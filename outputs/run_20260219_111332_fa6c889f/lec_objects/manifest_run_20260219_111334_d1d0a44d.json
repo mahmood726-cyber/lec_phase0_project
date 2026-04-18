@@ -1,0 +1,43 @@
+{
+  "run_id": "run_20260219_111334_d1d0a44d",
+  "created_at_utc": "2026-02-19T11:13:34.155420+00:00",
+  "completed_at_utc": "2026-02-19T11:13:34.347379+00:00",
+  "artifacts": [
+    {
+      "type": "discovery",
+      "path": "outputs\\run_20260219_111332_fa6c889f\\discovery\\discovery_colchicine_mi_2026-02-19.json",
+      "sha256": "fc9cb09783349076cbaa41b471b5191d3667e680385e0b37cca551c6eea21050",
+      "added_at": "2026-02-19T11:13:34.201429+00:00"
+    },
+    {
+      "type": "extraction",
+      "path": "data\\sample_extraction.json",
+      "sha256": "9c57c4cac7bcbe31c54da6c4969a062477469cc3c542500c890a22ff9dae1ae6",
+      "added_at": "2026-02-19T11:13:34.202958+00:00"
+    },
+    {
+      "type": "metaengine_input",
+      "path": "outputs\\run_20260219_111332_fa6c889f\\metaengine\\metaengine_input_colchicine_mi.json",
+      "sha256": "63dd01c2b9b4480a590edf79180f2ef89879fb2205088d03be30f1cfba0f62b1",
+      "added_at": "2026-02-19T11:13:34.207964+00:00"
+    },
+    {
+      "type": "metaengine_output",
+      "path": "outputs\\run_20260219_111332_fa6c889f\\metaengine\\metaengine_output_colchicine_mi.json",
+      "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a",
+      "added_at": "2026-02-19T11:13:34.237796+00:00"
+    },
+    {
+      "type": "truthcert",
+      "path": "outputs\\run_20260219_111332_fa6c889f\\verification\\certificates\\truthcert_run_20260219_111333_26a30082.json",
+      "sha256": "fee1e738a3caa796980f46a701115319b9d6fa0c289d233ddc0b9ddac9a972ad",
+      "added_at": "2026-02-19T11:13:34.282101+00:00"
+    },
+    {
+      "type": "audit_log",
+      "path": "outputs\\run_20260219_111332_fa6c889f\\verification\\audit_logs\\audit_run_20260219_111333_26a30082.json",
+      "sha256": "ad2a7b562a8619401a0b56a0cf27d1414460d71b1c9cf6857ec65621ad6275ee",
+      "added_at": "2026-02-19T11:13:34.324834+00:00"
+    }
+  ]
+}

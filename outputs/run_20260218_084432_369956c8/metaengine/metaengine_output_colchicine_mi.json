@@ -1,0 +1,15 @@
+{
+  "pooled": {
+    "estimate": 0.7215,
+    "ci_low": 0.6243,
+    "ci_high": 0.8338,
+    "se": 0.0738
+  },
+  "heterogeneity": {
+    "i2": 0,
+    "tau2": 0,
+    "q": 0.5331,
+    "df": 1
+  },
+  "n_studies": 2
+}

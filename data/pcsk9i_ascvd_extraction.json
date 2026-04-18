@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "topic": "PCSK9 Inhibitors in Atherosclerotic Cardiovascular Disease",
+    "pico": {
+      "population": "Adults with ASCVD or high cardiovascular risk on maximally tolerated statin therapy",
+      "intervention": "PCSK9 inhibitors (evolocumab, alirocumab)",
+      "comparator": "Placebo",
+      "outcome": "Major adverse cardiovascular events (MACE)"
+    },
+    "extraction_date": "2026-01-11",
+    "extractor": "LEC_Pipeline_v0.1"
+  },
+  "studies": [
+    {
+      "study_id": "NCT:01764633",
+      "trial_name": "FOURIER",
+      "pmid": "PMID:28304224",
+      "year": 2017,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "ASCVD with LDL-C >=70 mg/dL on statin therapy",
+      "n_total": 27564,
+      "intervention": {
+        "name": "Evolocumab",
+        "dose": "140mg Q2W or 420mg monthly",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 26.0,
+      "outcomes": [
+        {
+          "name": "CV death, MI, stroke, UA hospitalization, or coronary revascularization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 26.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 13784, "events": 1344},
+          "arm_control": {"n": 13780, "events": 1563},
+          "effect_measure": "HR",
+          "effect_estimate": 0.85,
+          "effect_ci_low": 0.79,
+          "effect_ci_high": 0.92,
+          "p_value": 0.00001
+        },
+        {
+          "name": "CV death, MI, or stroke (key secondary)",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 13784, "events": 816},
+          "arm_control": {"n": 13780, "events": 1013},
+          "effect_measure": "HR",
+          "effect_estimate": 0.80,
+          "effect_ci_low": 0.73,
+          "effect_ci_high": 0.88,
+          "p_value": 0.00001
+        },
+        {
+          "name": "Myocardial infarction",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 13784, "events": 468},
+          "arm_control": {"n": 13780, "events": 639},
+          "effect_measure": "HR",
+          "effect_estimate": 0.73,
+          "effect_ci_low": 0.65,
+          "effect_ci_high": 0.82
+        },
+        {
+          "name": "Stroke",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 13784, "events": 207},
+          "arm_control": {"n": 13780, "events": 262},
+          "effect_measure": "HR",
+          "effect_estimate": 0.79,
+          "effect_ci_low": 0.66,
+          "effect_ci_high": 0.95
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 13784, "events": 251},
+          "arm_control": {"n": 13780, "events": 240},
+          "effect_measure": "HR",
+          "effect_estimate": 1.05,
+          "effect_ci_low": 0.88,
+          "effect_ci_high": 1.25
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 13784, "events": 444},
+          "arm_control": {"n": 13780, "events": 426},
+          "effect_measure": "HR",
+          "effect_estimate": 1.04,
+          "effect_ci_low": 0.91,
+          "effect_ci_high": 1.19
+        },
+        {
+          "name": "Injection site reactions",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 13769, "events": 301},
+          "arm_control": {"n": 13756, "events": 97},
+          "effect_measure": "RR",
+          "effect_estimate": 3.10,
+          "effect_ci_low": 2.48,
+          "effect_ci_high": 3.87,
+          "safety_signal": true
+        },
+        {
+          "name": "Neurocognitive events",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 13769, "events": 177},
+          "arm_control": {"n": 13756, "events": 165},
+          "effect_measure": "RR",
+          "effect_estimate": 1.07,
+          "effect_ci_low": 0.87,
+          "effect_ci_high": 1.32
+        },
+        {
+          "name": "New-onset diabetes",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 13769, "events": 676},
+          "arm_control": {"n": 13756, "events": 644},
+          "effect_measure": "RR",
+          "effect_estimate": 1.05,
+          "effect_ci_low": 0.94,
+          "effect_ci_high": 1.17
+        },
+        {
+          "name": "Myalgia",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 13769, "events": 652},
+          "arm_control": {"n": 13756, "events": 618},
+          "effect_measure": "RR",
+          "effect_estimate": 1.05,
+          "effect_ci_low": 0.95,
+          "effect_ci_high": 1.17
+        }
+      ],
+      "ldl_reduction": {
+        "baseline_mg_dl": 92,
+        "achieved_mg_dl": 30,
+        "percent_reduction": 59
+      },
+      "subgroups": {
+        "baseline_ldl": {"<100": {"hr": 0.86}, ">=100": {"hr": 0.84}},
+        "diabetes": {"yes": {"hr": 0.83, "ci_low": 0.75, "ci_high": 0.93}, "no": {"hr": 0.87, "ci_low": 0.79, "ci_high": 0.96}},
+        "prior_mi": {"yes": {"hr": 0.81}, "no": {"hr": 0.92}},
+        "statin_intensity": {"high": {"hr": 0.85}, "moderate_low": {"hr": 0.86}},
+        "age": {"<65": {"hr": 0.82}, ">=65": {"hr": 0.89}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:28304224", "source_type": "pdf", "page": 4, "table_id": "Table 1"},
+        "effect_estimate": {"source_id": "PMID:28304224", "source_type": "pdf", "page": 9, "table_id": "Figure 2", "raw_text": "HR 0.85 (95% CI, 0.79-0.92)"},
+        "ldl_reduction": {"source_id": "PMID:28304224", "source_type": "pdf", "page": 7}
+      },
+      "risk_of_bias": {
+        "randomization": "low",
+        "allocation_concealment": "low",
+        "blinding": "low",
+        "incomplete_outcome": "low",
+        "selective_reporting": "low",
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:01663402",
+      "trial_name": "ODYSSEY Outcomes",
+      "pmid": "PMID:30403574",
+      "year": 2018,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "Recent ACS (1-12 months) with LDL-C >=70 mg/dL on high-intensity statin",
+      "n_total": 18924,
+      "intervention": {
+        "name": "Alirocumab",
+        "dose": "75-150mg Q2W (titrated to LDL-C target)",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 33.6,
+      "outcomes": [
+        {
+          "name": "CHD death, MI, ischemic stroke, or UA hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 33.6,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 9462, "events": 903},
+          "arm_control": {"n": 9462, "events": 1052},
+          "effect_measure": "HR",
+          "effect_estimate": 0.85,
+          "effect_ci_low": 0.78,
+          "effect_ci_high": 0.93,
+          "p_value": 0.0003
+        },
+        {
+          "name": "Myocardial infarction",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 9462, "events": 626},
+          "arm_control": {"n": 9462, "events": 722},
+          "effect_measure": "HR",
+          "effect_estimate": 0.86,
+          "effect_ci_low": 0.77,
+          "effect_ci_high": 0.96
+        },
+        {
+          "name": "Ischemic stroke",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 9462, "events": 111},
+          "arm_control": {"n": 9462, "events": 152},
+          "effect_measure": "HR",
+          "effect_estimate": 0.73,
+          "effect_ci_low": 0.57,
+          "effect_ci_high": 0.93
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 9462, "events": 334},
+          "arm_control": {"n": 9462, "events": 392},
+          "effect_measure": "HR",
+          "effect_estimate": 0.85,
+          "effect_ci_low": 0.73,
+          "effect_ci_high": 0.98,
+          "p_value": 0.026
+        },
+        {
+          "name": "CHD death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 9462, "events": 205},
+          "arm_control": {"n": 9462, "events": 222},
+          "effect_measure": "HR",
+          "effect_estimate": 0.92,
+          "effect_ci_low": 0.76,
+          "effect_ci_high": 1.11
+        },
+        {
+          "name": "Injection site reactions",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 9451, "events": 349},
+          "arm_control": {"n": 9443, "events": 211},
+          "effect_measure": "RR",
+          "effect_estimate": 1.65,
+          "effect_ci_low": 1.40,
+          "effect_ci_high": 1.95,
+          "safety_signal": true
+        },
+        {
+          "name": "Neurocognitive events",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 9451, "events": 171},
+          "arm_control": {"n": 9443, "events": 188},
+          "effect_measure": "RR",
+          "effect_estimate": 0.91,
+          "effect_ci_low": 0.74,
+          "effect_ci_high": 1.12
+        }
+      ],
+      "ldl_reduction": {
+        "baseline_mg_dl": 87,
+        "achieved_mg_dl": 53,
+        "percent_reduction": 55
+      },
+      "subgroups": {
+        "baseline_ldl": {"<80": {"hr": 0.86}, "80-100": {"hr": 0.87}, ">100": {"hr": 0.76, "ci_low": 0.65, "ci_high": 0.87}},
+        "diabetes": {"yes": {"hr": 0.84, "ci_low": 0.74, "ci_high": 0.97}, "no": {"hr": 0.86, "ci_low": 0.77, "ci_high": 0.96}},
+        "prior_cabg": {"yes": {"hr": 0.76}, "no": {"hr": 0.87}},
+        "polyvascular_disease": {"yes": {"hr": 0.73, "ci_low": 0.60, "ci_high": 0.89}, "no": {"hr": 0.88}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:30403574", "source_type": "pdf", "page": 3, "table_id": "Table 1"},
+        "effect_estimate": {"source_id": "PMID:30403574", "source_type": "pdf", "page": 8, "raw_text": "HR 0.85 (95% CI, 0.78-0.93)"}
+      },
+      "risk_of_bias": {
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:01813422",
+      "trial_name": "GLAGOV",
+      "pmid": "PMID:27846344",
+      "year": 2016,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "Angiographic coronary disease on statin therapy",
+      "n_total": 968,
+      "intervention": {
+        "name": "Evolocumab",
+        "dose": "420mg monthly",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 18.0,
+      "outcomes": [
+        {
+          "name": "Percent atheroma volume (PAV) change",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 18.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 484, "mean_change": -0.95, "sd": 0.14},
+          "arm_control": {"n": 484, "mean_change": 0.05, "sd": 0.14},
+          "effect_measure": "Difference",
+          "effect_estimate": -1.0,
+          "effect_ci_low": -1.8,
+          "effect_ci_high": -0.64,
+          "p_value": 0.0001,
+          "unit": "percentage points"
+        },
+        {
+          "name": "Plaque regression (any)",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 484, "events": 323, "pct": 64.3},
+          "arm_control": {"n": 484, "events": 228, "pct": 47.3},
+          "effect_measure": "OR",
+          "effect_estimate": 2.0,
+          "effect_ci_low": 1.55,
+          "effect_ci_high": 2.59
+        }
+      ],
+      "ldl_reduction": {
+        "baseline_mg_dl": 93,
+        "achieved_mg_dl": 37,
+        "percent_reduction": 60
+      },
+      "notes": "Imaging study (IVUS); not powered for clinical outcomes",
+      "provenance": {
+        "effect_estimate": {"source_id": "PMID:27846344", "source_type": "pdf", "page": 5}
+      },
+      "risk_of_bias": {
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:01439880",
+      "trial_name": "OSLER-1",
+      "pmid": "PMID:25773378",
+      "year": 2015,
+      "design": "RCT (open-label extension)",
+      "phase": "Phase 3",
+      "population": "Completed parent studies of evolocumab",
+      "n_total": 4465,
+      "intervention": {
+        "name": "Evolocumab",
+        "dose": "140mg Q2W or 420mg monthly (patient choice)",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Standard of care",
+      "followup_median_months": 11.1,
+      "outcomes": [
+        {
+          "name": "CV events (exploratory)",
+          "classification": "efficacy",
+          "is_primary": false,
+          "timepoint": 11.1,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 2976, "events": 29},
+          "arm_control": {"n": 1489, "events": 31},
+          "effect_measure": "HR",
+          "effect_estimate": 0.47,
+          "effect_ci_low": 0.28,
+          "effect_ci_high": 0.78
+        },
+        {
+          "name": "Any adverse event",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2976, "events": 2101},
+          "arm_control": {"n": 1489, "events": 920},
+          "effect_measure": "RR",
+          "effect_estimate": 1.14,
+          "effect_ci_low": 1.08,
+          "effect_ci_high": 1.21
+        },
+        {
+          "name": "Neurocognitive events",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2976, "events": 27},
+          "arm_control": {"n": 1489, "events": 4},
+          "effect_measure": "RR",
+          "effect_estimate": 3.38,
+          "effect_ci_low": 1.18,
+          "effect_ci_high": 9.64,
+          "safety_signal": true,
+          "notes": "Small numbers; exploratory analysis"
+        }
+      ],
+      "ldl_reduction": {
+        "percent_reduction": 61
+      },
+      "notes": "Open-label; exploratory CV outcomes; not powered for efficacy",
+      "provenance": {
+        "effect_estimate": {"source_id": "PMID:25773378", "source_type": "pdf", "page": 6}
+      },
+      "risk_of_bias": {
+        "overall": "high",
+        "notes": "Open-label design; high attrition in control arm"
+      }
+    },
+    {
+      "study_id": "NCT:02207634",
+      "trial_name": "EBBINGHAUS",
+      "pmid": "PMID:28291947",
+      "year": 2017,
+      "design": "RCT (cognitive sub-study of FOURIER)",
+      "phase": "Phase 3",
+      "population": "FOURIER participants with cognitive assessment",
+      "n_total": 1974,
+      "intervention": {
+        "name": "Evolocumab",
+        "dose": "140mg Q2W or 420mg monthly",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 19.4,
+      "outcomes": [
+        {
+          "name": "Cambridge Neuropsychological Test (executive function)",
+          "classification": "safety",
+          "is_primary": true,
+          "timepoint": 19.4,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 972, "mean_change": -0.29, "sd": 2.1},
+          "arm_control": {"n": 990, "mean_change": -0.31, "sd": 2.2},
+          "effect_measure": "Difference",
+          "effect_estimate": 0.02,
+          "effect_ci_low": -0.16,
+          "effect_ci_high": 0.20,
+          "p_value": 0.85,
+          "unit": "composite z-score"
+        },
+        {
+          "name": "Patient-reported cognitive complaints",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 972, "events": 31},
+          "arm_control": {"n": 990, "events": 29},
+          "effect_measure": "RR",
+          "effect_estimate": 1.09,
+          "effect_ci_low": 0.66,
+          "effect_ci_high": 1.79
+        }
+      ],
+      "ldl_reduction": {
+        "achieved_mg_dl": 29,
+        "percent_reduction": 57
+      },
+      "notes": "Dedicated cognitive safety study; no signal for cognitive decline with very low LDL-C",
+      "provenance": {
+        "effect_estimate": {"source_id": "PMID:28291947", "source_type": "pdf", "page": 4}
+      },
+      "risk_of_bias": {
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:02585778",
+      "trial_name": "SPIRE-2",
+      "pmid": "PMID:28039250",
+      "year": 2017,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "High CV risk with LDL-C >=70 mg/dL (>=100 for LDL-only entry)",
+      "n_total": 10621,
+      "intervention": {
+        "name": "Bococizumab",
+        "dose": "150mg Q2W",
+        "frequency": "subcutaneous"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 12.0,
+      "outcomes": [
+        {
+          "name": "CV death, MI, stroke, or UA hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 12.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 5308, "events": 173},
+          "arm_control": {"n": 5313, "events": 204},
+          "effect_measure": "HR",
+          "effect_estimate": 0.79,
+          "effect_ci_low": 0.65,
+          "effect_ci_high": 0.97,
+          "p_value": 0.02
+        },
+        {
+          "name": "Anti-drug antibodies",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 5308, "events": 1643},
+          "arm_control": {"n": 5313, "events": 0},
+          "effect_measure": "Incidence",
+          "effect_estimate": 31.0,
+          "effect_ci_low": 29.0,
+          "effect_ci_high": 33.0,
+          "unit": "percent",
+          "safety_signal": true
+        },
+        {
+          "name": "Injection site reactions",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 5308, "events": 548},
+          "arm_control": {"n": 5313, "events": 134},
+          "effect_measure": "RR",
+          "effect_estimate": 4.09,
+          "effect_ci_low": 3.40,
+          "effect_ci_high": 4.92,
+          "safety_signal": true
+        }
+      ],
+      "ldl_reduction": {
+        "percent_reduction": 41
+      },
+      "notes": "Program terminated early due to immunogenicity and attenuated LDL lowering over time; bococizumab not approved",
+      "provenance": {
+        "effect_estimate": {"source_id": "PMID:28039250", "source_type": "pdf", "page": 5}
+      },
+      "risk_of_bias": {
+        "overall": "some_concerns",
+        "notes": "Early termination; significant immunogenicity"
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "topic": "colchicine_mi",
+  "created_at_utc": "2026-02-16T18:48:01.667259+00:00",
+  "source": "europe_pmc",
+  "query": "colchicine myocardial infarction",
+  "total_found": 2,
+  "downloaded": 2,
+  "articles": [
+    {
+      "pmcid": "PMC123456",
+      "title": "Demo Article regarding colchicine myocardial infarction",
+      "doi": "10.1038/demo.123",
+      "journal": "Journal of Demo Evidence",
+      "year": "2025",
+      "pdf_path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\epmc\\pdfs\\PMC123456.pdf"
+    },
+    {
+      "pmcid": "PMC789012",
+      "title": "Another Great Study",
+      "doi": "10.1056/demo.456",
+      "journal": "NEJM Demo",
+      "year": "2024",
+      "pdf_path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\epmc\\pdfs\\PMC789012.pdf"
+    }
+  ]
+}

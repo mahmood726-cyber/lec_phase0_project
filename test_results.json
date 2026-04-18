@@ -1,0 +1,502 @@
+{
+  "passed": 80,
+  "failed": 19,
+  "pass_rate": 80.8080808080808,
+  "results": [
+    {
+      "test": "Page title contains 'LEC'",
+      "passed": true,
+      "details": "LEC Evidence Synthesis Tool v2.0 - ESC Guideline Support"
+    },
+    {
+      "test": "Header present",
+      "passed": true,
+      "details": "LEC Evidence Synthesis Tool"
+    },
+    {
+      "test": "Version badge shows v2.0",
+      "passed": true,
+      "details": "v2.0"
+    },
+    {
+      "test": "Tab 'discovery' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'data' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'meta' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'grade' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'nma' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'subgroups' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'recommendation' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'sof' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'validation' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Tab 'export' navigation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "CT.gov condition input present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "CT.gov intervention input present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Study type dropdown present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Status dropdown present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Phase dropdown present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "CT.gov search button present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "CT.gov API query executed",
+      "passed": true,
+      "details": "Error: CT.gov API Error: `filter.phase` is unknown parameter"
+    },
+    {
+      "test": "CT.gov API response received",
+      "passed": true,
+      "details": "Error: CT.gov API Error: `filter.phase` is unknown parameter. Try a different se"
+    },
+    {
+      "test": "CT.gov search UI functional",
+      "passed": true,
+      "details": "Search form works correctly"
+    },
+    {
+      "test": "SGLT2i sample data loads",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO title populated",
+      "passed": true,
+      "details": "SGLT2 Inhibitors for Heart Failure"
+    },
+    {
+      "test": "PCSK9i sample data loads",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Colchicine sample data loads",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Parsed studies table visible",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Study count shows 5 studies",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Studies table has 5 rows",
+      "passed": true,
+      "details": "Found 5 rows"
+    },
+    {
+      "test": "Clear button empties data",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Model dropdown has 3 options",
+      "passed": true,
+      "details": "['', '', '']"
+    },
+    {
+      "test": "Tau estimator has DL/REML/PM",
+      "passed": false,
+      "details": "REML and PM present"
+    },
+    {
+      "test": "Pooled estimate calculated",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "95% CI calculated",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "I^2 statistic calculated",
+      "passed": false,
+      "details": "calculated"
+    },
+    {
+      "test": "tau^2 statistic calculated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Prediction interval displayed",
+      "passed": false,
+      "details": "empty"
+    },
+    {
+      "test": "Forest plot SVG generated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Forest plot has content",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Forest plot has pooled diamond",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Download SVG button present",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Funnel plot SVG generated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Funnel plot has data points",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Funnel plot has CI region",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Egger's test calculated",
+      "passed": true,
+      "details": "Intercept = -2.999, t = 2.64, p = 0.001 (Possible asymmetry)"
+    },
+    {
+      "test": "Sensitivity analysis table present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Shows excluded studies",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Shows effect estimates",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Starting level dropdown works",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Downgrade domain 'grade-rob' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Downgrade domain 'grade-inconsistency' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Downgrade domain 'grade-indirectness' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Downgrade domain 'grade-imprecision' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Downgrade domain 'grade-pubbias' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Upgrade domain 'grade-large-effect' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Upgrade domain 'grade-dose' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Upgrade domain 'grade-confounding' present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "GRADE result calculated",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "GRADE symbols displayed",
+      "passed": false,
+      "details": "symbols present"
+    },
+    {
+      "test": "GRADE rationale generated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "NMA sample data loads",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "SUCRA rankings generated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Network diagram has nodes",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Network diagram has edges",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "League table generated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Inconsistency assessment present",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Subgroup analysis",
+      "passed": false,
+      "details": "Message: element not interactable\n  (Session info: chrome=143.0.7499.170); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception\nStacktrace:\nSymbols not available. Dumping unresolved backtrace:\n\t0x7ff79b8d88d5\n\t0x7ff79b8d8930\n\t0x7ff79b6b1465\n\t0x7ff79b6ff263\n\t0x7ff79b731fda\n\t0x7ff79b6fc746\n\t0x7ff79b75ac97\n\t0x7ff79b6fac29\n\t0x7ff79b6fba93\n\t0x7ff79bbf0620\n\t0x7ff79bbeaf60\n\t0x7ff79bc096c6\n\t0x7ff79b8f5dd4\n\t0x7ff79b8fed7c\n\t0x7ff79b8e1ff4\n\t0x7ff79b8e21a5\n\t0x7ff79b8c7ed2\n\t0x7ffc2bd4e8d7\n\t0x7ffc2d36c53c\n"
+    },
+    {
+      "test": "Override has Class III (No Benefit)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Override has Class III (Harm)",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Recommendation class derived",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Evidence level derived",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Recommendation text generated",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Recommendation rationale provided",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "SoF table has outcome",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "SoF table has effect estimate",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "SoF table has certainty column",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Validation compares to reference",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Validation shows concordance",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Validation score calculated",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "JSON export button present",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Markdown export button present",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Print button present",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "test": "Analysis log has entries",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Log has timestamps",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Log has action types",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Save Session button present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Session saved successfully",
+      "passed": true,
+      "details": "Session saved!"
+    },
+    {
+      "test": "Load Session button present",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Effect measure dropdown works",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Study design dropdown works",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO input 'pico-title' editable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO input 'pico-population' editable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO input 'pico-intervention' editable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO input 'pico-comparator' editable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "PICO input 'pico-outcome' editable",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Cards are present",
+      "passed": true,
+      "details": "Found 34 cards"
+    },
+    {
+      "test": "Navigation tabs visible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Header visible",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "test": "Empty data shows alert",
+      "passed": true,
+      "details": "Please enter study data"
+    }
+  ]
+}

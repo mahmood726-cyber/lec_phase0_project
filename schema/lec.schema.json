@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lec.example.org/lec.schema.json",
+  "title": "Living Evidence Composite (LEC) Object",
+  "type": "object",
+  "required": [
+    "lec_version",
+    "created_at_utc",
+    "updated_at_utc",
+    "question",
+    "analysis",
+    "verification",
+    "reproducibility"
+  ],
+  "properties": {
+    "lec_version": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "title",
+        "pico"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "pico": {
+          "type": "object",
+          "required": [
+            "population",
+            "intervention",
+            "comparator",
+            "outcome"
+          ],
+          "properties": {
+            "population": {
+              "type": "string"
+            },
+            "intervention": {
+              "type": "string"
+            },
+            "comparator": {
+              "type": "string"
+            },
+            "outcome": {
+              "type": "string"
+            },
+            "timeframe": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_universe": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "included_studies": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "analysis": {
+      "type": "object",
+      "required": [
+        "outcome_type",
+        "effect_measure",
+        "model",
+        "results",
+        "metaengine_contract"
+      ],
+      "properties": {
+        "outcome_type": {
+          "type": "string",
+          "enum": [
+            "binary",
+            "continuous",
+            "time_to_event",
+            "diagnostic",
+            "other"
+          ]
+        },
+        "effect_measure": {
+          "type": "string"
+        },
+        "model": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "results": {
+          "type": "object",
+          "required": [
+            "pooled",
+            "heterogeneity"
+          ],
+          "properties": {
+            "pooled": {
+              "type": "object",
+              "required": [
+                "estimate",
+                "ci_low",
+                "ci_high"
+              ],
+              "properties": {
+                "estimate": {
+                  "type": "number"
+                },
+                "ci_low": {
+                  "type": "number"
+                },
+                "ci_high": {
+                  "type": "number"
+                },
+                "se": {
+                  "type": "number"
+                },
+                "p_value": {
+                  "type": "number"
+                },
+                "z": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            },
+            "heterogeneity": {
+              "type": "object",
+              "required": [
+                "i2",
+                "tau2"
+              ],
+              "properties": {
+                "i2": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 100.0
+                },
+                "tau2": {
+                  "type": "number",
+                  "minimum": 0.0
+                },
+                "q": {
+                  "type": "number"
+                },
+                "df": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "additionalProperties": false
+            },
+            "diagnostics": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "metaengine_contract": {
+          "type": "object",
+          "required": [
+            "contract_version",
+            "input",
+            "output"
+          ],
+          "properties": {
+            "contract_version": {
+              "type": "string",
+              "pattern": "^\\d+\\.\\d+\\.\\d+$"
+            },
+            "input": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "output": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "engine_meta": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "truthcert"
+      ],
+      "properties": {
+        "truthcert": {
+          "type": "object",
+          "required": [
+            "assurance_level",
+            "decision",
+            "certificate",
+            "audit_log"
+          ],
+          "properties": {
+            "assurance_level": {
+              "type": "string",
+              "enum": [
+                "bronze",
+                "silver",
+                "gold"
+              ]
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "PASS",
+                "FLAG",
+                "FAIL"
+              ]
+            },
+            "certificate": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "audit_log": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "reproducibility": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "manifest"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string"
+        },
+        "manifest": {
+          "type": "object",
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "path"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "added_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

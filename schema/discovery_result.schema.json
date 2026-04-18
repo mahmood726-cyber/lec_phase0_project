@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lec.example.org/discovery_result.schema.json",
+  "title": "Trial Discovery Result",
+  "type": "object",
+  "required": [
+    "query",
+    "discovered_trials",
+    "created_at_utc"
+  ],
+  "properties": {
+    "query": {
+      "type": "object",
+      "properties": {
+        "intervention": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "seed_trials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "free_text": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "discovered_trials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "trial_id",
+          "score",
+          "provenance"
+        ],
+        "properties": {
+          "trial_id": {
+            "type": "string"
+          },
+          "id_type": {
+            "type": "string",
+            "enum": [
+              "nct",
+              "pmid",
+              "doi",
+              "trial_key"
+            ]
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "disposition": {
+            "type": "string",
+            "enum": [
+              "INCLUDE",
+              "FLAG",
+              "EXCLUDE"
+            ]
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "matched_mas",
+              "term_matches",
+              "discovery_method"
+            ],
+            "properties": {
+              "matched_mas": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "term_matches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "co_occurrence_sources": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "discovery_method": {
+                "type": "string",
+                "enum": [
+                  "exact_ma_match",
+                  "fuzzy_ma_match",
+                  "co_occurrence",
+                  "term_expansion",
+                  "aact_mesh_sql"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "mas_searched": {
+          "type": "integer"
+        },
+        "mas_matched": {
+          "type": "integer"
+        },
+        "trials_before_filter": {
+          "type": "integer"
+        },
+        "trials_after_filter": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

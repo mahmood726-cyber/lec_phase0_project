@@ -1,0 +1,10 @@
+# Discovery scoring config (deterministic)
+weights:
+  ma_match: 0.45
+  cooccur: 0.35
+  term: 0.20
+thresholds:
+  include: 0.75
+  flag: 0.55
+neighbors:
+  top_n: 50

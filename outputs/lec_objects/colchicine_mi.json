@@ -1,0 +1,128 @@
+{
+  "lec_version": "0.1.0",
+  "created_at_utc": "2026-02-16T20:16:09.601962+00:00",
+  "updated_at_utc": "2026-02-16T20:16:09.601972+00:00",
+  "question": {
+    "title": "Meta-analysis for topic: colchicine_mi",
+    "pico": {
+      "population": "To be specified",
+      "intervention": "To be specified",
+      "comparator": "To be specified",
+      "outcome": "To be specified"
+    }
+  },
+  "evidence_universe": {
+    "discovery_artifacts": [
+      {
+        "path": "outputs\\discovery\\discovery_colchicine_mi_2026-02-16.json",
+        "sha256": "c280ac8088d1bfe8ae8e6065c34473917f121f269688321ba9109d3b65e8d47d",
+        "candidate_count": 5
+      }
+    ],
+    "statistics": {
+      "total_candidates": 5,
+      "included": 0,
+      "flagged": 2,
+      "excluded": 3
+    }
+  },
+  "included_studies": {
+    "count": 2,
+    "study_ids": [
+      "NCT:02551094",
+      "NCT:03048825"
+    ]
+  },
+  "analysis": {
+    "outcome_type": "binary",
+    "effect_measure": "HR",
+    "model": {
+      "type": "random_effects",
+      "method": "REML"
+    },
+    "results": {
+      "pooled": {
+        "estimate": 0.7215,
+        "ci_low": 0.6243,
+        "ci_high": 0.8338,
+        "se": 0.0738
+      },
+      "heterogeneity": {
+        "i2": 0,
+        "tau2": 0,
+        "q": 0.5331,
+        "df": 1
+      }
+    },
+    "metaengine_contract": {
+      "contract_version": "0.1.0",
+      "input": {
+        "path": "outputs\\metaengine\\metaengine_input_colchicine_mi.json",
+        "sha256": "b97ff53e476dc598e04ba2f96b8c0a980b7dc757eb744bef28530707e316b2a4"
+      },
+      "output": {
+        "path": "outputs\\metaengine\\metaengine_output_colchicine_mi.json",
+        "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a"
+      }
+    }
+  },
+  "verification": {
+    "truthcert": {
+      "assurance_level": "bronze",
+      "decision": "PASS",
+      "certificate": {
+        "path": "outputs\\verification\\certificates\\truthcert_run_20260216_201609_5c9a00fb.json",
+        "sha256": "558a5c92d3b1195e3f41886e7d7685cc052e8a6d500105b07c4f6ab63aac2d8d"
+      },
+      "audit_log": {
+        "path": "outputs\\verification\\audit_logs\\audit_run_20260216_201609_5c9a00fb.json",
+        "sha256": "8be76291e8ec9af70e7717c9687a0457575204a88c805aa821d42552a79637b9"
+      }
+    }
+  },
+  "reproducibility": {
+    "run_id": "run_20260216_201609_a14e7d4b",
+    "manifest": {
+      "path": "outputs\\lec_objects\\manifest_run_20260216_201609_a14e7d4b.json",
+      "sha256": ""
+    },
+    "artifacts": [
+      {
+        "type": "discovery",
+        "path": "outputs\\discovery\\discovery_colchicine_mi_2026-02-16.json",
+        "sha256": "c280ac8088d1bfe8ae8e6065c34473917f121f269688321ba9109d3b65e8d47d",
+        "added_at": "2026-02-16T20:16:09.565009+00:00"
+      },
+      {
+        "type": "extraction",
+        "path": "data\\sample_extraction.json",
+        "sha256": "9c57c4cac7bcbe31c54da6c4969a062477469cc3c542500c890a22ff9dae1ae6",
+        "added_at": "2026-02-16T20:16:09.565226+00:00"
+      },
+      {
+        "type": "metaengine_input",
+        "path": "outputs\\metaengine\\metaengine_input_colchicine_mi.json",
+        "sha256": "b97ff53e476dc598e04ba2f96b8c0a980b7dc757eb744bef28530707e316b2a4",
+        "added_at": "2026-02-16T20:16:09.565363+00:00"
+      },
+      {
+        "type": "metaengine_output",
+        "path": "outputs\\metaengine\\metaengine_output_colchicine_mi.json",
+        "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a",
+        "added_at": "2026-02-16T20:16:09.574018+00:00"
+      },
+      {
+        "type": "truthcert",
+        "path": "outputs\\verification\\certificates\\truthcert_run_20260216_201609_5c9a00fb.json",
+        "sha256": "558a5c92d3b1195e3f41886e7d7685cc052e8a6d500105b07c4f6ab63aac2d8d",
+        "added_at": "2026-02-16T20:16:09.586642+00:00"
+      },
+      {
+        "type": "audit_log",
+        "path": "outputs\\verification\\audit_logs\\audit_run_20260216_201609_5c9a00fb.json",
+        "sha256": "8be76291e8ec9af70e7717c9687a0457575204a88c805aa821d42552a79637b9",
+        "added_at": "2026-02-16T20:16:09.600923+00:00"
+      }
+    ]
+  }
+}

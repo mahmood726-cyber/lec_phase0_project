@@ -1,0 +1,131 @@
+{
+  "run_id": "run_20260111_150801_e9a87b2d",
+  "started_at": "2026-01-11T15:08:01.619393+00:00",
+  "assurance_level": "bronze",
+  "extraction_source": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\sample_extraction.json",
+  "extraction_sha256": "87c5f470caae9b85cdf7c671a88a34f290f56ece2954138da4aeabf23daa71ce",
+  "steps": [
+    {
+      "step": "provenance_check",
+      "started_at": "2026-01-11T15:08:01.620337+00:00",
+      "completed_at": "2026-01-11T15:08:01.620679+00:00",
+      "status": "FAIL",
+      "issue_count": 7,
+      "issues": [
+        {
+          "study_id": "NCT:02551094",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        }
+      ]
+    },
+    {
+      "step": "mvp_validators",
+      "started_at": "2026-01-11T15:08:01.620703+00:00",
+      "completed_at": "2026-01-11T15:08:01.620900+00:00",
+      "validators_run": [
+        "effect_direction",
+        "inconsistent_n",
+        "units_timepoint",
+        "duplicates"
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "flagged": 0,
+        "failed": 0
+      },
+      "results": [
+        {
+          "validator": "effect_direction",
+          "description": "Validates effect direction consistency across fields",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-11T15:08:01.620736+00:00"
+        },
+        {
+          "validator": "inconsistent_n",
+          "description": "Validates N and events consistency across arms",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-11T15:08:01.620773+00:00"
+        },
+        {
+          "validator": "units_timepoint",
+          "description": "Validates units and timepoints are specified and consistent",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-11T15:08:01.620797+00:00"
+        },
+        {
+          "validator": "duplicates",
+          "description": "Detects potential duplicate studies",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-11T15:08:01.620887+00:00"
+        }
+      ]
+    },
+    {
+      "step": "disagreement_check",
+      "started_at": "2026-01-11T15:08:01.620906+00:00",
+      "completed_at": "2026-01-11T15:08:01.620911+00:00",
+      "status": "PASS",
+      "critical_disagreements": 0,
+      "total_disagreements": 0
+    }
+  ],
+  "completed_at": "2026-01-11T15:08:01.620928+00:00",
+  "decision": "FAIL",
+  "decision_reasons": [
+    "provenance_failures: 7",
+    "---DETAILS---",
+    "DECISION: FAIL - 7 critical issue(s) found",
+    "  - NCT:02551094: Critical field 'timepoint_unit' missing provenance",
+    "  - NCT:02551094: Critical field 'effect_ci_low' missing provenance",
+    "  - NCT:02551094: Critical field 'effect_ci_high' missing provenance",
+    "  - ...and 4 more",
+    "ACTION REQUIRED: Fix provenance/extraction issues before proceeding"
+  ]
+}

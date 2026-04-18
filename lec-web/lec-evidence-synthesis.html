@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEC Evidence Synthesis Tool - ESC Guideline Support</title>
+    <style>
+        /* ============================================
+           LEC Evidence Synthesis Tool - Styles
+           ESC-Compliant Formatting
+           ============================================ */
+
+        :root {
+            /* ESC Color Palette */
+            --esc-red: #AE2026;
+            --esc-dark: #1a1a2e;
+            --esc-blue: #16213e;
+            --grade-high: #2e7d32;
+            --grade-moderate: #f9a825;
+            --grade-low: #ef6c00;
+            --grade-very-low: #c62828;
+            --class-i: #2e7d32;
+            --class-iia: #f9a825;
+            --class-iib: #ef6c00;
+            --class-iii: #c62828;
+            --bg-light: #f5f5f5;
+            --bg-white: #ffffff;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--esc-dark), var(--esc-blue));
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header-subtitle {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .header-badge {
+            background: var(--esc-red);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: var(--bg-white);
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            padding: 0 1rem;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: var(--esc-red);
+        }
+
+        .nav-tab.active {
+            color: var(--esc-red);
+            border-bottom-color: var(--esc-red);
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: var(--bg-light);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        /* Grid Layout */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--esc-red);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            font-family: 'Consolas', monospace;
+            resize: vertical;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--esc-red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #8b1a1f;
+        }
+
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+
+        .btn-success {
+            background: var(--grade-high);
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .data-table th, .data-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .data-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        .data-table .num {
+            text-align: right;
+            font-family: 'Consolas', monospace;
+        }
+
+        /* Results Display */
+        .result-box {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .result-primary {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--esc-red);
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .result-ci {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* GRADE Display */
+        .grade-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .grade-high { background: var(--grade-high); }
+        .grade-moderate { background: var(--grade-moderate); color: #333; }
+        .grade-low { background: var(--grade-low); }
+        .grade-very-low { background: var(--grade-very-low); }
+
+        .grade-domain {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grade-domain:last-child {
+            border-bottom: none;
+        }
+
+        .grade-domain-name {
+            font-weight: 500;
+        }
+
+        .grade-domain-rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .grade-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--grade-high);
+        }
+
+        .grade-dot.empty {
+            background: var(--border-color);
+        }
+
+        .grade-dot.downgrade {
+            background: var(--grade-very-low);
+        }
+
+        /* ESC Recommendation Box */
+        .esc-recommendation {
+            border: 3px solid;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .esc-recommendation.class-i { border-color: var(--class-i); }
+        .esc-recommendation.class-iia { border-color: var(--class-iia); }
+        .esc-recommendation.class-iib { border-color: var(--class-iib); }
+        .esc-recommendation.class-iii { border-color: var(--class-iii); }
+
+        .esc-rec-header {
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .class-i .esc-rec-header { background: var(--class-i); }
+        .class-iia .esc-rec-header { background: var(--class-iia); color: #333; }
+        .class-iib .esc-rec-header { background: var(--class-iib); }
+        .class-iii .esc-rec-header { background: var(--class-iii); }
+
+        .esc-rec-class {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .esc-rec-level {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .esc-rec-body {
+            padding: 1.5rem;
+        }
+
+        .esc-rec-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .esc-rec-rationale {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Forest Plot SVG Styles */
+        .forest-plot-container {
+            overflow-x: auto;
+            padding: 1rem;
+        }
+
+        .forest-plot {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .forest-study-label {
+            font-size: 12px;
+        }
+
+        .forest-effect-line {
+            stroke: #333;
+            stroke-width: 1.5;
+        }
+
+        .forest-effect-point {
+            fill: var(--esc-red);
+        }
+
+        .forest-pooled-diamond {
+            fill: var(--esc-red);
+        }
+
+        .forest-null-line {
+            stroke: #999;
+            stroke-dasharray: 4,4;
+        }
+
+        /* Network Diagram */
+        .network-container {
+            width: 100%;
+            height: 400px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .network-node {
+            fill: var(--esc-red);
+            cursor: pointer;
+        }
+
+        .network-node.reference {
+            fill: var(--esc-blue);
+        }
+
+        .network-edge {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+
+        .network-label {
+            font-size: 11px;
+            text-anchor: middle;
+        }
+
+        /* Summary of Findings Table */
+        .sof-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .sof-table th {
+            background: var(--esc-dark);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .sof-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sof-table .certainty-cell {
+            text-align: center;
+        }
+
+        .sof-symbols {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        /* Stats Display */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--esc-red);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Alert/Status Messages */
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .alert-success {
+            background: #e8f5e9;
+            border-left: 4px solid var(--grade-high);
+            color: #1b5e20;
+        }
+
+        .alert-warning {
+            background: #fff3e0;
+            border-left: 4px solid var(--grade-moderate);
+            color: #e65100;
+        }
+
+        .alert-error {
+            background: #ffebee;
+            border-left: 4px solid var(--grade-very-low);
+            color: #b71c1c;
+        }
+
+        .alert-info {
+            background: #e3f2fd;
+            border-left: 4px solid var(--esc-blue);
+            color: #0d47a1;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top-color: var(--esc-red);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .hidden { display: none; }
+
+        /* Print Styles */
+        @media print {
+            .header, .nav-tabs, .btn, .no-print {
+                display: none !important;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <h1>LEC Evidence Synthesis Tool</h1>
+            <div class="header-subtitle">Living Evidence Composite Pipeline for ESC Guidelines</div>
+        </div>
+        <div class="header-badge">v1.0 Beta</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="data">Data Input</button>
+        <button class="nav-tab" data-tab="meta">Meta-Analysis</button>
+        <button class="nav-tab" data-tab="grade">GRADE</button>
+        <button class="nav-tab" data-tab="nma">NMA</button>
+        <button class="nav-tab" data-tab="subgroups">Subgroups</button>
+        <button class="nav-tab" data-tab="recommendation">Recommendation</button>
+        <button class="nav-tab" data-tab="sof">Summary of Findings</button>
+        <button class="nav-tab" data-tab="export">Export</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Data Input Tab -->
+        <section id="tab-data" class="tab-content active">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Clinical Question (PICO)</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Question Title</label>
+                            <input type="text" class="form-input" id="pico-title"
+                                   placeholder="e.g., SGLT2 Inhibitors for Heart Failure">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Population</label>
+                            <input type="text" class="form-input" id="pico-population"
+                                   placeholder="e.g., Adults with heart failure (HFrEF and HFpEF)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Intervention</label>
+                            <input type="text" class="form-input" id="pico-intervention"
+                                   placeholder="e.g., Dapagliflozin 10mg daily">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Comparator</label>
+                            <input type="text" class="form-input" id="pico-comparator"
+                                   placeholder="e.g., Placebo">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Primary Outcome</label>
+                            <input type="text" class="form-input" id="pico-outcome"
+                                   placeholder="e.g., CV death or HF hospitalization">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Effect Measure</label>
+                            <select class="form-select" id="effect-measure">
+                                <option value="HR">Hazard Ratio (HR)</option>
+                                <option value="RR">Risk Ratio (RR)</option>
+                                <option value="OR">Odds Ratio (OR)</option>
+                                <option value="MD">Mean Difference (MD)</option>
+                                <option value="SMD">Standardized Mean Difference (SMD)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Study Design</label>
+                            <select class="form-select" id="study-design">
+                                <option value="rct">Randomized Controlled Trials</option>
+                                <option value="observational">Observational Studies</option>
+                                <option value="mixed">Mixed Designs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Study Data Entry</span>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary" onclick="loadSampleData()">Load Sample</button>
+                            <button class="btn btn-secondary" onclick="importJSON()">Import JSON</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            Enter study data in the format below, or import from JSON.
+                            One study per line: Study Name, Effect, CI Low, CI High, N (Treatment), N (Control)
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Study Data (CSV format)</label>
+                            <textarea class="form-textarea" id="study-data" placeholder="DAPA-HF, 0.74, 0.65, 0.85, 2373, 2371
+EMPEROR-Reduced, 0.75, 0.65, 0.86, 1863, 1867
+EMPEROR-Preserved, 0.79, 0.69, 0.90, 2997, 2991
+DELIVER, 0.82, 0.73, 0.92, 3131, 3132"></textarea>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary" onclick="parseStudyData()">Parse Data</button>
+                            <button class="btn btn-secondary" onclick="clearData()">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parsed Studies Table -->
+            <div class="card" id="parsed-studies-card" style="display:none;">
+                <div class="card-header">
+                    <span>Parsed Studies</span>
+                    <span id="study-count">0 studies</span>
+                </div>
+                <div class="card-body">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Study</th>
+                                <th class="num">Effect</th>
+                                <th class="num">95% CI Low</th>
+                                <th class="num">95% CI High</th>
+                                <th class="num">N (Treatment)</th>
+                                <th class="num">N (Control)</th>
+                                <th class="num">Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studies-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meta-Analysis Tab -->
+        <section id="tab-meta" class="tab-content">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <span>Analysis Settings</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Model</label>
+                            <select class="form-select" id="ma-model">
+                                <option value="random">Random Effects (DerSimonian-Laird)</option>
+                                <option value="random-hksj" selected>Random Effects (HKSJ)</option>
+                                <option value="fixed">Fixed Effect (Inverse Variance)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tau² Estimator</label>
+                            <select class="form-select" id="tau-estimator">
+                                <option value="dl" selected>DerSimonian-Laird</option>
+                                <option value="reml">REML</option>
+                                <option value="pm">Paule-Mandel</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="runMetaAnalysis()">Run Meta-Analysis</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Pooled Result</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="result-box text-center" id="pooled-result">
+                            <div class="result-primary" id="pooled-estimate">--</div>
+                            <div class="result-ci" id="pooled-ci">(-- to --)</div>
+                            <div class="result-label">Pooled Effect Estimate (95% CI)</div>
+                        </div>
+                        <div class="stat-grid mt-2">
+                            <div class="stat-item">
+                                <div class="stat-value" id="stat-i2">--</div>
+                                <div class="stat-label">I² (%)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="stat-tau2">--</div>
+                                <div class="stat-label">τ²</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="stat-q">--</div>
+                                <div class="stat-label">Q (p-value)</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="stat-studies">--</div>
+                                <div class="stat-label">Studies</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forest Plot -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Forest Plot</span>
+                    <button class="btn btn-secondary" onclick="downloadForestPlot()">Download SVG</button>
+                </div>
+                <div class="card-body">
+                    <div class="forest-plot-container">
+                        <svg id="forest-plot" class="forest-plot"></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heterogeneity & Sensitivity -->
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">Heterogeneity Interpretation</div>
+                    <div class="card-body" id="heterogeneity-interpretation">
+                        <p>Run meta-analysis to see heterogeneity assessment.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Leave-One-Out Sensitivity</div>
+                    <div class="card-body" id="sensitivity-results">
+                        <p>Run meta-analysis to see sensitivity analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRADE Tab -->
+        <section id="tab-grade" class="tab-content">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">GRADE Certainty Assessment</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Starting Level</label>
+                            <select class="form-select" id="grade-starting">
+                                <option value="high">HIGH (RCTs)</option>
+                                <option value="low">LOW (Observational)</option>
+                            </select>
+                        </div>
+
+                        <h4 class="mt-2 mb-1">Downgrade Domains</h4>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Risk of Bias</span>
+                            <select class="form-select" style="width:auto;" id="grade-rob">
+                                <option value="0">No concern (0)</option>
+                                <option value="-1">Serious (-1)</option>
+                                <option value="-2">Very serious (-2)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Inconsistency</span>
+                            <select class="form-select" style="width:auto;" id="grade-inconsistency">
+                                <option value="0">No concern (0)</option>
+                                <option value="-1">Serious (-1)</option>
+                                <option value="-2">Very serious (-2)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Indirectness</span>
+                            <select class="form-select" style="width:auto;" id="grade-indirectness">
+                                <option value="0">No concern (0)</option>
+                                <option value="-1">Serious (-1)</option>
+                                <option value="-2">Very serious (-2)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Imprecision</span>
+                            <select class="form-select" style="width:auto;" id="grade-imprecision">
+                                <option value="0">No concern (0)</option>
+                                <option value="-1">Serious (-1)</option>
+                                <option value="-2">Very serious (-2)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Publication Bias</span>
+                            <select class="form-select" style="width:auto;" id="grade-pubbias">
+                                <option value="0">Undetected (0)</option>
+                                <option value="-1">Suspected (-1)</option>
+                            </select>
+                        </div>
+
+                        <h4 class="mt-2 mb-1">Upgrade Domains (Observational Only)</h4>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Large Effect</span>
+                            <select class="form-select" style="width:auto;" id="grade-large-effect">
+                                <option value="0">Not applicable (0)</option>
+                                <option value="1">Large effect (+1)</option>
+                                <option value="2">Very large effect (+2)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Dose-Response</span>
+                            <select class="form-select" style="width:auto;" id="grade-dose">
+                                <option value="0">Not applicable (0)</option>
+                                <option value="1">Gradient present (+1)</option>
+                            </select>
+                        </div>
+
+                        <div class="grade-domain">
+                            <span class="grade-domain-name">Plausible Confounding</span>
+                            <select class="form-select" style="width:auto;" id="grade-confounding">
+                                <option value="0">Not applicable (0)</option>
+                                <option value="1">Would reduce effect (+1)</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary mt-2" onclick="calculateGRADE()">Calculate GRADE</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">GRADE Result</div>
+                    <div class="card-body">
+                        <div class="text-center mb-2">
+                            <div id="grade-result-badge" class="grade-badge grade-high">HIGH</div>
+                        </div>
+                        <div id="grade-symbols" class="text-center sof-symbols mb-2">
+                            ⊕⊕⊕⊕
+                        </div>
+                        <div id="grade-interpretation" class="result-box">
+                            <p><strong>Interpretation:</strong> We are very confident that the true effect lies close to the estimate of the effect.</p>
+                        </div>
+                        <div id="grade-rationale" class="mt-2">
+                            <h4>Rationale</h4>
+                            <ul id="grade-rationale-list">
+                                <li>No serious concerns across all domains</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NMA Tab -->
+        <section id="tab-nma" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <span>Network Meta-Analysis</span>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        Enter treatment comparisons for network meta-analysis.
+                        Format: Treatment A, Treatment B, Effect, CI Low, CI High, Study
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Reference Treatment</label>
+                        <input type="text" class="form-input" id="nma-reference" value="Placebo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Network Comparisons</label>
+                        <textarea class="form-textarea" id="nma-data" placeholder="Dapagliflozin, Placebo, 0.74, 0.65, 0.85, DAPA-HF
+Empagliflozin, Placebo, 0.75, 0.65, 0.86, EMPEROR-Reduced
+Dapagliflozin, Placebo, 0.82, 0.73, 0.92, DELIVER"></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="runNMA()">Run NMA</button>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">Network Diagram</div>
+                    <div class="card-body">
+                        <div class="network-container" id="network-diagram">
+                            <svg id="network-svg" width="100%" height="100%"></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">SUCRA Rankings</div>
+                    <div class="card-body">
+                        <table class="data-table" id="sucra-table">
+                            <thead>
+                                <tr>
+                                    <th>Treatment</th>
+                                    <th class="num">SUCRA</th>
+                                    <th class="num">P-Score</th>
+                                    <th class="num">Mean Rank</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sucra-body">
+                                <tr><td colspan="4" class="text-center">Run NMA to see rankings</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">League Table</div>
+                <div class="card-body">
+                    <div id="league-table-container">
+                        <p class="text-center">Run NMA to generate league table</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subgroups Tab -->
+        <section id="tab-subgroups" class="tab-content">
+            <div class="card">
+                <div class="card-header">Subgroup Analysis</div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        Enter subgroup data to analyze effect modification.
+                        Format: Subgroup, Effect, CI Low, CI High, N
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subgroup Variable</label>
+                        <input type="text" class="form-input" id="subgroup-variable" placeholder="e.g., Diabetes Status">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subgroup Data</label>
+                        <textarea class="form-textarea" id="subgroup-data" placeholder="Diabetes Yes, 0.76, 0.68, 0.85, 8000
+Diabetes No, 0.79, 0.71, 0.88, 14000"></textarea>
+                    </div>
+                    <button class="btn btn-primary" onclick="runSubgroupAnalysis()">Analyze Subgroups</button>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">Subgroup Results</div>
+                    <div class="card-body" id="subgroup-results">
+                        <p>Enter subgroup data and run analysis.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">ICEMAN Credibility Assessment</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="iceman-prespecified" checked>
+                                Pre-specified subgroup
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="iceman-direction">
+                                Direction predicted a priori
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="iceman-consistent">
+                                Consistent across related outcomes
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="iceman-biological">
+                                Biological rationale
+                            </label>
+                        </div>
+                        <div id="iceman-result" class="result-box mt-2">
+                            <strong>ICEMAN Score:</strong> <span id="iceman-score">--</span>/6<br>
+                            <strong>Credibility:</strong> <span id="iceman-rating">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendation Tab -->
+        <section id="tab-recommendation" class="tab-content">
+            <div class="card">
+                <div class="card-header">ESC Recommendation Derivation</div>
+                <div class="card-body">
+                    <p>Based on the evidence synthesis, the following recommendation is derived using ESC methodology.</p>
+                    <button class="btn btn-primary" onclick="deriveRecommendation()">Derive Recommendation</button>
+                </div>
+            </div>
+
+            <div id="recommendation-output">
+                <div class="esc-recommendation class-iia" id="esc-rec-box">
+                    <div class="esc-rec-header">
+                        <span class="esc-rec-class">Class <span id="rec-class">IIa</span></span>
+                        <span class="esc-rec-level">Level <span id="rec-level">A</span></span>
+                    </div>
+                    <div class="esc-rec-body">
+                        <div class="esc-rec-text" id="rec-text">
+                            "[Intervention] should be considered in [population]"
+                        </div>
+                        <div class="esc-rec-rationale">
+                            <strong>Rationale:</strong> <span id="rec-rationale">Based on evidence synthesis...</span>
+                        </div>
+                        <div class="mt-2">
+                            <strong>Considerations:</strong>
+                            <ul id="rec-considerations">
+                                <li>Effect estimate and certainty</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-2">
+                <div class="card-header">ESC Class Definitions</div>
+                <div class="card-body">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Definition</th>
+                                <th>Wording</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="grade-badge grade-high">I</span></td>
+                                <td>Evidence/agreement that treatment is beneficial</td>
+                                <td>"Is recommended / Is indicated"</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-moderate">IIa</span></td>
+                                <td>Weight of evidence in favor of usefulness</td>
+                                <td>"Should be considered"</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-low">IIb</span></td>
+                                <td>Usefulness less well established</td>
+                                <td>"May be considered"</td>
+                            </tr>
+                            <tr>
+                                <td><span class="grade-badge grade-very-low">III</span></td>
+                                <td>Evidence that treatment is not useful or harmful</td>
+                                <td>"Is not recommended"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary of Findings Tab -->
+        <section id="tab-sof" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <span>Summary of Findings Table</span>
+                    <button class="btn btn-secondary" onclick="generateSoF()">Generate SoF</button>
+                </div>
+                <div class="card-body">
+                    <div id="sof-output">
+                        <table class="sof-table">
+                            <thead>
+                                <tr>
+                                    <th>Outcome</th>
+                                    <th>Studies (N)</th>
+                                    <th>Participants</th>
+                                    <th>Effect Estimate</th>
+                                    <th>95% CI</th>
+                                    <th>Certainty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sof-body">
+                                <tr>
+                                    <td colspan="6" class="text-center">Run meta-analysis first, then generate SoF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">GRADE Certainty Legend</div>
+                <div class="card-body">
+                    <div class="grid-2">
+                        <div>
+                            <p><span class="sof-symbols">⊕⊕⊕⊕</span> <strong>HIGH</strong> - Very confident the true effect is close to estimate</p>
+                            <p><span class="sof-symbols">⊕⊕⊕○</span> <strong>MODERATE</strong> - True effect likely close but may differ</p>
+                        </div>
+                        <div>
+                            <p><span class="sof-symbols">⊕⊕○○</span> <strong>LOW</strong> - True effect may differ substantially</p>
+                            <p><span class="sof-symbols">⊕○○○</span> <strong>VERY LOW</strong> - Very little confidence in estimate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Tab -->
+        <section id="tab-export" class="tab-content">
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-header">JSON Export</div>
+                    <div class="card-body text-center">
+                        <p>Export complete analysis as JSON for archival or re-import.</p>
+                        <button class="btn btn-primary mt-2" onclick="exportJSON()">Download JSON</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Markdown Report</div>
+                    <div class="card-body text-center">
+                        <p>Generate formatted markdown report for documentation.</p>
+                        <button class="btn btn-primary mt-2" onclick="exportMarkdown()">Download Markdown</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Print/PDF</div>
+                    <div class="card-body text-center">
+                        <p>Print the current view or save as PDF.</p>
+                        <button class="btn btn-primary mt-2" onclick="window.print()">Print Report</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">Analysis Log</div>
+                <div class="card-body">
+                    <textarea class="form-textarea" id="analysis-log" readonly style="height:300px;"></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+    // ============================================
+    // LEC Evidence Synthesis Tool - JavaScript Engine
+    // ============================================
+
+    // Global State
+    const LEC = {
+        pico: {},
+        studies: [],
+        metaResult: null,
+        gradeAssessment: null,
+        nmaResult: null,
+        recommendation: null,
+        log: []
+    };
+
+    // ============================================
+    // Utility Functions
+    // ============================================
+
+    function log(message) {
+        const timestamp = new Date().toISOString();
+        LEC.log.push(`[${timestamp}] ${message}`);
+        document.getElementById('analysis-log').value = LEC.log.join('\n');
+    }
+
+    function formatNumber(num, decimals = 2) {
+        return Number(num).toFixed(decimals);
+    }
+
+    // Normal distribution CDF (approximation)
+    function normCDF(x) {
+        const a1 =  0.254829592;
+        const a2 = -0.284496736;
+        const a3 =  1.421413741;
+        const a4 = -1.453152027;
+        const a5 =  1.061405429;
+        const p  =  0.3275911;
+
+        const sign = x < 0 ? -1 : 1;
+        x = Math.abs(x) / Math.sqrt(2);
+
+        const t = 1.0 / (1.0 + p * x);
+        const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+        return 0.5 * (1.0 + sign * y);
+    }
+
+    // Chi-squared CDF approximation (for small df)
+    function chi2CDF(x, df) {
+        if (x <= 0) return 0;
+        // Wilson-Hilferty approximation
+        const z = Math.pow(x / df, 1/3) - (1 - 2/(9*df));
+        const denom = Math.sqrt(2/(9*df));
+        return normCDF(z / denom);
+    }
+
+    // t-distribution critical value approximation
+    function tCritical(p, df) {
+        // Approximation for two-tailed critical value
+        if (df >= 30) {
+            return 1.96; // Normal approximation
+        }
+        // Simple lookup for common values
+        const tTable = {
+            1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571,
+            6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228,
+            15: 2.131, 20: 2.086, 25: 2.060, 30: 2.042
+        };
+        if (tTable[df]) return tTable[df];
+        // Linear interpolation
+        const keys = Object.keys(tTable).map(Number).sort((a,b) => a-b);
+        for (let i = 0; i < keys.length - 1; i++) {
+            if (df >= keys[i] && df < keys[i+1]) {
+                const ratio = (df - keys[i]) / (keys[i+1] - keys[i]);
+                return tTable[keys[i]] * (1 - ratio) + tTable[keys[i+1]] * ratio;
+            }
+        }
+        return 1.96;
+    }
+
+    // ============================================
+    // Tab Navigation
+    // ============================================
+
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Update active tab
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Update active content
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        });
+    });
+
+    // ============================================
+    // Data Input Functions
+    // ============================================
+
+    function loadSampleData() {
+        document.getElementById('pico-title').value = 'SGLT2 Inhibitors for Heart Failure';
+        document.getElementById('pico-population').value = 'Adults with heart failure (HFrEF and HFpEF)';
+        document.getElementById('pico-intervention').value = 'SGLT2 inhibitors (dapagliflozin, empagliflozin)';
+        document.getElementById('pico-comparator').value = 'Placebo';
+        document.getElementById('pico-outcome').value = 'CV death or HF hospitalization';
+        document.getElementById('effect-measure').value = 'HR';
+        document.getElementById('study-design').value = 'rct';
+
+        document.getElementById('study-data').value = `DAPA-HF, 0.74, 0.65, 0.85, 2373, 2371
+EMPEROR-Reduced, 0.75, 0.65, 0.86, 1863, 1867
+EMPEROR-Preserved, 0.79, 0.69, 0.90, 2997, 2991
+DELIVER, 0.82, 0.73, 0.92, 3131, 3132
+SOLOIST-WHF, 0.67, 0.52, 0.85, 608, 614`;
+
+        log('Loaded sample data: SGLT2i in Heart Failure');
+        parseStudyData();
+    }
+
+    function parseStudyData() {
+        const rawData = document.getElementById('study-data').value.trim();
+        if (!rawData) {
+            alert('Please enter study data');
+            return;
+        }
+
+        LEC.studies = [];
+        const lines = rawData.split('\n');
+
+        for (const line of lines) {
+            const parts = line.split(',').map(p => p.trim());
+            if (parts.length >= 4) {
+                const study = {
+                    name: parts[0],
+                    effect: parseFloat(parts[1]),
+                    ciLow: parseFloat(parts[2]),
+                    ciHigh: parseFloat(parts[3]),
+                    nTreatment: parts[4] ? parseInt(parts[4]) : null,
+                    nControl: parts[5] ? parseInt(parts[5]) : null
+                };
+
+                // Calculate SE from CI (log scale for ratio measures)
+                const effectMeasure = document.getElementById('effect-measure').value;
+                if (['HR', 'RR', 'OR'].includes(effectMeasure)) {
+                    const logCI = Math.log(study.ciHigh) - Math.log(study.ciLow);
+                    study.se = logCI / (2 * 1.96);
+                    study.logEffect = Math.log(study.effect);
+                } else {
+                    study.se = (study.ciHigh - study.ciLow) / (2 * 1.96);
+                    study.logEffect = study.effect;
+                }
+
+                study.variance = study.se * study.se;
+                study.weight = 1 / study.variance;
+
+                LEC.studies.push(study);
+            }
+        }
+
+        // Store PICO
+        LEC.pico = {
+            title: document.getElementById('pico-title').value,
+            population: document.getElementById('pico-population').value,
+            intervention: document.getElementById('pico-intervention').value,
+            comparator: document.getElementById('pico-comparator').value,
+            outcome: document.getElementById('pico-outcome').value,
+            effectMeasure: document.getElementById('effect-measure').value,
+            studyDesign: document.getElementById('study-design').value
+        };
+
+        // Update UI
+        updateStudiesTable();
+        document.getElementById('parsed-studies-card').style.display = 'block';
+        document.getElementById('study-count').textContent = `${LEC.studies.length} studies`;
+
+        log(`Parsed ${LEC.studies.length} studies`);
+    }
+
+    function updateStudiesTable() {
+        const tbody = document.getElementById('studies-table-body');
+        const totalWeight = LEC.studies.reduce((sum, s) => sum + s.weight, 0);
+
+        tbody.innerHTML = LEC.studies.map(s => `
+            <tr>
+                <td>${s.name}</td>
+                <td class="num">${formatNumber(s.effect)}</td>
+                <td class="num">${formatNumber(s.ciLow)}</td>
+                <td class="num">${formatNumber(s.ciHigh)}</td>
+                <td class="num">${s.nTreatment || '-'}</td>
+                <td class="num">${s.nControl || '-'}</td>
+                <td class="num">${formatNumber(s.weight / totalWeight * 100, 1)}%</td>
+            </tr>
+        `).join('');
+    }
+
+    function clearData() {
+        LEC.studies = [];
+        LEC.metaResult = null;
+        document.getElementById('study-data').value = '';
+        document.getElementById('parsed-studies-card').style.display = 'none';
+        log('Data cleared');
+    }
+
+    function importJSON() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.onchange = (e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const data = JSON.parse(event.target.result);
+                    if (data.studies) {
+                        // Format studies for textarea
+                        const lines = data.studies.map(s => {
+                            const effect = s.effect_estimate || s.effect || s.estimate;
+                            const ciLow = s.ci_low || s.ciLow || s.effect_ci_low;
+                            const ciHigh = s.ci_high || s.ciHigh || s.effect_ci_high;
+                            const name = s.name || s.study_id || s.trial_name;
+                            return `${name}, ${effect}, ${ciLow}, ${ciHigh}`;
+                        });
+                        document.getElementById('study-data').value = lines.join('\n');
+                        log('Imported JSON data');
+                        parseStudyData();
+                    }
+                } catch (err) {
+                    alert('Error parsing JSON: ' + err.message);
+                }
+            };
+            reader.readAsText(file);
+        };
+        input.click();
+    }
+
+    // ============================================
+    // Meta-Analysis Engine
+    // ============================================
+
+    function runMetaAnalysis() {
+        if (LEC.studies.length === 0) {
+            alert('Please enter study data first');
+            return;
+        }
+
+        const model = document.getElementById('ma-model').value;
+        const effectMeasure = document.getElementById('effect-measure').value;
+        const isRatio = ['HR', 'RR', 'OR'].includes(effectMeasure);
+
+        log(`Running ${model} meta-analysis on ${LEC.studies.length} studies`);
+
+        // Calculate weights and weighted mean
+        const k = LEC.studies.length;
+        let sumW = 0, sumWY = 0, sumWY2 = 0;
+
+        for (const study of LEC.studies) {
+            const y = isRatio ? study.logEffect : study.effect;
+            const w = study.weight;
+            sumW += w;
+            sumWY += w * y;
+            sumWY2 += w * y * y;
+        }
+
+        // Fixed effect estimate
+        const fixedEffect = sumWY / sumW;
+        const fixedVar = 1 / sumW;
+
+        // Q statistic for heterogeneity
+        const Q = sumWY2 - (sumWY * sumWY / sumW);
+        const df = k - 1;
+        const pHet = 1 - chi2CDF(Q, df);
+
+        // I² statistic
+        const I2 = Math.max(0, (Q - df) / Q * 100);
+
+        // Tau² (DerSimonian-Laird)
+        const C = sumW - (LEC.studies.reduce((s, st) => s + st.weight * st.weight, 0) / sumW);
+        let tau2 = Math.max(0, (Q - df) / C);
+
+        // Random effects weights and pooled estimate
+        let reEffect, reVar, reSE;
+
+        if (model === 'fixed') {
+            reEffect = fixedEffect;
+            reVar = fixedVar;
+        } else {
+            // Random effects
+            let sumWRE = 0, sumWYRE = 0;
+            for (const study of LEC.studies) {
+                const y = isRatio ? study.logEffect : study.effect;
+                const wRE = 1 / (study.variance + tau2);
+                study.weightRE = wRE;
+                sumWRE += wRE;
+                sumWYRE += wRE * y;
+            }
+            reEffect = sumWYRE / sumWRE;
+            reVar = 1 / sumWRE;
+        }
+
+        reSE = Math.sqrt(reVar);
+
+        // HKSJ adjustment
+        let ciMultiplier = 1.96;
+        if (model === 'random-hksj' && k > 1) {
+            // Calculate q* for HKSJ
+            let qStar = 0;
+            for (const study of LEC.studies) {
+                const y = isRatio ? study.logEffect : study.effect;
+                const w = study.weightRE || study.weight;
+                qStar += w * Math.pow(y - reEffect, 2);
+            }
+            const hksjVar = reVar * qStar / df;
+            reSE = Math.sqrt(hksjVar);
+            ciMultiplier = tCritical(0.05, df);
+        }
+
+        // Calculate CI
+        const ciLow = reEffect - ciMultiplier * reSE;
+        const ciHigh = reEffect + ciMultiplier * reSE;
+
+        // Back-transform if ratio measure
+        let pooledEffect, pooledCILow, pooledCIHigh;
+        if (isRatio) {
+            pooledEffect = Math.exp(reEffect);
+            pooledCILow = Math.exp(ciLow);
+            pooledCIHigh = Math.exp(ciHigh);
+        } else {
+            pooledEffect = reEffect;
+            pooledCILow = ciLow;
+            pooledCIHigh = ciHigh;
+        }
+
+        // P-value for pooled effect
+        const z = Math.abs(reEffect / reSE);
+        const pValue = 2 * (1 - normCDF(z));
+
+        // Store results
+        LEC.metaResult = {
+            pooled: {
+                effect: pooledEffect,
+                ciLow: pooledCILow,
+                ciHigh: pooledCIHigh,
+                se: reSE,
+                pValue: pValue
+            },
+            heterogeneity: {
+                Q: Q,
+                df: df,
+                pHet: pHet,
+                I2: I2,
+                tau2: tau2
+            },
+            model: model,
+            effectMeasure: effectMeasure,
+            k: k,
+            n: LEC.studies.reduce((s, st) => s + (st.nTreatment || 0) + (st.nControl || 0), 0)
+        };
+
+        // Update UI
+        updateMetaResults();
+        drawForestPlot();
+        runLeaveOneOut();
+
+        log(`Meta-analysis complete: ${effectMeasure} ${formatNumber(pooledEffect)} (${formatNumber(pooledCILow)}-${formatNumber(pooledCIHigh)}), I²=${formatNumber(I2, 1)}%`);
+    }
+
+    function updateMetaResults() {
+        const r = LEC.metaResult;
+
+        document.getElementById('pooled-estimate').textContent = formatNumber(r.pooled.effect);
+        document.getElementById('pooled-ci').textContent = `(${formatNumber(r.pooled.ciLow)} to ${formatNumber(r.pooled.ciHigh)})`;
+        document.getElementById('stat-i2').textContent = formatNumber(r.heterogeneity.I2, 1) + '%';
+        document.getElementById('stat-tau2').textContent = formatNumber(r.heterogeneity.tau2, 4);
+        document.getElementById('stat-q').textContent = `${formatNumber(r.heterogeneity.Q, 1)} (p=${formatNumber(r.heterogeneity.pHet, 3)})`;
+        document.getElementById('stat-studies').textContent = r.k;
+
+        // Heterogeneity interpretation
+        let hetInterp = '';
+        if (r.heterogeneity.I2 < 25) {
+            hetInterp = '<span style="color:green">Low heterogeneity (I² < 25%)</span>. Effect estimates are consistent across studies.';
+        } else if (r.heterogeneity.I2 < 50) {
+            hetInterp = '<span style="color:orange">Moderate heterogeneity (I² 25-50%)</span>. Some variation in effect estimates.';
+        } else if (r.heterogeneity.I2 < 75) {
+            hetInterp = '<span style="color:darkorange">Substantial heterogeneity (I² 50-75%)</span>. Consider exploring sources of heterogeneity.';
+        } else {
+            hetInterp = '<span style="color:red">Considerable heterogeneity (I² > 75%)</span>. Substantial variation - interpret pooled estimate with caution.';
+        }
+        document.getElementById('heterogeneity-interpretation').innerHTML = `<p>${hetInterp}</p>`;
+
+        // Auto-set GRADE inconsistency
+        if (r.heterogeneity.I2 < 40) {
+            document.getElementById('grade-inconsistency').value = '0';
+        } else if (r.heterogeneity.I2 < 75) {
+            document.getElementById('grade-inconsistency').value = '-1';
+        } else {
+            document.getElementById('grade-inconsistency').value = '-2';
+        }
+    }
+
+    function runLeaveOneOut() {
+        if (!LEC.metaResult) return;
+
+        const effectMeasure = LEC.metaResult.effectMeasure;
+        const isRatio = ['HR', 'RR', 'OR'].includes(effectMeasure);
+        const results = [];
+
+        for (let i = 0; i < LEC.studies.length; i++) {
+            const subset = LEC.studies.filter((_, idx) => idx !== i);
+
+            // Quick random effects calculation
+            const k = subset.length;
+            let sumW = 0, sumWY = 0, sumWY2 = 0;
+
+            for (const study of subset) {
+                const y = isRatio ? study.logEffect : study.effect;
+                const w = study.weight;
+                sumW += w;
+                sumWY += w * y;
+                sumWY2 += w * y * y;
+            }
+
+            const Q = sumWY2 - (sumWY * sumWY / sumW);
+            const df = k - 1;
+            const C = sumW - (subset.reduce((s, st) => s + st.weight * st.weight, 0) / sumW);
+            const tau2 = Math.max(0, (Q - df) / C);
+
+            let sumWRE = 0, sumWYRE = 0;
+            for (const study of subset) {
+                const y = isRatio ? study.logEffect : study.effect;
+                const wRE = 1 / (study.variance + tau2);
+                sumWRE += wRE;
+                sumWYRE += wRE * y;
+            }
+
+            const effect = isRatio ? Math.exp(sumWYRE / sumWRE) : sumWYRE / sumWRE;
+            results.push({
+                excluded: LEC.studies[i].name,
+                effect: effect
+            });
+        }
+
+        // Display results
+        const html = `
+            <table class="data-table">
+                <thead><tr><th>Excluded Study</th><th class="num">Pooled ${effectMeasure}</th></tr></thead>
+                <tbody>
+                    ${results.map(r => `<tr><td>${r.excluded}</td><td class="num">${formatNumber(r.effect)}</td></tr>`).join('')}
+                </tbody>
+            </table>
+            <p class="mt-1" style="font-size:0.85rem;color:#666;">
+                Original pooled estimate: ${formatNumber(LEC.metaResult.pooled.effect)}
+            </p>
+        `;
+        document.getElementById('sensitivity-results').innerHTML = html;
+    }
+
+    // ============================================
+    // Forest Plot
+    // ============================================
+
+    function drawForestPlot() {
+        if (!LEC.metaResult || LEC.studies.length === 0) return;
+
+        const svg = document.getElementById('forest-plot');
+        const effectMeasure = LEC.metaResult.effectMeasure;
+        const isRatio = ['HR', 'RR', 'OR'].includes(effectMeasure);
+        const nullValue = isRatio ? 1 : 0;
+
+        // Dimensions
+        const margin = { top: 40, right: 120, bottom: 40, left: 180 };
+        const rowHeight = 30;
+        const width = 800;
+        const height = margin.top + margin.bottom + (LEC.studies.length + 2) * rowHeight;
+
+        // Find range for x-axis
+        let minX = Math.min(...LEC.studies.map(s => s.ciLow), LEC.metaResult.pooled.ciLow);
+        let maxX = Math.max(...LEC.studies.map(s => s.ciHigh), LEC.metaResult.pooled.ciHigh);
+
+        if (isRatio) {
+            // Use log scale for ratio measures
+            minX = Math.max(0.1, minX * 0.9);
+            maxX = Math.min(10, maxX * 1.1);
+        } else {
+            const padding = (maxX - minX) * 0.1;
+            minX -= padding;
+            maxX += padding;
+        }
+
+        // Scale function
+        const plotWidth = width - margin.left - margin.right;
+        const xScale = (val) => {
+            if (isRatio) {
+                return margin.left + (Math.log(val) - Math.log(minX)) / (Math.log(maxX) - Math.log(minX)) * plotWidth;
+            }
+            return margin.left + (val - minX) / (maxX - minX) * plotWidth;
+        };
+
+        let svgContent = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
+
+        // Background
+        svgContent += `<rect width="${width}" height="${height}" fill="white"/>`;
+
+        // Header
+        svgContent += `<text x="${margin.left - 10}" y="${margin.top - 15}" text-anchor="end" font-weight="bold" font-size="12">Study</text>`;
+        svgContent += `<text x="${xScale(nullValue)}" y="${margin.top - 15}" text-anchor="middle" font-weight="bold" font-size="12">${effectMeasure}</text>`;
+        svgContent += `<text x="${width - 10}" y="${margin.top - 15}" text-anchor="end" font-weight="bold" font-size="12">${effectMeasure} [95% CI]</text>`;
+
+        // Null line
+        const nullX = xScale(nullValue);
+        svgContent += `<line x1="${nullX}" y1="${margin.top}" x2="${nullX}" y2="${height - margin.bottom}" stroke="#999" stroke-dasharray="4,4"/>`;
+
+        // Studies
+        const totalWeight = LEC.studies.reduce((s, st) => s + (st.weightRE || st.weight), 0);
+
+        LEC.studies.forEach((study, i) => {
+            const y = margin.top + (i + 0.5) * rowHeight;
+            const weight = (study.weightRE || study.weight) / totalWeight;
+            const pointSize = Math.sqrt(weight) * 20 + 4;
+
+            // Study name
+            svgContent += `<text x="${margin.left - 10}" y="${y + 4}" text-anchor="end" font-size="11">${study.name}</text>`;
+
+            // CI line
+            const x1 = xScale(Math.max(study.ciLow, minX));
+            const x2 = xScale(Math.min(study.ciHigh, maxX));
+            svgContent += `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="#333" stroke-width="1.5"/>`;
+
+            // Point estimate
+            const xPoint = xScale(study.effect);
+            svgContent += `<rect x="${xPoint - pointSize/2}" y="${y - pointSize/2}" width="${pointSize}" height="${pointSize}" fill="#AE2026"/>`;
+
+            // Effect text
+            svgContent += `<text x="${width - 10}" y="${y + 4}" text-anchor="end" font-size="10" font-family="monospace">${formatNumber(study.effect)} [${formatNumber(study.ciLow)}, ${formatNumber(study.ciHigh)}]</text>`;
+        });
+
+        // Pooled estimate (diamond)
+        const pooledY = margin.top + (LEC.studies.length + 0.5) * rowHeight;
+        svgContent += `<line x1="${margin.left}" y1="${pooledY - 10}" x2="${width - margin.right}" y2="${pooledY - 10}" stroke="#ccc"/>`;
+
+        svgContent += `<text x="${margin.left - 10}" y="${pooledY + 4}" text-anchor="end" font-size="11" font-weight="bold">Pooled</text>`;
+
+        const diamondLeft = xScale(LEC.metaResult.pooled.ciLow);
+        const diamondRight = xScale(LEC.metaResult.pooled.ciHigh);
+        const diamondCenter = xScale(LEC.metaResult.pooled.effect);
+        const diamondHeight = 8;
+
+        svgContent += `<polygon points="${diamondLeft},${pooledY} ${diamondCenter},${pooledY - diamondHeight} ${diamondRight},${pooledY} ${diamondCenter},${pooledY + diamondHeight}" fill="#AE2026"/>`;
+
+        svgContent += `<text x="${width - 10}" y="${pooledY + 4}" text-anchor="end" font-size="10" font-family="monospace" font-weight="bold">${formatNumber(LEC.metaResult.pooled.effect)} [${formatNumber(LEC.metaResult.pooled.ciLow)}, ${formatNumber(LEC.metaResult.pooled.ciHigh)}]</text>`;
+
+        // X-axis
+        const axisY = height - margin.bottom + 15;
+        svgContent += `<line x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}" stroke="#333"/>`;
+
+        // Axis ticks
+        const ticks = isRatio ? [0.5, 1, 2] : [-1, 0, 1];
+        ticks.forEach(tick => {
+            if (tick >= minX && tick <= maxX) {
+                const x = xScale(tick);
+                svgContent += `<line x1="${x}" y1="${height - margin.bottom}" x2="${x}" y2="${height - margin.bottom + 5}" stroke="#333"/>`;
+                svgContent += `<text x="${x}" y="${axisY}" text-anchor="middle" font-size="10">${tick}</text>`;
+            }
+        });
+
+        // Axis labels
+        if (isRatio) {
+            svgContent += `<text x="${margin.left + plotWidth * 0.25}" y="${height - 5}" text-anchor="middle" font-size="10" fill="#666">Favors ${LEC.pico.intervention || 'Treatment'}</text>`;
+            svgContent += `<text x="${margin.left + plotWidth * 0.75}" y="${height - 5}" text-anchor="middle" font-size="10" fill="#666">Favors ${LEC.pico.comparator || 'Control'}</text>`;
+        }
+
+        svgContent += '</svg>';
+        svg.outerHTML = svgContent;
+    }
+
+    function downloadForestPlot() {
+        const svg = document.getElementById('forest-plot');
+        const svgData = new XMLSerializer().serializeToString(svg);
+        const blob = new Blob([svgData], { type: 'image/svg+xml' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'forest_plot.svg';
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // ============================================
+    // GRADE Assessment
+    // ============================================
+
+    function calculateGRADE() {
+        const starting = document.getElementById('grade-starting').value;
+        const startLevel = starting === 'high' ? 4 : 2; // HIGH=4, LOW=2
+
+        // Downgrades
+        const rob = parseInt(document.getElementById('grade-rob').value);
+        const inconsistency = parseInt(document.getElementById('grade-inconsistency').value);
+        const indirectness = parseInt(document.getElementById('grade-indirectness').value);
+        const imprecision = parseInt(document.getElementById('grade-imprecision').value);
+        const pubBias = parseInt(document.getElementById('grade-pubbias').value);
+
+        // Upgrades (only for observational)
+        let largeEffect = 0, doseResponse = 0, confounding = 0;
+        if (starting === 'low') {
+            largeEffect = parseInt(document.getElementById('grade-large-effect').value);
+            doseResponse = parseInt(document.getElementById('grade-dose').value);
+            confounding = parseInt(document.getElementById('grade-confounding').value);
+        }
+
+        const totalDowngrade = rob + inconsistency + indirectness + imprecision + pubBias;
+        const totalUpgrade = largeEffect + doseResponse + confounding;
+
+        // Calculate final level
+        let finalLevel = startLevel + totalDowngrade + totalUpgrade;
+        finalLevel = Math.max(1, Math.min(4, finalLevel)); // Clamp 1-4
+
+        // Level names and symbols
+        const levels = {
+            4: { name: 'HIGH', class: 'grade-high', symbol: '⊕⊕⊕⊕' },
+            3: { name: 'MODERATE', class: 'grade-moderate', symbol: '⊕⊕⊕○' },
+            2: { name: 'LOW', class: 'grade-low', symbol: '⊕⊕○○' },
+            1: { name: 'VERY LOW', class: 'grade-very-low', symbol: '⊕○○○' }
+        };
+
+        const result = levels[finalLevel];
+
+        // Update UI
+        const badge = document.getElementById('grade-result-badge');
+        badge.textContent = result.name;
+        badge.className = 'grade-badge ' + result.class;
+
+        document.getElementById('grade-symbols').textContent = result.symbol;
+
+        // Interpretation
+        const interpretations = {
+            4: 'We are very confident that the true effect lies close to the estimate of the effect.',
+            3: 'We are moderately confident in the effect estimate. The true effect is likely to be close to the estimate, but there is a possibility that it is substantially different.',
+            2: 'Our confidence in the effect estimate is limited. The true effect may be substantially different from the estimate.',
+            1: 'We have very little confidence in the effect estimate. The true effect is likely to be substantially different from the estimate.'
+        };
+        document.getElementById('grade-interpretation').innerHTML = `<p><strong>Interpretation:</strong> ${interpretations[finalLevel]}</p>`;
+
+        // Rationale
+        const rationale = [];
+        if (rob < 0) rationale.push(`Risk of bias: ${rob === -1 ? 'Serious' : 'Very serious'} concerns`);
+        if (inconsistency < 0) rationale.push(`Inconsistency: ${inconsistency === -1 ? 'Serious' : 'Very serious'} heterogeneity`);
+        if (indirectness < 0) rationale.push(`Indirectness: ${indirectness === -1 ? 'Serious' : 'Very serious'} concerns`);
+        if (imprecision < 0) rationale.push(`Imprecision: ${imprecision === -1 ? 'Serious' : 'Very serious'} imprecision`);
+        if (pubBias < 0) rationale.push('Publication bias: Suspected');
+        if (largeEffect > 0) rationale.push(`Large effect: +${largeEffect} upgrade`);
+        if (doseResponse > 0) rationale.push('Dose-response gradient: +1 upgrade');
+        if (confounding > 0) rationale.push('Plausible confounding: +1 upgrade');
+        if (rationale.length === 0) rationale.push('No serious concerns across all domains');
+
+        document.getElementById('grade-rationale-list').innerHTML = rationale.map(r => `<li>${r}</li>`).join('');
+
+        // Store assessment
+        LEC.gradeAssessment = {
+            startingLevel: starting,
+            finalLevel: result.name.toLowerCase().replace(' ', '_'),
+            symbol: result.symbol,
+            domains: { rob, inconsistency, indirectness, imprecision, pubBias },
+            upgrades: { largeEffect, doseResponse, confounding },
+            totalDowngrade,
+            totalUpgrade,
+            rationale
+        };
+
+        log(`GRADE assessment: ${result.name}`);
+    }
+
+    // ============================================
+    // NMA Functions
+    // ============================================
+
+    function runNMA() {
+        const rawData = document.getElementById('nma-data').value.trim();
+        const reference = document.getElementById('nma-reference').value.trim();
+
+        if (!rawData) {
+            alert('Please enter NMA comparison data');
+            return;
+        }
+
+        // Parse comparisons
+        const comparisons = [];
+        const treatments = new Set([reference]);
+
+        rawData.split('\n').forEach(line => {
+            const parts = line.split(',').map(p => p.trim());
+            if (parts.length >= 5) {
+                comparisons.push({
+                    treatmentA: parts[0],
+                    treatmentB: parts[1],
+                    effect: parseFloat(parts[2]),
+                    ciLow: parseFloat(parts[3]),
+                    ciHigh: parseFloat(parts[4]),
+                    study: parts[5] || ''
+                });
+                treatments.add(parts[0]);
+                treatments.add(parts[1]);
+            }
+        });
+
+        const treatmentList = Array.from(treatments);
+
+        // Calculate SUCRA (simplified - based on pairwise comparisons vs reference)
+        const sucraScores = {};
+        const effectVsRef = {};
+
+        treatmentList.forEach(t => {
+            if (t === reference) {
+                effectVsRef[t] = 1.0;
+            } else {
+                const comp = comparisons.find(c =>
+                    (c.treatmentA === t && c.treatmentB === reference) ||
+                    (c.treatmentB === t && c.treatmentA === reference)
+                );
+                if (comp) {
+                    effectVsRef[t] = comp.treatmentA === t ? comp.effect : 1 / comp.effect;
+                } else {
+                    effectVsRef[t] = 1.0;
+                }
+            }
+        });
+
+        // Sort by effect (lower is better for HR/RR)
+        const sorted = treatmentList.slice().sort((a, b) => effectVsRef[a] - effectVsRef[b]);
+
+        sorted.forEach((t, i) => {
+            const rank = i + 1;
+            const n = treatmentList.length;
+            sucraScores[t] = {
+                sucra: (n - rank) / (n - 1),
+                pScore: (n - rank) / (n - 1),
+                meanRank: rank,
+                effect: effectVsRef[t]
+            };
+        });
+
+        // Store results
+        LEC.nmaResult = {
+            reference,
+            treatments: treatmentList,
+            comparisons,
+            sucra: sucraScores
+        };
+
+        // Update SUCRA table
+        const sucraBody = document.getElementById('sucra-body');
+        sucraBody.innerHTML = sorted.map(t => `
+            <tr>
+                <td>${t}${t === reference ? ' (ref)' : ''}</td>
+                <td class="num">${formatNumber(sucraScores[t].sucra, 3)}</td>
+                <td class="num">${formatNumber(sucraScores[t].pScore, 3)}</td>
+                <td class="num">${sucraScores[t].meanRank}</td>
+            </tr>
+        `).join('');
+
+        // Draw network diagram
+        drawNetworkDiagram(treatmentList, comparisons, reference);
+
+        // Generate league table
+        generateLeagueTable(treatmentList, comparisons, reference);
+
+        log(`NMA complete: ${treatmentList.length} treatments, ${comparisons.length} comparisons`);
+    }
+
+    function drawNetworkDiagram(treatments, comparisons, reference) {
+        const container = document.getElementById('network-diagram');
+        const width = container.clientWidth || 400;
+        const height = 400;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const radius = Math.min(width, height) * 0.35;
+
+        // Position nodes in a circle
+        const nodePositions = {};
+        treatments.forEach((t, i) => {
+            const angle = (2 * Math.PI * i / treatments.length) - Math.PI / 2;
+            nodePositions[t] = {
+                x: centerX + radius * Math.cos(angle),
+                y: centerY + radius * Math.sin(angle)
+            };
+        });
+
+        let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
+        svg += `<rect width="${width}" height="${height}" fill="#fafafa"/>`;
+
+        // Draw edges
+        comparisons.forEach(comp => {
+            const p1 = nodePositions[comp.treatmentA];
+            const p2 = nodePositions[comp.treatmentB];
+            if (p1 && p2) {
+                svg += `<line x1="${p1.x}" y1="${p1.y}" x2="${p2.x}" y2="${p2.y}" stroke="#999" stroke-width="2" stroke-opacity="0.6"/>`;
+            }
+        });
+
+        // Draw nodes
+        treatments.forEach(t => {
+            const pos = nodePositions[t];
+            const isRef = t === reference;
+            const nodeSize = isRef ? 25 : 20;
+            const color = isRef ? '#16213e' : '#AE2026';
+
+            svg += `<circle cx="${pos.x}" cy="${pos.y}" r="${nodeSize}" fill="${color}"/>`;
+            svg += `<text x="${pos.x}" y="${pos.y + nodeSize + 15}" text-anchor="middle" font-size="11" font-weight="${isRef ? 'bold' : 'normal'}">${t}</text>`;
+        });
+
+        svg += '</svg>';
+        document.getElementById('network-svg').outerHTML = svg;
+    }
+
+    function generateLeagueTable(treatments, comparisons, reference) {
+        // Create effect matrix
+        const n = treatments.length;
+        const matrix = {};
+
+        treatments.forEach(t1 => {
+            matrix[t1] = {};
+            treatments.forEach(t2 => {
+                if (t1 === t2) {
+                    matrix[t1][t2] = { effect: null, direct: true };
+                } else {
+                    const comp = comparisons.find(c =>
+                        (c.treatmentA === t1 && c.treatmentB === t2) ||
+                        (c.treatmentA === t2 && c.treatmentB === t1)
+                    );
+                    if (comp) {
+                        const effect = comp.treatmentA === t1 ? comp.effect : 1 / comp.effect;
+                        matrix[t1][t2] = { effect, direct: true, ciLow: comp.ciLow, ciHigh: comp.ciHigh };
+                    } else {
+                        matrix[t1][t2] = { effect: null, direct: false };
+                    }
+                }
+            });
+        });
+
+        // Generate HTML table
+        let html = '<table class="data-table"><thead><tr><th></th>';
+        treatments.forEach(t => {
+            html += `<th>${t}</th>`;
+        });
+        html += '</tr></thead><tbody>';
+
+        treatments.forEach(t1 => {
+            html += `<tr><td><strong>${t1}</strong></td>`;
+            treatments.forEach(t2 => {
+                const cell = matrix[t1][t2];
+                if (t1 === t2) {
+                    html += '<td class="text-center">-</td>';
+                } else if (cell.effect) {
+                    const sig = cell.ciHigh && cell.ciHigh < 1 ? '*' : '';
+                    html += `<td class="num">${formatNumber(cell.effect)}${sig}</td>`;
+                } else {
+                    html += '<td class="text-center" style="color:#999">N/A</td>';
+                }
+            });
+            html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        html += '<p class="mt-1" style="font-size:0.8rem;color:#666;">* Statistically significant (95% CI excludes 1.0)</p>';
+
+        document.getElementById('league-table-container').innerHTML = html;
+    }
+
+    // ============================================
+    // Subgroup Analysis
+    // ============================================
+
+    function runSubgroupAnalysis() {
+        const variable = document.getElementById('subgroup-variable').value;
+        const rawData = document.getElementById('subgroup-data').value.trim();
+
+        if (!rawData) {
+            alert('Please enter subgroup data');
+            return;
+        }
+
+        const subgroups = [];
+        rawData.split('\n').forEach(line => {
+            const parts = line.split(',').map(p => p.trim());
+            if (parts.length >= 4) {
+                subgroups.push({
+                    name: parts[0],
+                    effect: parseFloat(parts[1]),
+                    ciLow: parseFloat(parts[2]),
+                    ciHigh: parseFloat(parts[3]),
+                    n: parts[4] ? parseInt(parts[4]) : null
+                });
+            }
+        });
+
+        // Calculate interaction test (Q between subgroups)
+        const k = subgroups.length;
+        let sumW = 0, sumWY = 0;
+
+        subgroups.forEach(sg => {
+            const logSE = (Math.log(sg.ciHigh) - Math.log(sg.ciLow)) / (2 * 1.96);
+            sg.se = logSE;
+            sg.variance = logSE * logSE;
+            sg.weight = 1 / sg.variance;
+            sg.logEffect = Math.log(sg.effect);
+            sumW += sg.weight;
+            sumWY += sg.weight * sg.logEffect;
+        });
+
+        const pooledLog = sumWY / sumW;
+        let Qbetween = 0;
+        subgroups.forEach(sg => {
+            Qbetween += sg.weight * Math.pow(sg.logEffect - pooledLog, 2);
+        });
+
+        const df = k - 1;
+        const pInteraction = 1 - chi2CDF(Qbetween, df);
+
+        // Display results
+        let html = `<h4>${variable || 'Subgroup'} Analysis</h4>`;
+        html += '<table class="data-table"><thead><tr><th>Subgroup</th><th class="num">Effect</th><th class="num">95% CI</th><th class="num">N</th></tr></thead><tbody>';
+
+        subgroups.forEach(sg => {
+            html += `<tr><td>${sg.name}</td><td class="num">${formatNumber(sg.effect)}</td><td class="num">${formatNumber(sg.ciLow)}-${formatNumber(sg.ciHigh)}</td><td class="num">${sg.n || '-'}</td></tr>`;
+        });
+
+        html += '</tbody></table>';
+        html += `<div class="result-box mt-2">
+            <strong>Interaction Test:</strong><br>
+            Q = ${formatNumber(Qbetween, 2)}, df = ${df}, p = ${formatNumber(pInteraction, 4)}<br>
+            <strong>Interpretation:</strong> ${pInteraction < 0.05 ? 'Significant interaction - effect differs between subgroups' : 'No significant interaction - effect consistent across subgroups'}
+        </div>`;
+
+        document.getElementById('subgroup-results').innerHTML = html;
+
+        // Update ICEMAN
+        updateICEMAN(pInteraction);
+
+        log(`Subgroup analysis: ${variable}, p-interaction = ${formatNumber(pInteraction, 4)}`);
+    }
+
+    function updateICEMAN(pInteraction) {
+        let score = 0;
+
+        if (document.getElementById('iceman-prespecified').checked) score++;
+        if (document.getElementById('iceman-direction').checked) score++;
+        if (pInteraction < 0.05) score++; // Significant interaction
+        if (document.getElementById('iceman-consistent').checked) score++;
+        if (document.getElementById('iceman-biological').checked) score++;
+        // Small number of subgroups tested (+1) - assume yes
+        score++;
+
+        let rating;
+        if (score >= 5) rating = 'High';
+        else if (score >= 3) rating = 'Moderate';
+        else rating = 'Low';
+
+        document.getElementById('iceman-score').textContent = score;
+        document.getElementById('iceman-rating').textContent = rating;
+    }
+
+    // ============================================
+    // ESC Recommendation
+    // ============================================
+
+    function deriveRecommendation() {
+        if (!LEC.metaResult) {
+            alert('Please run meta-analysis first');
+            return;
+        }
+
+        const effect = LEC.metaResult.pooled.effect;
+        const ciLow = LEC.metaResult.pooled.ciLow;
+        const ciHigh = LEC.metaResult.pooled.ciHigh;
+        const effectMeasure = LEC.metaResult.effectMeasure;
+        const certainty = LEC.gradeAssessment ? LEC.gradeAssessment.finalLevel : 'moderate';
+
+        // Determine recommendation class
+        let recClass, recLevel, recText, rationale;
+        const isRatio = ['HR', 'RR', 'OR'].includes(effectMeasure);
+        const significantBenefit = isRatio ? ciHigh < 1.0 : ciLow > 0;
+        const strongEffect = isRatio ? effect < 0.70 : Math.abs(effect) > 0.5;
+        const moderateEffect = isRatio ? effect < 0.85 : Math.abs(effect) > 0.2;
+
+        // ESC class logic
+        if (significantBenefit && strongEffect && ['high', 'moderate'].includes(certainty)) {
+            recClass = 'I';
+            rationale = `Strong benefit demonstrated (${effectMeasure} ${formatNumber(effect)}) with ${certainty} certainty`;
+        } else if (significantBenefit && moderateEffect && ['high', 'moderate'].includes(certainty)) {
+            recClass = 'IIa';
+            rationale = `Moderate benefit demonstrated (${effectMeasure} ${formatNumber(effect)}) with ${certainty} certainty`;
+        } else if (significantBenefit) {
+            recClass = 'IIb';
+            rationale = `Benefit suggested (${effectMeasure} ${formatNumber(effect)}) but certainty is ${certainty}`;
+        } else if (isRatio && ciLow > 1.0) {
+            recClass = 'III';
+            rationale = `Potential harm signal (${effectMeasure} ${formatNumber(effect)}, CI entirely above 1.0)`;
+        } else {
+            recClass = 'IIb';
+            rationale = `Uncertain benefit (${effectMeasure} ${formatNumber(effect)}, CI crosses null)`;
+        }
+
+        // Evidence level
+        const k = LEC.metaResult.k;
+        const design = document.getElementById('study-design').value;
+        if (k >= 2 && design === 'rct') {
+            recLevel = 'A';
+        } else if (k >= 1 && design === 'rct') {
+            recLevel = 'B';
+        } else {
+            recLevel = 'C';
+        }
+
+        // Recommendation wording
+        const wordings = {
+            'I': 'is recommended',
+            'IIa': 'should be considered',
+            'IIb': 'may be considered',
+            'III': 'is not recommended'
+        };
+
+        const intervention = LEC.pico.intervention || 'The intervention';
+        const population = LEC.pico.population || 'the target population';
+        recText = `${intervention} ${wordings[recClass]} in ${population.toLowerCase()}`;
+
+        // Update UI
+        const recBox = document.getElementById('esc-rec-box');
+        recBox.className = 'esc-recommendation class-' + recClass.toLowerCase();
+        document.getElementById('rec-class').textContent = recClass;
+        document.getElementById('rec-level').textContent = recLevel;
+        document.getElementById('rec-text').textContent = `"${recText}"`;
+        document.getElementById('rec-rationale').textContent = rationale;
+
+        // Considerations
+        const considerations = [];
+        const reduction = isRatio ? ((1 - effect) * 100).toFixed(0) : effect.toFixed(2);
+        considerations.push(`${isRatio ? 'Relative risk reduction' : 'Effect size'}: ${reduction}${isRatio ? '%' : ''}`);
+        considerations.push(`Evidence from ${k} ${design === 'rct' ? 'randomized trials' : 'studies'}`);
+        if (certainty) considerations.push(`GRADE certainty: ${certainty.toUpperCase()}`);
+
+        document.getElementById('rec-considerations').innerHTML = considerations.map(c => `<li>${c}</li>`).join('');
+
+        // Store recommendation
+        LEC.recommendation = {
+            class: recClass,
+            level: recLevel,
+            text: recText,
+            rationale,
+            considerations
+        };
+
+        log(`ESC Recommendation: Class ${recClass}, Level ${recLevel}`);
+    }
+
+    // ============================================
+    // Summary of Findings
+    // ============================================
+
+    function generateSoF() {
+        if (!LEC.metaResult) {
+            alert('Please run meta-analysis first');
+            return;
+        }
+
+        const r = LEC.metaResult;
+        const g = LEC.gradeAssessment || { finalLevel: 'moderate', symbol: '⊕⊕⊕○' };
+        const totalN = r.n || LEC.studies.reduce((s, st) => s + (st.nTreatment || 0) + (st.nControl || 0), 0);
+
+        const symbols = {
+            'high': '⊕⊕⊕⊕',
+            'moderate': '⊕⊕⊕○',
+            'low': '⊕⊕○○',
+            'very_low': '⊕○○○'
+        };
+
+        const certaintySymbol = symbols[g.finalLevel] || g.symbol || '⊕⊕⊕○';
+
+        const html = `
+            <tr>
+                <td><strong>${LEC.pico.outcome || 'Primary outcome'}</strong></td>
+                <td class="num">${r.k}</td>
+                <td class="num">${totalN.toLocaleString()}</td>
+                <td class="num">${r.effectMeasure} ${formatNumber(r.pooled.effect)}</td>
+                <td class="num">${formatNumber(r.pooled.ciLow)}-${formatNumber(r.pooled.ciHigh)}</td>
+                <td class="certainty-cell">
+                    <span class="sof-symbols">${certaintySymbol}</span><br>
+                    <small>${g.finalLevel ? g.finalLevel.toUpperCase().replace('_', ' ') : 'MODERATE'}</small>
+                </td>
+            </tr>
+        `;
+
+        document.getElementById('sof-body').innerHTML = html;
+        log('Generated Summary of Findings table');
+    }
+
+    // ============================================
+    // Export Functions
+    // ============================================
+
+    function exportJSON() {
+        const exportData = {
+            version: '1.0',
+            exportDate: new Date().toISOString(),
+            pico: LEC.pico,
+            studies: LEC.studies.map(s => ({
+                name: s.name,
+                effect: s.effect,
+                ciLow: s.ciLow,
+                ciHigh: s.ciHigh,
+                nTreatment: s.nTreatment,
+                nControl: s.nControl
+            })),
+            metaAnalysis: LEC.metaResult,
+            gradeAssessment: LEC.gradeAssessment,
+            nma: LEC.nmaResult,
+            recommendation: LEC.recommendation,
+            log: LEC.log
+        };
+
+        const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `lec_analysis_${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        log('Exported analysis to JSON');
+    }
+
+    function exportMarkdown() {
+        let md = `# Evidence Synthesis Report\n\n`;
+        md += `**Generated:** ${new Date().toISOString()}\n\n`;
+
+        // PICO
+        md += `## Clinical Question\n\n`;
+        md += `**Title:** ${LEC.pico.title || 'Not specified'}\n\n`;
+        md += `| Component | Description |\n|-----------|-------------|\n`;
+        md += `| Population | ${LEC.pico.population || '-'} |\n`;
+        md += `| Intervention | ${LEC.pico.intervention || '-'} |\n`;
+        md += `| Comparator | ${LEC.pico.comparator || '-'} |\n`;
+        md += `| Outcome | ${LEC.pico.outcome || '-'} |\n\n`;
+
+        // Meta-analysis
+        if (LEC.metaResult) {
+            md += `## Meta-Analysis Results\n\n`;
+            md += `**Pooled Effect:** ${LEC.metaResult.effectMeasure} ${formatNumber(LEC.metaResult.pooled.effect)} `;
+            md += `(95% CI: ${formatNumber(LEC.metaResult.pooled.ciLow)}-${formatNumber(LEC.metaResult.pooled.ciHigh)})\n\n`;
+            md += `**Heterogeneity:** I² = ${formatNumber(LEC.metaResult.heterogeneity.I2, 1)}%, `;
+            md += `τ² = ${formatNumber(LEC.metaResult.heterogeneity.tau2, 4)}\n\n`;
+            md += `**Studies:** ${LEC.metaResult.k}\n\n`;
+        }
+
+        // GRADE
+        if (LEC.gradeAssessment) {
+            md += `## GRADE Assessment\n\n`;
+            md += `**Certainty:** ${LEC.gradeAssessment.finalLevel.toUpperCase().replace('_', ' ')} ${LEC.gradeAssessment.symbol}\n\n`;
+            md += `**Rationale:**\n`;
+            LEC.gradeAssessment.rationale.forEach(r => {
+                md += `- ${r}\n`;
+            });
+            md += '\n';
+        }
+
+        // Recommendation
+        if (LEC.recommendation) {
+            md += `## ESC Recommendation\n\n`;
+            md += `**Class ${LEC.recommendation.class} | Level ${LEC.recommendation.level}**\n\n`;
+            md += `> ${LEC.recommendation.text}\n\n`;
+            md += `**Rationale:** ${LEC.recommendation.rationale}\n\n`;
+        }
+
+        const blob = new Blob([md], { type: 'text/markdown' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `lec_report_${new Date().toISOString().split('T')[0]}.md`;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        log('Exported report to Markdown');
+    }
+
+    // ============================================
+    // Initialization
+    // ============================================
+
+    log('LEC Evidence Synthesis Tool initialized');
+    </script>
+</body>
+</html>

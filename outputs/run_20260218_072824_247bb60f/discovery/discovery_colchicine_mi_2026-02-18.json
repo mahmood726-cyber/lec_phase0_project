@@ -1,0 +1,161 @@
+{
+  "topic": "colchicine_mi",
+  "created_at_utc": "2026-02-18T07:28:24.617310+00:00",
+  "source": "cochrane501_ranked",
+  "candidates_source": "outputs\\run_20260218_072824_247bb60f\\ctgov\\ctgov_candidates_colchicine_mi_20260218.json",
+  "config": {},
+  "statistics": {
+    "total_candidates": 5,
+    "included": 0,
+    "flagged": 2,
+    "excluded": 3
+  },
+  "discovered_trials": [
+    {
+      "nct_id": "NCT02551094",
+      "brief_title": "Colchicine Cardiovascular Outcomes Trial (COLCOT)",
+      "overall_status": "Completed",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.9,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "COMPLETED",
+        "HAS_RESULTS"
+      ],
+      "cochrane_score": 0.3,
+      "score_components": {
+        "ma_match": 0.3,
+        "cooccur": 0.3,
+        "term": 0.3
+      },
+      "provenance": {
+        "matched_mas": [],
+        "term_matches": [],
+        "co_occurrence_sources": [],
+        "discovery_method": "aact_mesh_sql"
+      },
+      "rank": 1,
+      "combined_score": 0.6,
+      "final_disposition": "FLAG"
+    },
+    {
+      "nct_id": "NCT03048825",
+      "brief_title": "Low Dose Colchicine After Myocardial Infarction (LoDoCo-MI)",
+      "overall_status": "Completed",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.85,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "COMPLETED"
+      ],
+      "cochrane_score": 0.3,
+      "score_components": {
+        "ma_match": 0.3,
+        "cooccur": 0.3,
+        "term": 0.3
+      },
+      "provenance": {
+        "matched_mas": [],
+        "term_matches": [],
+        "co_occurrence_sources": [],
+        "discovery_method": "aact_mesh_sql"
+      },
+      "rank": 2,
+      "combined_score": 0.575,
+      "final_disposition": "FLAG"
+    },
+    {
+      "nct_id": "NCT01551094",
+      "brief_title": "Colchicine in Acute Coronary Syndrome",
+      "overall_status": "Completed",
+      "phase": "Phase 2",
+      "allocation": "Randomized",
+      "score_total": 0.75,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_2",
+        "COMPLETED"
+      ],
+      "cochrane_score": 0.28,
+      "score_components": {
+        "ma_match": 0.3,
+        "cooccur": 0.3,
+        "term": 0.2
+      },
+      "provenance": {
+        "matched_mas": [],
+        "term_matches": [],
+        "co_occurrence_sources": [],
+        "discovery_method": "aact_mesh_sql"
+      },
+      "rank": 3,
+      "combined_score": 0.515,
+      "final_disposition": "EXCLUDE"
+    },
+    {
+      "nct_id": "NCT04322682",
+      "brief_title": "Colchicine for MI Prevention",
+      "overall_status": "Recruiting",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.6,
+      "disposition": "FLAG",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "RECRUITING_NO_RESULTS"
+      ],
+      "cochrane_score": 0.165,
+      "score_components": {
+        "ma_match": 0.0,
+        "cooccur": 0.3,
+        "term": 0.3
+      },
+      "provenance": {
+        "matched_mas": [],
+        "term_matches": [],
+        "co_occurrence_sources": [],
+        "discovery_method": "aact_mesh_sql"
+      },
+      "rank": 4,
+      "combined_score": 0.3825,
+      "final_disposition": "EXCLUDE"
+    },
+    {
+      "nct_id": "NCT00000001",
+      "brief_title": "Observational Colchicine Study",
+      "overall_status": "Completed",
+      "phase": null,
+      "allocation": null,
+      "score_total": 0.3,
+      "disposition": "EXCLUDE",
+      "reason_codes": [
+        "ALLOC_UNKNOWN",
+        "PHASE_UNKNOWN",
+        "NOT_RANDOMIZED_LIKELY"
+      ],
+      "cochrane_score": 0.135,
+      "score_components": {
+        "ma_match": 0.3,
+        "cooccur": 0.0,
+        "term": 0.0
+      },
+      "provenance": {
+        "matched_mas": [],
+        "term_matches": [],
+        "co_occurrence_sources": [],
+        "discovery_method": "aact_mesh_sql"
+      },
+      "rank": 5,
+      "combined_score": 0.2175,
+      "final_disposition": "EXCLUDE"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "topic": "colchicine_cardiovascular",
+  "treatments": [
+    {
+      "id": "colchicine",
+      "name": "colchicine",
+      "category": null
+    },
+    {
+      "id": "placebo",
+      "name": "placebo",
+      "category": null
+    },
+    {
+      "id": "canakinumab",
+      "name": "canakinumab",
+      "category": null
+    }
+  ],
+  "comparisons": [
+    {
+      "treatment_a": "colchicine",
+      "treatment_b": "placebo",
+      "n_studies": 11,
+      "effect_estimate": 0.5913639687626652,
+      "ci_low": 0.08,
+      "ci_high": 2.76,
+      "i2": 0
+    },
+    {
+      "treatment_a": "canakinumab",
+      "treatment_b": "placebo",
+      "n_studies": 1,
+      "effect_estimate": 0.83,
+      "ci_low": 0.7,
+      "ci_high": 0.98,
+      "i2": 0
+    }
+  ],
+  "reference_treatment": "placebo",
+  "outcome_type": "binary",
+  "effect_measure": "HR",
+  "created_at": "2026-02-17T22:05:40.593370+00:00",
+  "network_hash": "8833c517c5c3108c"
+}

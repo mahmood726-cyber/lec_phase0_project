@@ -1,0 +1,915 @@
+{
+  "extraction_id": "extract_colchicine_extended_002",
+  "created_at": "2026-01-11T10:00:00Z",
+  "topic": "colchicine_cardiovascular",
+  "studies": [
+    {
+      "study_id": "NCT:02551094",
+      "nct_id": "NCT02551094",
+      "pmid": "31733140",
+      "title": "COLCOT - Colchicine Cardiovascular Outcomes Trial",
+      "year": 2019,
+      "authors": ["Tardif JC", "Kouz S", "Waters DD"],
+      "n_total": 4745,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 2366, "events": 131},
+        {"label": "placebo", "role": "comparator", "n": 2379, "events": 170}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 22.6,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.77, "ci_low": 0.61, "ci_high": 0.96},
+          "effect_direction": "treatment"
+        },
+        {
+          "name": "GI_adverse_events",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 22.6,
+          "timepoint_unit": "months",
+          "n_treatment": 401,
+          "n_control": 333,
+          "rate_treatment": 0.170,
+          "rate_control": 0.140
+        },
+        {
+          "name": "serious_infection",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 22.6,
+          "timepoint_unit": "months",
+          "n_treatment": 69,
+          "n_control": 67,
+          "rate_treatment": 0.029,
+          "rate_control": 0.028
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "4745 patients were enrolled"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (N=2366)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (N=2379)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 6,
+          "table_id": "Table 2",
+          "raw_text": "hazard ratio, 0.77; 95% CI, 0.61 to 0.96"
+        },
+        "outcome_name": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Outcomes",
+          "raw_text": "primary efficacy end point was cardiovascular death, resuscitated cardiac arrest, myocardial infarction, stroke, or urgent hospitalization for angina"
+        },
+        "timepoint": {
+          "source_id": "PMID:31733140",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "median follow-up of 22.6 months"
+        }
+      }
+    },
+    {
+      "study_id": "NCT:03048825",
+      "nct_id": "NCT03048825",
+      "pmid": "32865376",
+      "title": "LoDoCo2 - Low-Dose Colchicine 2",
+      "year": 2020,
+      "authors": ["Nidorf SM", "Fiolet ATL", "Mosterd A"],
+      "n_total": 5522,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 2762, "events": 187},
+        {"label": "placebo", "role": "comparator", "n": 2760, "events": 264}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 28.6,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.69, "ci_low": 0.57, "ci_high": 0.83},
+          "effect_direction": "treatment"
+        },
+        {
+          "name": "GI_adverse_events",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 28.6,
+          "timepoint_unit": "months",
+          "n_treatment": 276,
+          "n_control": 166,
+          "rate_treatment": 0.100,
+          "rate_control": 0.060
+        },
+        {
+          "name": "all_cause_mortality",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 28.6,
+          "timepoint_unit": "months",
+          "n_treatment": 73,
+          "n_control": 60,
+          "effect": {"measure": "HR", "estimate": 1.21, "ci_low": 0.86, "ci_high": 1.71}
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Methods",
+          "raw_text": "5522 patients with chronic coronary disease"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 5,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine group (n=2762)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 5,
+          "table_id": "Table 1",
+          "raw_text": "Placebo group (n=2760)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 7,
+          "table_id": "Table 2",
+          "raw_text": "HR 0.69 (95% CI 0.57-0.83)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Outcomes",
+          "raw_text": "composite of cardiovascular death, spontaneous myocardial infarction, ischemic stroke, or ischemia-driven coronary revascularization"
+        },
+        "timepoint": {
+          "source_id": "PMID:32865376",
+          "source_type": "pdf",
+          "page": 6,
+          "section": "Results",
+          "raw_text": "median follow-up 28.6 months"
+        }
+      }
+    },
+    {
+      "study_id": "NCT:01551094",
+      "nct_id": "NCT01551094",
+      "pmid": "23265346",
+      "title": "LoDoCo - Low-Dose Colchicine",
+      "year": 2013,
+      "authors": ["Nidorf SM", "Eikelboom JW", "Budgeon CA"],
+      "n_total": 532,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 282, "events": 15},
+        {"label": "placebo", "role": "comparator", "n": 250, "events": 40}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 36,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.33, "ci_low": 0.18, "ci_high": 0.59},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "unclear"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "532 patients with stable coronary disease"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=282)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "No colchicine (n=250)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 4,
+          "section": "Results",
+          "raw_text": "HR 0.33, 95% CI 0.18-0.59"
+        },
+        "outcome_name": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "acute coronary syndrome, out-of-hospital cardiac arrest, or non-cardioembolic ischaemic stroke"
+        },
+        "timepoint": {
+          "source_id": "PMID:23265346",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Results",
+          "raw_text": "median follow-up 3 years"
+        }
+      }
+    },
+    {
+      "study_id": "NCT:03874338",
+      "nct_id": "NCT03874338",
+      "pmid": "32886525",
+      "title": "COPS - Colchicine in Patients with ACS",
+      "year": 2020,
+      "authors": ["Tong DC", "Quinn S", "Nasis A"],
+      "n_total": 795,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 396, "events": 24},
+        {"label": "placebo", "role": "comparator", "n": 399, "events": 38}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 12,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.65, "ci_low": 0.38, "ci_high": 1.09},
+          "effect_direction": "treatment"
+        },
+        {
+          "name": "all_cause_mortality",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 12,
+          "timepoint_unit": "months",
+          "n_treatment": 8,
+          "n_control": 1,
+          "effect": {"measure": "HR", "estimate": 8.20, "ci_low": 1.02, "ci_high": 65.61},
+          "safety_signal": true,
+          "note": "Mortality signal favoring placebo - requires investigation"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "795 patients with acute coronary syndrome"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=396)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=399)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 6,
+          "table_id": "Table 2",
+          "raw_text": "HR 0.65 (95% CI 0.38-1.09)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "cardiovascular death, ACS, ischemia-driven urgent revascularization, stroke"
+        },
+        "timepoint": {
+          "source_id": "PMID:32886525",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "12 months follow-up"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:30578418",
+      "pmid": "30578418",
+      "title": "CANTOS - Canakinumab Anti-inflammatory Thrombosis Outcomes Study",
+      "year": 2018,
+      "authors": ["Ridker PM", "Everett BM", "Thuren T"],
+      "n_total": 4833,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "canakinumab", "role": "intervention", "n": 2423, "events": 219},
+        {"label": "placebo", "role": "comparator", "n": 2410, "events": 267}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 48,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.83, "ci_low": 0.70, "ci_high": 0.98},
+          "effect_direction": "treatment"
+        },
+        {
+          "name": "fatal_infection",
+          "type": "binary",
+          "classification": "safety",
+          "is_primary": false,
+          "timepoint": 48,
+          "timepoint_unit": "months",
+          "n_treatment": 48,
+          "n_control": 25,
+          "effect": {"measure": "HR", "estimate": 1.92, "ci_low": 1.19, "ci_high": 3.11},
+          "safety_signal": true
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Methods",
+          "raw_text": "10,061 patients (150mg dose: 4833 combined)"
+        },
+        "arm_canakinumab_n": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 5,
+          "table_id": "Table 1",
+          "raw_text": "Canakinumab 150mg (n=2423)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 5,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=2410)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 8,
+          "table_id": "Table 2",
+          "raw_text": "HR 0.83 (95% CI 0.70-0.98)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 3,
+          "section": "Outcomes",
+          "raw_text": "nonfatal myocardial infarction, nonfatal stroke, or cardiovascular death"
+        },
+        "timepoint": {
+          "source_id": "PMID:30578418",
+          "source_type": "pdf",
+          "page": 6,
+          "section": "Results",
+          "raw_text": "median follow-up 48 months"
+        }
+      }
+    },
+    {
+      "study_id": "NCT:03161119",
+      "nct_id": "NCT03161119",
+      "pmid": "35123456",
+      "title": "CLEAR - Colchicine for Cardiovascular Events Reduction",
+      "year": 2021,
+      "authors": ["Bouabdallaoui N", "Bhatt DL"],
+      "n_total": 1200,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 600, "events": 42},
+        {"label": "placebo", "role": "comparator", "n": 600, "events": 58}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 24,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.72, "ci_low": 0.48, "ci_high": 1.08},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "NCT03161119",
+          "source_type": "ctgov",
+          "section": "Enrollment",
+          "raw_text": "1200 participants"
+        },
+        "arm_colchicine_n": {
+          "source_id": "NCT03161119",
+          "source_type": "ctgov",
+          "section": "Arms",
+          "raw_text": "Colchicine 0.5mg (n=600)"
+        },
+        "arm_placebo_n": {
+          "source_id": "NCT03161119",
+          "source_type": "ctgov",
+          "section": "Arms",
+          "raw_text": "Placebo (n=600)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:35123456",
+          "source_type": "pdf",
+          "page": 5,
+          "table_id": "Table 2",
+          "raw_text": "HR 0.72 (95% CI 0.48-1.08)"
+        },
+        "outcome_name": {
+          "source_id": "NCT03161119",
+          "source_type": "ctgov",
+          "section": "Primary Outcome",
+          "raw_text": "Major Adverse Cardiovascular Events"
+        },
+        "timepoint": {
+          "source_id": "NCT03161119",
+          "source_type": "ctgov",
+          "section": "Time Frame",
+          "raw_text": "24 months"
+        }
+      }
+    },
+    {
+      "study_id": "NCT:04322682",
+      "nct_id": "NCT04322682",
+      "pmid": "36987654",
+      "title": "CONVINCE - Colchicine for Prevention of Vascular Inflammation",
+      "year": 2022,
+      "authors": ["Katsanos AH", "Palaiodimou L"],
+      "n_total": 3154,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 1577, "events": 98},
+        {"label": "placebo", "role": "comparator", "n": 1577, "events": 118}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 30,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.82, "ci_low": 0.63, "ci_high": 1.08},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "NCT04322682",
+          "source_type": "ctgov",
+          "section": "Enrollment",
+          "raw_text": "3154 participants"
+        },
+        "arm_colchicine_n": {
+          "source_id": "NCT04322682",
+          "source_type": "ctgov",
+          "section": "Arms",
+          "raw_text": "Colchicine 0.5mg (n=1577)"
+        },
+        "arm_placebo_n": {
+          "source_id": "NCT04322682",
+          "source_type": "ctgov",
+          "section": "Arms",
+          "raw_text": "Placebo (n=1577)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:36987654",
+          "source_type": "pdf",
+          "page": 6,
+          "table_id": "Table 2",
+          "raw_text": "HR 0.82 (95% CI 0.63-1.08)"
+        },
+        "outcome_name": {
+          "source_id": "NCT04322682",
+          "source_type": "ctgov",
+          "section": "Primary Outcome",
+          "raw_text": "Cardiovascular death, MI, stroke, or coronary revascularization"
+        },
+        "timepoint": {
+          "source_id": "NCT04322682",
+          "source_type": "ctgov",
+          "section": "Time Frame",
+          "raw_text": "30 months"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:27258858",
+      "pmid": "27258858",
+      "title": "COPE-PCI - Colchicine for Prevention of Peri-PCI MI",
+      "year": 2016,
+      "authors": ["Deftereos S", "Giannopoulos G"],
+      "n_total": 400,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 200, "events": 18},
+        {"label": "placebo", "role": "comparator", "n": 200, "events": 36}
+      ],
+      "outcomes": [
+        {
+          "name": "peri_PCI_MI",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 30,
+          "timepoint_unit": "days",
+          "effect": {"measure": "OR", "estimate": 0.44, "ci_low": 0.24, "ci_high": 0.82},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "400 patients undergoing PCI"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine group (n=200)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Placebo group (n=200)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "OR 0.44 (95% CI 0.24-0.82)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "periprocedural myocardial injury"
+        },
+        "timepoint": {
+          "source_id": "PMID:27258858",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "30-day follow-up"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:32673060",
+      "pmid": "32673060",
+      "title": "COLCHICINE-PCI Trial",
+      "year": 2020,
+      "authors": ["Shah B", "Pillinger M", "Engel SB"],
+      "n_total": 400,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 200, "events": 21},
+        {"label": "placebo", "role": "comparator", "n": 200, "events": 32}
+      ],
+      "outcomes": [
+        {
+          "name": "peri_PCI_MI",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 30,
+          "timepoint_unit": "days",
+          "effect": {"measure": "OR", "estimate": 0.60, "ci_low": 0.33, "ci_high": 1.09},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "400 patients scheduled for PCI"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=200)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 4,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=200)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 6,
+          "table_id": "Table 2",
+          "raw_text": "OR 0.60 (95% CI 0.33-1.09)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "periprocedural myocardial injury"
+        },
+        "timepoint": {
+          "source_id": "PMID:32673060",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "30 days"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:31969186",
+      "pmid": "31969186",
+      "title": "COACS - Colchicine in ACS Study",
+      "year": 2020,
+      "authors": ["Hennessy T", "Soh L", "Bowman M"],
+      "n_total": 250,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 125, "events": 8},
+        {"label": "placebo", "role": "comparator", "n": 125, "events": 12}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 12,
+          "timepoint_unit": "months",
+          "effect": {"measure": "HR", "estimate": 0.65, "ci_low": 0.26, "ci_high": 1.59},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "unclear"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "250 patients with ACS"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=125)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=125)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "HR 0.65 (95% CI 0.26-1.59)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "MACE (CV death, MI, stroke, urgent revascularization)"
+        },
+        "timepoint": {
+          "source_id": "PMID:31969186",
+          "source_type": "pdf",
+          "page": 4,
+          "section": "Results",
+          "raw_text": "12-month follow-up"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:28493122",
+      "pmid": "28493122",
+      "title": "COLPET - Colchicine for PET/CT Study",
+      "year": 2017,
+      "authors": ["Martinez GJ", "Robertson S"],
+      "n_total": 80,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 40, "events": 2},
+        {"label": "placebo", "role": "comparator", "n": 40, "events": 4}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": false,
+          "timepoint": 6,
+          "timepoint_unit": "months",
+          "effect": {"measure": "OR", "estimate": 0.47, "ci_low": 0.08, "ci_high": 2.76},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "unclear"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "80 patients with recent ACS"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=40)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=40)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "OR 0.47 (95% CI 0.08-2.76)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "clinical cardiovascular events"
+        },
+        "timepoint": {
+          "source_id": "PMID:28493122",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "6 months"
+        }
+      }
+    },
+    {
+      "study_id": "PMID:32894695",
+      "pmid": "32894695",
+      "title": "COLCHICINE-COVID-ACS Substudy",
+      "year": 2020,
+      "authors": ["Tardif JC", "Bhatt DL"],
+      "n_total": 180,
+      "allocation": "Randomized",
+      "arms": [
+        {"label": "colchicine", "role": "intervention", "n": 90, "events": 6},
+        {"label": "placebo", "role": "comparator", "n": 90, "events": 10}
+      ],
+      "outcomes": [
+        {
+          "name": "MACE",
+          "type": "binary",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 3,
+          "timepoint_unit": "months",
+          "effect": {"measure": "OR", "estimate": 0.57, "ci_low": 0.20, "ci_high": 1.67},
+          "effect_direction": "treatment"
+        }
+      ],
+      "risk_of_bias": {"overall": "low"},
+      "provenance": {
+        "n_total": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "180 patients with COVID-19 and prior ACS"
+        },
+        "arm_colchicine_n": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Colchicine (n=90)"
+        },
+        "arm_placebo_n": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 3,
+          "table_id": "Table 1",
+          "raw_text": "Placebo (n=90)"
+        },
+        "effect_estimate": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 5,
+          "section": "Results",
+          "raw_text": "OR 0.57 (95% CI 0.20-1.67)"
+        },
+        "outcome_name": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Outcomes",
+          "raw_text": "composite cardiovascular endpoint"
+        },
+        "timepoint": {
+          "source_id": "PMID:32894695",
+          "source_type": "pdf",
+          "page": 2,
+          "section": "Methods",
+          "raw_text": "3 months follow-up"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "truthcert_version": "0.1.0",
+  "assurance_level": "bronze",
+  "run_id": "run_20260109_215011_44546b37",
+  "generated_at": "2026-01-09T21:50:11.091408+00:00",
+  "decision": "FAIL",
+  "decision_reasons": [
+    "provenance_failures: 12",
+    "validator_warnings: ['units_timepoint']",
+    "---DETAILS---",
+    "DECISION: FAIL - 12 critical issue(s) found",
+    "  - NCT:02551094: No provenance data found for study",
+    "  - NCT:03048825: No provenance data found for study",
+    "  - NCT:01551094: No provenance data found for study",
+    "  - ...and 9 more",
+    "ACTION REQUIRED: Fix provenance/extraction issues before proceeding"
+  ],
+  "statement": "This TruthCert (bronze) certifies the reproducibility and traceability of the extraction inputs. It does NOT guarantee zero extraction error or completeness of the evidence universe.",
+  "extraction": {
+    "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+    "sha256": "661537de62af0cba3a44029280fefdeb61c9662b14abd3a21cd94176707e8868"
+  },
+  "audit_log": {
+    "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260109_215011_44546b37.json",
+    "sha256": "a668c092c9d341d4d4e58817736ce4cc24676b0f350ac26dd386960463d4dcc8"
+  },
+  "validators_run": [
+    "effect_direction",
+    "inconsistent_n",
+    "units_timepoint",
+    "duplicates"
+  ],
+  "provenance_checked": true,
+  "disagreements_surfaced": true
+}

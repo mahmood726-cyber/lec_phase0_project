@@ -1,0 +1,43 @@
+{
+  "run_id": "run_20260112_210509_48fe6d53",
+  "created_at_utc": "2026-01-12T21:05:09.623691+00:00",
+  "completed_at_utc": "2026-01-12T21:05:09.691549+00:00",
+  "artifacts": [
+    {
+      "type": "discovery",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\discovery\\discovery_colchicine_mi_2026-01-12.json",
+      "sha256": "f8c54be4026b2b449f57885c00338caebeb66b946204275129455820776fd923",
+      "added_at": "2026-01-12T21:05:09.641348+00:00"
+    },
+    {
+      "type": "extraction",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\sample_extraction.json",
+      "sha256": "9c57c4cac7bcbe31c54da6c4969a062477469cc3c542500c890a22ff9dae1ae6",
+      "added_at": "2026-01-12T21:05:09.641760+00:00"
+    },
+    {
+      "type": "metaengine_input",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\metaengine\\metaengine_input_colchicine_mi.json",
+      "sha256": "b1596408532277948dcfc58cbbcdfe77686fa102ced957795ba26e33c8672464",
+      "added_at": "2026-01-12T21:05:09.642042+00:00"
+    },
+    {
+      "type": "metaengine_output",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\metaengine\\metaengine_output_colchicine_mi.json",
+      "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a",
+      "added_at": "2026-01-12T21:05:09.643812+00:00"
+    },
+    {
+      "type": "truthcert",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\certificates\\truthcert_run_20260112_210509_784183f1.json",
+      "sha256": "a7f13e8a06fe337f48ea60137529c7ccdd9dd2b601b8d4dca4082a030bedf007",
+      "added_at": "2026-01-12T21:05:09.663863+00:00"
+    },
+    {
+      "type": "audit_log",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260112_210509_784183f1.json",
+      "sha256": "247c49521b421cce05348baa5d00569fcc0edfaee621c6242c756d64cf47fd7e",
+      "added_at": "2026-01-12T21:05:09.682545+00:00"
+    }
+  ]
+}

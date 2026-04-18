@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lec.example.org/provenance.schema.json",
+  "title": "Field-level provenance (Bronze)",
+  "type": "object",
+  "required": [
+    "source",
+    "locator",
+    "method",
+    "agent_id",
+    "timestamp_utc",
+    "confidence"
+  ],
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_id",
+        "sha256"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "pdf",
+            "html",
+            "xml",
+            "registry",
+            "other"
+          ]
+        },
+        "source_id": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "locator": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bbox": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[x, y, w, h] in page coordinates (implementation-defined)"
+        },
+        "text_quote": {
+          "type": "string",
+          "maxLength": 500
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "additionalProperties": false
+}

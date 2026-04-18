@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lec.example.org/extraction.schema.json",
+  "title": "Multi-agent extraction output (Bronze)",
+  "type": "object",
+  "required": [
+    "topic",
+    "agent_id",
+    "created_at_utc",
+    "studies"
+  ],
+  "properties": {
+    "topic": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "studies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "trial_key",
+          "arms",
+          "outcomes"
+        ],
+        "properties": {
+          "trial_key": {
+            "type": "string"
+          },
+          "identifiers": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "arms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "arm_id",
+                "label",
+                "n",
+                "provenance"
+              ],
+              "properties": {
+                "arm_id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "n": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "provenance": {
+                  "$ref": "provenance.schema.json"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "outcomes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "timepoint",
+                "type",
+                "measure",
+                "data",
+                "provenance"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "timepoint": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "binary",
+                    "continuous",
+                    "time_to_event",
+                    "other"
+                  ]
+                },
+                "measure": {
+                  "type": "string"
+                },
+                "units": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "provenance": {
+                  "$ref": "provenance.schema.json"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

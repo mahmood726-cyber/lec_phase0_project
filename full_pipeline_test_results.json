@@ -1,0 +1,759 @@
+{
+  "timestamp": "2026-01-12T17:23:30.954822",
+  "duration_seconds": 209.3059105873108,
+  "total_tests": 123,
+  "passed": 123,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "topics_tested": 35,
+  "results": {
+    "ui_tests": [
+      {
+        "test": "Page title present",
+        "passed": true,
+        "details": "LEC Evidence Synthesis Tool v2.0 - ESC Guideline Support",
+        "timestamp": "2026-01-12T17:18:55.258809"
+      },
+      {
+        "test": "Header correct",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:55.316641"
+      },
+      {
+        "test": "Version badge v2.0",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:55.347267"
+      },
+      {
+        "test": "Tab 'discovery' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:56.258507"
+      },
+      {
+        "test": "Tab 'data' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:57.281514"
+      },
+      {
+        "test": "Tab 'meta' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:58.275099"
+      },
+      {
+        "test": "Tab 'grade' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:18:59.397975"
+      },
+      {
+        "test": "Tab 'nma' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:00.374929"
+      },
+      {
+        "test": "Tab 'subgroups' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:01.307752"
+      },
+      {
+        "test": "Tab 'recommendation' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:02.206551"
+      },
+      {
+        "test": "Tab 'sof' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:03.080345"
+      },
+      {
+        "test": "Tab 'validation' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:03.951063"
+      },
+      {
+        "test": "Tab 'export' works",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:04.835872"
+      },
+      {
+        "test": "Category selector present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.398580"
+      },
+      {
+        "test": "Topic selector present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.498950"
+      },
+      {
+        "test": "Load Topic button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.574341"
+      },
+      {
+        "test": "Condition input present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.673094"
+      },
+      {
+        "test": "Intervention input present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.740485"
+      },
+      {
+        "test": "Study type dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.805978"
+      },
+      {
+        "test": "Status dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.844868"
+      },
+      {
+        "test": "Phase dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.881819"
+      },
+      {
+        "test": "Has results dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.916136"
+      },
+      {
+        "test": "Min enrollment input present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.951014"
+      },
+      {
+        "test": "Search CT.gov button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:06.982446"
+      },
+      {
+        "test": "PubMed query input present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:07.016028"
+      },
+      {
+        "test": "PICO Title present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.448007"
+      },
+      {
+        "test": "PICO Population present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.483001"
+      },
+      {
+        "test": "PICO Intervention present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.507268"
+      },
+      {
+        "test": "PICO Comparator present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.533962"
+      },
+      {
+        "test": "PICO Outcome present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.562721"
+      },
+      {
+        "test": "Effect measure dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.588914"
+      },
+      {
+        "test": "Study design dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.628134"
+      },
+      {
+        "test": "Study data textarea present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.672722"
+      },
+      {
+        "test": "Parse Data button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.722590"
+      },
+      {
+        "test": "Clear button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.763754"
+      },
+      {
+        "test": "SGLT2i sample button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.794749"
+      },
+      {
+        "test": "PCSK9i sample button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.838754"
+      },
+      {
+        "test": "Colchicine sample button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:08.879920"
+      },
+      {
+        "test": "Model dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.255889"
+      },
+      {
+        "test": "Tau estimator dropdown present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.271806"
+      },
+      {
+        "test": "Run Meta-Analysis button present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.290870"
+      },
+      {
+        "test": "Pooled estimate display present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.308752"
+      },
+      {
+        "test": "Pooled CI display present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.328382"
+      },
+      {
+        "test": "I-squared statistic display present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.345671"
+      },
+      {
+        "test": "tau-squared statistic display present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.363056"
+      },
+      {
+        "test": "Forest plot SVG present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.378894"
+      },
+      {
+        "test": "Funnel plot SVG present",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:19:10.395989"
+      }
+    ],
+    "topic_tests": [
+      {
+        "test": "Category count >= 15",
+        "passed": true,
+        "details": "19 categories",
+        "timestamp": "2026-01-12T17:19:12.139705"
+      },
+      {
+        "test": "Category 'Heart Failure...' has topics",
+        "passed": true,
+        "details": "25 topics",
+        "timestamp": "2026-01-12T17:19:20.042095"
+      },
+      {
+        "test": "Category 'Coronary Artery Dise...' has topics",
+        "passed": true,
+        "details": "30 topics",
+        "timestamp": "2026-01-12T17:19:21.850962"
+      },
+      {
+        "test": "Category 'Lipid Management...' has topics",
+        "passed": true,
+        "details": "20 topics",
+        "timestamp": "2026-01-12T17:19:23.197581"
+      },
+      {
+        "test": "Category 'Atrial Fibrillation...' has topics",
+        "passed": true,
+        "details": "23 topics",
+        "timestamp": "2026-01-12T17:19:24.665943"
+      },
+      {
+        "test": "Category 'Hypertension...' has topics",
+        "passed": true,
+        "details": "22 topics",
+        "timestamp": "2026-01-12T17:19:25.731180"
+      },
+      {
+        "test": "Category 'Diabetes & Cardiomet...' has topics",
+        "passed": true,
+        "details": "28 topics",
+        "timestamp": "2026-01-12T17:19:26.837576"
+      },
+      {
+        "test": "Category 'Valvular Heart Disea...' has topics",
+        "passed": true,
+        "details": "11 topics",
+        "timestamp": "2026-01-12T17:19:27.502360"
+      },
+      {
+        "test": "Category 'Pulmonary Hypertensi...' has topics",
+        "passed": true,
+        "details": "9 topics",
+        "timestamp": "2026-01-12T17:19:28.095063"
+      },
+      {
+        "test": "Category 'Arrhythmias...' has topics",
+        "passed": true,
+        "details": "15 topics",
+        "timestamp": "2026-01-12T17:19:28.843776"
+      },
+      {
+        "test": "Category 'Acute Cardiovascular...' has topics",
+        "passed": true,
+        "details": "9 topics",
+        "timestamp": "2026-01-12T17:19:29.433351"
+      },
+      {
+        "test": "Category 'Prevention & Risk...' has topics",
+        "passed": true,
+        "details": "11 topics",
+        "timestamp": "2026-01-12T17:19:30.159095"
+      },
+      {
+        "test": "Category 'Cardiomyopathy...' has topics",
+        "passed": true,
+        "details": "19 topics",
+        "timestamp": "2026-01-12T17:19:30.942070"
+      },
+      {
+        "test": "Category 'Pericardial Disease...' has topics",
+        "passed": true,
+        "details": "12 topics",
+        "timestamp": "2026-01-12T17:19:31.721683"
+      },
+      {
+        "test": "Category 'Transplant & Devices...' has topics",
+        "passed": true,
+        "details": "7 topics",
+        "timestamp": "2026-01-12T17:19:32.339702"
+      },
+      {
+        "test": "Category 'Peripheral Artery Di...' has topics",
+        "passed": true,
+        "details": "18 topics",
+        "timestamp": "2026-01-12T17:19:33.119070"
+      },
+      {
+        "test": "Category 'Venous Thromboemboli...' has topics",
+        "passed": true,
+        "details": "15 topics",
+        "timestamp": "2026-01-12T17:19:33.854938"
+      },
+      {
+        "test": "Category 'Aortic Disease...' has topics",
+        "passed": true,
+        "details": "12 topics",
+        "timestamp": "2026-01-12T17:19:34.815857"
+      },
+      {
+        "test": "Category 'Structural Intervent...' has topics",
+        "passed": true,
+        "details": "15 topics",
+        "timestamp": "2026-01-12T17:19:35.682571"
+      },
+      {
+        "test": "Category 'Cardiac Imaging...' has topics",
+        "passed": true,
+        "details": "12 topics",
+        "timestamp": "2026-01-12T17:19:36.425084"
+      },
+      {
+        "test": "Total topics >= 300",
+        "passed": true,
+        "details": "313 topics",
+        "timestamp": "2026-01-12T17:19:43.237411"
+      },
+      {
+        "test": "Topic 'hf-sglt2i' loads",
+        "passed": true,
+        "details": "Condition: Heart Failure...",
+        "timestamp": "2026-01-12T17:19:44.567787"
+      },
+      {
+        "test": "Topic 'lipid-pcsk9i' loads",
+        "passed": true,
+        "details": "Condition: Hypercholesterolemia...",
+        "timestamp": "2026-01-12T17:19:45.639528"
+      },
+      {
+        "test": "Topic 'cad-colchicine' loads",
+        "passed": true,
+        "details": "Condition: Coronary Artery Disease...",
+        "timestamp": "2026-01-12T17:19:46.666878"
+      },
+      {
+        "test": "Topic 'af-doac' loads",
+        "passed": true,
+        "details": "Condition: Atrial Fibrillation...",
+        "timestamp": "2026-01-12T17:19:47.753317"
+      },
+      {
+        "test": "Topic 'hf-arni' loads",
+        "passed": true,
+        "details": "Condition: Heart Failure...",
+        "timestamp": "2026-01-12T17:19:49.099055"
+      },
+      {
+        "test": "Batch topic load rate >= 90%",
+        "passed": true,
+        "details": "100.0%",
+        "timestamp": "2026-01-12T17:22:12.937981"
+      }
+    ],
+    "search_tests": [
+      {
+        "test": "Search 'Heart Failure' + 'Dapagliflozin'",
+        "passed": true,
+        "details": "Found 3 trials",
+        "timestamp": "2026-01-12T17:19:55.736860"
+      },
+      {
+        "test": "Search 'Atrial Fibrillation' + 'Apixaban'",
+        "passed": true,
+        "details": "Found 6 trials",
+        "timestamp": "2026-01-12T17:20:02.207220"
+      },
+      {
+        "test": "Search 'Coronary Artery Disease' + 'Colchicine'",
+        "passed": true,
+        "details": "Found 1 trials",
+        "timestamp": "2026-01-12T17:20:06.218365"
+      },
+      {
+        "test": "Trial checkboxes work",
+        "passed": true,
+        "details": "Selected 1 trials",
+        "timestamp": "2026-01-12T17:20:06.882893"
+      },
+      {
+        "test": "PubMed search: 'DAPA-HF dapagliflozin heart fa...'",
+        "passed": true,
+        "details": "Found 48 articles",
+        "timestamp": "2026-01-12T17:20:11.161537"
+      },
+      {
+        "test": "PubMed search: 'EMPEROR-Reduced empagliflozin...'",
+        "passed": true,
+        "details": "Found 26 articles",
+        "timestamp": "2026-01-12T17:20:13.313709"
+      },
+      {
+        "test": "PubMed search: 'colchicine cardiovascular COLC...'",
+        "passed": true,
+        "details": "Found 6 articles",
+        "timestamp": "2026-01-12T17:20:15.224548"
+      }
+    ],
+    "pipeline_tests": [
+      {
+        "test": "SGLT2i: Data loaded",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:18.025052"
+      },
+      {
+        "test": "SGLT2i: Studies parsed",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:19.450293"
+      },
+      {
+        "test": "SGLT2i: Pooled estimate",
+        "passed": true,
+        "details": "0.77",
+        "timestamp": "2026-01-12T17:20:23.437511"
+      },
+      {
+        "test": "SGLT2i: 95% CI",
+        "passed": true,
+        "details": "(0.71 to 0.83)",
+        "timestamp": "2026-01-12T17:20:23.437538"
+      },
+      {
+        "test": "SGLT2i: I-squared statistic",
+        "passed": true,
+        "details": "0.0%",
+        "timestamp": "2026-01-12T17:20:23.437549"
+      },
+      {
+        "test": "SGLT2i: Forest plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:23.460269"
+      },
+      {
+        "test": "SGLT2i: Funnel plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:23.471984"
+      },
+      {
+        "test": "SGLT2i: GRADE calculated",
+        "passed": true,
+        "details": "HIGH",
+        "timestamp": "2026-01-12T17:20:26.665578"
+      },
+      {
+        "test": "SGLT2i: ESC Recommendation",
+        "passed": true,
+        "details": "Class IIa, Level A",
+        "timestamp": "2026-01-12T17:20:29.883745"
+      },
+      {
+        "test": "SGLT2i: SoF table",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:33.120832"
+      },
+      {
+        "test": "PCSK9i: Data loaded",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:36.037933"
+      },
+      {
+        "test": "PCSK9i: Studies parsed",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:37.440814"
+      },
+      {
+        "test": "PCSK9i: Pooled estimate",
+        "passed": true,
+        "details": "0.85",
+        "timestamp": "2026-01-12T17:20:41.539755"
+      },
+      {
+        "test": "PCSK9i: 95% CI",
+        "passed": true,
+        "details": "(0.80 to 0.90)",
+        "timestamp": "2026-01-12T17:20:41.539774"
+      },
+      {
+        "test": "PCSK9i: I-squared statistic",
+        "passed": true,
+        "details": "0.0%",
+        "timestamp": "2026-01-12T17:20:41.539780"
+      },
+      {
+        "test": "PCSK9i: Forest plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:41.546544"
+      },
+      {
+        "test": "PCSK9i: Funnel plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:41.552192"
+      },
+      {
+        "test": "PCSK9i: GRADE calculated",
+        "passed": true,
+        "details": "HIGH",
+        "timestamp": "2026-01-12T17:20:44.252675"
+      },
+      {
+        "test": "PCSK9i: ESC Recommendation",
+        "passed": true,
+        "details": "Class IIb, Level A",
+        "timestamp": "2026-01-12T17:20:46.971018"
+      },
+      {
+        "test": "PCSK9i: SoF table",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:49.773475"
+      },
+      {
+        "test": "Colchicine: Data loaded",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:52.788609"
+      },
+      {
+        "test": "Colchicine: Studies parsed",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:54.150886"
+      },
+      {
+        "test": "Colchicine: Pooled estimate",
+        "passed": true,
+        "details": "0.72",
+        "timestamp": "2026-01-12T17:20:58.028350"
+      },
+      {
+        "test": "Colchicine: 95% CI",
+        "passed": true,
+        "details": "(0.64 to 0.81)",
+        "timestamp": "2026-01-12T17:20:58.028373"
+      },
+      {
+        "test": "Colchicine: I-squared statistic",
+        "passed": true,
+        "details": "0.0%",
+        "timestamp": "2026-01-12T17:20:58.028397"
+      },
+      {
+        "test": "Colchicine: Forest plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:58.041188"
+      },
+      {
+        "test": "Colchicine: Funnel plot",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:20:58.050248"
+      },
+      {
+        "test": "Colchicine: GRADE calculated",
+        "passed": true,
+        "details": "HIGH",
+        "timestamp": "2026-01-12T17:21:00.836265"
+      },
+      {
+        "test": "Colchicine: ESC Recommendation",
+        "passed": true,
+        "details": "Class IIa, Level A",
+        "timestamp": "2026-01-12T17:21:03.921735"
+      },
+      {
+        "test": "Colchicine: SoF table",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:21:06.703474"
+      },
+      {
+        "test": "NMA SUCRA rankings",
+        "passed": true,
+        "details": "4 treatments",
+        "timestamp": "2026-01-12T17:22:18.886722"
+      },
+      {
+        "test": "NMA network diagram",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:22:19.110733"
+      },
+      {
+        "test": "NMA league table",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:22:19.251662"
+      },
+      {
+        "test": "Subgroup analysis results",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:22:24.346145"
+      },
+      {
+        "test": "ICEMAN credibility",
+        "passed": true,
+        "details": "Low (2)",
+        "timestamp": "2026-01-12T17:22:24.551340"
+      }
+    ],
+    "validation_tests": [
+      {
+        "test": "sglt2i: HR matches (0.77 vs 0.77)",
+        "passed": true,
+        "details": "Diff: 0.000",
+        "timestamp": "2026-01-12T17:21:13.192288"
+      },
+      {
+        "test": "sglt2i: CI matches (0.71-0.83 vs 0.72-0.82)",
+        "passed": true,
+        "details": "Diff: 0.010, 0.010",
+        "timestamp": "2026-01-12T17:21:13.192364"
+      },
+      {
+        "test": "sglt2i: Concordance >= 95%",
+        "passed": true,
+        "details": "95.0%",
+        "timestamp": "2026-01-12T17:21:13.192387"
+      },
+      {
+        "test": "colchicine: HR matches (0.72 vs 0.72)",
+        "passed": true,
+        "details": "Diff: 0.000",
+        "timestamp": "2026-01-12T17:21:19.824155"
+      },
+      {
+        "test": "colchicine: CI matches (0.64-0.81 vs 0.65-0.80)",
+        "passed": true,
+        "details": "Diff: 0.010, 0.010",
+        "timestamp": "2026-01-12T17:21:19.824187"
+      },
+      {
+        "test": "colchicine: Concordance >= 95%",
+        "passed": true,
+        "details": "95.0%",
+        "timestamp": "2026-01-12T17:21:19.824203"
+      },
+      {
+        "test": "Built-in validation runs",
+        "passed": true,
+        "details": "",
+        "timestamp": "2026-01-12T17:21:23.623283"
+      }
+    ]
+  }
+}

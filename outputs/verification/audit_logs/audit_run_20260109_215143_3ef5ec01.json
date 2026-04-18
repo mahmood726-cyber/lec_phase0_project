@@ -1,0 +1,163 @@
+{
+  "run_id": "run_20260109_215143_3ef5ec01",
+  "started_at": "2026-01-09T21:51:43.646650+00:00",
+  "assurance_level": "bronze",
+  "extraction_source": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+  "extraction_sha256": "661537de62af0cba3a44029280fefdeb61c9662b14abd3a21cd94176707e8868",
+  "steps": [
+    {
+      "step": "provenance_check",
+      "started_at": "2026-01-09T21:51:43.647088+00:00",
+      "completed_at": "2026-01-09T21:51:43.647142+00:00",
+      "status": "FAIL",
+      "issue_count": 12,
+      "issues": [
+        {
+          "study_id": "NCT:02551094",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "severity": "error",
+          "message": "No provenance data found for study"
+        }
+      ]
+    },
+    {
+      "step": "mvp_validators",
+      "started_at": "2026-01-09T21:51:43.647157+00:00",
+      "completed_at": "2026-01-09T21:51:43.650343+00:00",
+      "validators_run": [
+        "effect_direction",
+        "inconsistent_n",
+        "units_timepoint",
+        "duplicates"
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 3,
+        "flagged": 1,
+        "failed": 0
+      },
+      "results": [
+        {
+          "validator": "effect_direction",
+          "description": "Validates effect direction consistency across fields",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-09T21:51:43.647275+00:00"
+        },
+        {
+          "validator": "inconsistent_n",
+          "description": "Validates N and events consistency across arms",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-09T21:51:43.647380+00:00"
+        },
+        {
+          "validator": "units_timepoint",
+          "description": "Validates units and timepoints are specified and consistent",
+          "status": "FLAG",
+          "issues": [
+            {
+              "study_id": "cross_study",
+              "field": "timepoint_units",
+              "message": "Heterogeneous timepoint units across studies: {'months', 'days'}",
+              "severity": "warning",
+              "details": {
+                "unique_units": [
+                  "months",
+                  "days"
+                ]
+              }
+            }
+          ],
+          "issue_count": 1,
+          "validated_at": "2026-01-09T21:51:43.647478+00:00"
+        },
+        {
+          "validator": "duplicates",
+          "description": "Detects potential duplicate studies",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-01-09T21:51:43.650305+00:00"
+        }
+      ]
+    },
+    {
+      "step": "disagreement_check",
+      "started_at": "2026-01-09T21:51:43.650355+00:00",
+      "completed_at": "2026-01-09T21:51:43.650365+00:00",
+      "status": "PASS",
+      "critical_disagreements": 0,
+      "total_disagreements": 0
+    }
+  ],
+  "completed_at": "2026-01-09T21:51:43.650404+00:00",
+  "decision": "FAIL",
+  "decision_reasons": [
+    "provenance_failures: 12",
+    "validator_warnings: ['units_timepoint']",
+    "---DETAILS---",
+    "DECISION: FAIL - 12 critical issue(s) found",
+    "  - NCT:02551094: No provenance data found for study",
+    "  - NCT:03048825: No provenance data found for study",
+    "  - NCT:01551094: No provenance data found for study",
+    "  - ...and 9 more",
+    "ACTION REQUIRED: Fix provenance/extraction issues before proceeding"
+  ]
+}

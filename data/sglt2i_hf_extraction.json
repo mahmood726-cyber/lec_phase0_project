@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "topic": "SGLT2 Inhibitors in Heart Failure",
+    "pico": {
+      "population": "Adults with heart failure (HFrEF and HFpEF)",
+      "intervention": "SGLT2 inhibitors (dapagliflozin, empagliflozin, sotagliflozin)",
+      "comparator": "Placebo",
+      "outcome": "Composite of CV death or HF hospitalization"
+    },
+    "extraction_date": "2026-01-11",
+    "extractor": "LEC_Pipeline_v0.1"
+  },
+  "studies": [
+    {
+      "study_id": "NCT:03036124",
+      "trial_name": "DAPA-HF",
+      "pmid": "PMID:31535829",
+      "year": 2019,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "HFrEF (LVEF <=40%)",
+      "n_total": 4744,
+      "intervention": {
+        "name": "Dapagliflozin",
+        "dose": "10mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 18.2,
+      "outcomes": [
+        {
+          "name": "CV death or HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 18.2,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 2373, "events": 386},
+          "arm_control": {"n": 2371, "events": 502},
+          "effect_measure": "HR",
+          "effect_estimate": 0.74,
+          "effect_ci_low": 0.65,
+          "effect_ci_high": 0.85,
+          "p_value": 0.00001
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2373, "events": 227},
+          "arm_control": {"n": 2371, "events": 273},
+          "effect_measure": "HR",
+          "effect_estimate": 0.82,
+          "effect_ci_low": 0.69,
+          "effect_ci_high": 0.98
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2373, "events": 276},
+          "arm_control": {"n": 2371, "events": 329},
+          "effect_measure": "HR",
+          "effect_estimate": 0.83,
+          "effect_ci_low": 0.71,
+          "effect_ci_high": 0.97
+        },
+        {
+          "name": "HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2373, "events": 231},
+          "arm_control": {"n": 2371, "events": 318},
+          "effect_measure": "HR",
+          "effect_estimate": 0.70,
+          "effect_ci_low": 0.59,
+          "effect_ci_high": 0.83
+        },
+        {
+          "name": "Serious adverse events",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2368, "events": 740},
+          "arm_control": {"n": 2368, "events": 764},
+          "effect_measure": "RR",
+          "effect_estimate": 0.97,
+          "effect_ci_low": 0.90,
+          "effect_ci_high": 1.05
+        },
+        {
+          "name": "Volume depletion",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2368, "events": 177},
+          "arm_control": {"n": 2368, "events": 162},
+          "effect_measure": "RR",
+          "effect_estimate": 1.09,
+          "effect_ci_low": 0.88,
+          "effect_ci_high": 1.35
+        },
+        {
+          "name": "Diabetic ketoacidosis",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2368, "events": 3},
+          "arm_control": {"n": 2368, "events": 0},
+          "effect_measure": "RR",
+          "effect_estimate": 7.0,
+          "effect_ci_low": 0.36,
+          "effect_ci_high": 135.5,
+          "safety_signal": true
+        }
+      ],
+      "subgroups": {
+        "diabetes": {"yes": {"hr": 0.75, "ci_low": 0.63, "ci_high": 0.90}, "no": {"hr": 0.73, "ci_low": 0.60, "ci_high": 0.88}},
+        "lvef": {"<=30%": {"hr": 0.72}, ">30%": {"hr": 0.77}},
+        "nyha_class": {"II": {"hr": 0.74}, "III-IV": {"hr": 0.75}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:31535829", "source_type": "pdf", "page": 3, "table_id": "Table 1"},
+        "effect_estimate": {"source_id": "PMID:31535829", "source_type": "pdf", "page": 7, "table_id": "Table 2", "raw_text": "HR 0.74 (95% CI, 0.65-0.85)"},
+        "arm_intervention_events": {"source_id": "PMID:31535829", "source_type": "pdf", "page": 7}
+      },
+      "risk_of_bias": {
+        "randomization": "low",
+        "allocation_concealment": "low",
+        "blinding": "low",
+        "incomplete_outcome": "low",
+        "selective_reporting": "low",
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:03057977",
+      "trial_name": "EMPEROR-Reduced",
+      "pmid": "PMID:32865377",
+      "year": 2020,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "HFrEF (LVEF <=40%)",
+      "n_total": 3730,
+      "intervention": {
+        "name": "Empagliflozin",
+        "dose": "10mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 16.0,
+      "outcomes": [
+        {
+          "name": "CV death or HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 16.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 1863, "events": 361},
+          "arm_control": {"n": 1867, "events": 462},
+          "effect_measure": "HR",
+          "effect_estimate": 0.75,
+          "effect_ci_low": 0.65,
+          "effect_ci_high": 0.86,
+          "p_value": 0.00003
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": 187},
+          "arm_control": {"n": 1867, "events": 202},
+          "effect_measure": "HR",
+          "effect_estimate": 0.92,
+          "effect_ci_low": 0.75,
+          "effect_ci_high": 1.12
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": 249},
+          "arm_control": {"n": 1867, "events": 266},
+          "effect_measure": "HR",
+          "effect_estimate": 0.92,
+          "effect_ci_low": 0.77,
+          "effect_ci_high": 1.10
+        },
+        {
+          "name": "HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": 246},
+          "arm_control": {"n": 1867, "events": 342},
+          "effect_measure": "HR",
+          "effect_estimate": 0.69,
+          "effect_ci_low": 0.59,
+          "effect_ci_high": 0.81
+        },
+        {
+          "name": "eGFR decline",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": null},
+          "arm_control": {"n": 1867, "events": null},
+          "effect_measure": "Difference",
+          "effect_estimate": 1.73,
+          "effect_ci_low": 1.10,
+          "effect_ci_high": 2.37,
+          "unit": "mL/min/1.73m2/year slower decline"
+        },
+        {
+          "name": "Genital infections",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": 28},
+          "arm_control": {"n": 1867, "events": 7},
+          "effect_measure": "RR",
+          "effect_estimate": 4.0,
+          "effect_ci_low": 1.76,
+          "effect_ci_high": 9.10,
+          "safety_signal": true
+        },
+        {
+          "name": "Hypotension",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 1863, "events": 147},
+          "arm_control": {"n": 1867, "events": 129},
+          "effect_measure": "RR",
+          "effect_estimate": 1.14,
+          "effect_ci_low": 0.91,
+          "effect_ci_high": 1.43
+        }
+      ],
+      "subgroups": {
+        "diabetes": {"yes": {"hr": 0.72, "ci_low": 0.60, "ci_high": 0.87}, "no": {"hr": 0.78, "ci_low": 0.64, "ci_high": 0.97}},
+        "lvef": {"<=30%": {"hr": 0.76}, ">30%": {"hr": 0.74}},
+        "egfr": {"<60": {"hr": 0.78}, ">=60": {"hr": 0.72}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:32865377", "source_type": "pdf", "page": 4, "table_id": "Table 1"},
+        "effect_estimate": {"source_id": "PMID:32865377", "source_type": "pdf", "page": 8, "table_id": "Figure 2", "raw_text": "HR 0.75 (95% CI, 0.65-0.86)"}
+      },
+      "risk_of_bias": {
+        "randomization": "low",
+        "allocation_concealment": "low",
+        "blinding": "low",
+        "incomplete_outcome": "low",
+        "selective_reporting": "low",
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:03057951",
+      "trial_name": "EMPEROR-Preserved",
+      "pmid": "PMID:34449189",
+      "year": 2021,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "HFpEF (LVEF >40%)",
+      "n_total": 5988,
+      "intervention": {
+        "name": "Empagliflozin",
+        "dose": "10mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 26.2,
+      "outcomes": [
+        {
+          "name": "CV death or HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 26.2,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 2997, "events": 415},
+          "arm_control": {"n": 2991, "events": 511},
+          "effect_measure": "HR",
+          "effect_estimate": 0.79,
+          "effect_ci_low": 0.69,
+          "effect_ci_high": 0.90,
+          "p_value": 0.0003
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2997, "events": 219},
+          "arm_control": {"n": 2991, "events": 244},
+          "effect_measure": "HR",
+          "effect_estimate": 0.91,
+          "effect_ci_low": 0.76,
+          "effect_ci_high": 1.09
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2997, "events": 422},
+          "arm_control": {"n": 2991, "events": 427},
+          "effect_measure": "HR",
+          "effect_estimate": 1.00,
+          "effect_ci_low": 0.87,
+          "effect_ci_high": 1.15
+        },
+        {
+          "name": "HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 2997, "events": 259},
+          "arm_control": {"n": 2991, "events": 352},
+          "effect_measure": "HR",
+          "effect_estimate": 0.71,
+          "effect_ci_low": 0.60,
+          "effect_ci_high": 0.83
+        },
+        {
+          "name": "Hypotension",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2996, "events": 304},
+          "arm_control": {"n": 2989, "events": 249},
+          "effect_measure": "RR",
+          "effect_estimate": 1.22,
+          "effect_ci_low": 1.04,
+          "effect_ci_high": 1.43,
+          "safety_signal": true
+        },
+        {
+          "name": "Urinary tract infection",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 2996, "events": 267},
+          "arm_control": {"n": 2989, "events": 227},
+          "effect_measure": "RR",
+          "effect_estimate": 1.18,
+          "effect_ci_low": 0.99,
+          "effect_ci_high": 1.40
+        }
+      ],
+      "subgroups": {
+        "diabetes": {"yes": {"hr": 0.79, "ci_low": 0.67, "ci_high": 0.94}, "no": {"hr": 0.78, "ci_low": 0.64, "ci_high": 0.95}},
+        "lvef": {"41-49%": {"hr": 0.71}, "50-59%": {"hr": 0.80}, ">=60%": {"hr": 0.87}},
+        "sex": {"male": {"hr": 0.77}, "female": {"hr": 0.82}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:34449189", "source_type": "pdf", "page": 3},
+        "effect_estimate": {"source_id": "PMID:34449189", "source_type": "pdf", "page": 6, "raw_text": "HR 0.79 (95% CI, 0.69-0.90)"}
+      },
+      "risk_of_bias": {
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:03619213",
+      "trial_name": "DELIVER",
+      "pmid": "PMID:36027570",
+      "year": 2022,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "HFmrEF/HFpEF (LVEF >40%)",
+      "n_total": 6263,
+      "intervention": {
+        "name": "Dapagliflozin",
+        "dose": "10mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 28.0,
+      "outcomes": [
+        {
+          "name": "CV death or HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 28.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 3131, "events": 512},
+          "arm_control": {"n": 3132, "events": 610},
+          "effect_measure": "HR",
+          "effect_estimate": 0.82,
+          "effect_ci_low": 0.73,
+          "effect_ci_high": 0.92,
+          "p_value": 0.0008
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 3131, "events": 231},
+          "arm_control": {"n": 3132, "events": 261},
+          "effect_measure": "HR",
+          "effect_estimate": 0.88,
+          "effect_ci_low": 0.74,
+          "effect_ci_high": 1.05
+        },
+        {
+          "name": "All-cause mortality",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 3131, "events": 497},
+          "arm_control": {"n": 3132, "events": 526},
+          "effect_measure": "HR",
+          "effect_estimate": 0.94,
+          "effect_ci_low": 0.83,
+          "effect_ci_high": 1.07
+        },
+        {
+          "name": "Total HF hospitalizations",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 3131, "events": 567},
+          "arm_control": {"n": 3132, "events": 742},
+          "effect_measure": "RR",
+          "effect_estimate": 0.77,
+          "effect_ci_low": 0.67,
+          "effect_ci_high": 0.89
+        },
+        {
+          "name": "Serious adverse events",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 3126, "events": 1221},
+          "arm_control": {"n": 3127, "events": 1271},
+          "effect_measure": "RR",
+          "effect_estimate": 0.96,
+          "effect_ci_low": 0.90,
+          "effect_ci_high": 1.02
+        }
+      ],
+      "subgroups": {
+        "diabetes": {"yes": {"hr": 0.79}, "no": {"hr": 0.87}},
+        "lvef": {"<=60%": {"hr": 0.76}, ">60%": {"hr": 0.92}},
+        "prior_hf_hosp": {"yes": {"hr": 0.80}, "no": {"hr": 0.84}}
+      },
+      "provenance": {
+        "n_total": {"source_id": "PMID:36027570", "source_type": "pdf", "page": 4},
+        "effect_estimate": {"source_id": "PMID:36027570", "source_type": "pdf", "page": 7, "raw_text": "HR 0.82 (95% CI, 0.73-0.92)"}
+      },
+      "risk_of_bias": {
+        "overall": "low"
+      }
+    },
+    {
+      "study_id": "NCT:03521934",
+      "trial_name": "SOLOIST-WHF",
+      "pmid": "PMID:33200892",
+      "year": 2021,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "Type 2 diabetes with recent worsening HF",
+      "n_total": 1222,
+      "intervention": {
+        "name": "Sotagliflozin",
+        "dose": "200-400mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 9.0,
+      "outcomes": [
+        {
+          "name": "CV death or HF hospitalization/urgent visit",
+          "classification": "efficacy",
+          "is_primary": true,
+          "timepoint": 9.0,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 608, "events": 245},
+          "arm_control": {"n": 614, "events": 355},
+          "effect_measure": "HR",
+          "effect_estimate": 0.67,
+          "effect_ci_low": 0.52,
+          "effect_ci_high": 0.85,
+          "p_value": 0.001
+        },
+        {
+          "name": "CV death",
+          "classification": "efficacy",
+          "is_primary": false,
+          "arm_intervention": {"n": 608, "events": 51},
+          "arm_control": {"n": 614, "events": 58},
+          "effect_measure": "HR",
+          "effect_estimate": 0.84,
+          "effect_ci_low": 0.58,
+          "effect_ci_high": 1.22
+        },
+        {
+          "name": "Diarrhea",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 608, "events": 40},
+          "arm_control": {"n": 614, "events": 18},
+          "effect_measure": "RR",
+          "effect_estimate": 2.24,
+          "effect_ci_low": 1.30,
+          "effect_ci_high": 3.87,
+          "safety_signal": true
+        },
+        {
+          "name": "Severe hypoglycemia",
+          "classification": "safety",
+          "is_primary": false,
+          "arm_intervention": {"n": 608, "events": 4},
+          "arm_control": {"n": 614, "events": 4},
+          "effect_measure": "RR",
+          "effect_estimate": 1.01,
+          "effect_ci_low": 0.25,
+          "effect_ci_high": 4.03
+        }
+      ],
+      "notes": "Trial stopped early due to loss of funding (COVID-19 impact)",
+      "provenance": {
+        "n_total": {"source_id": "PMID:33200892", "source_type": "pdf", "page": 3},
+        "effect_estimate": {"source_id": "PMID:33200892", "source_type": "pdf", "page": 6, "raw_text": "HR 0.67 (95% CI, 0.52-0.85)"}
+      },
+      "risk_of_bias": {
+        "overall": "some_concerns",
+        "notes": "Early termination may affect precision"
+      }
+    },
+    {
+      "study_id": "NCT:01920711",
+      "trial_name": "EMPA-REG OUTCOME (HF subgroup)",
+      "pmid": "PMID:26378978",
+      "year": 2015,
+      "design": "RCT",
+      "phase": "Phase 3",
+      "population": "Type 2 diabetes with established CVD (HF subgroup)",
+      "n_total": 706,
+      "intervention": {
+        "name": "Empagliflozin",
+        "dose": "10-25mg",
+        "frequency": "once daily"
+      },
+      "comparator": "Placebo",
+      "followup_median_months": 37.2,
+      "outcomes": [
+        {
+          "name": "HF hospitalization",
+          "classification": "efficacy",
+          "is_primary": false,
+          "timepoint": 37.2,
+          "timepoint_unit": "months",
+          "arm_intervention": {"n": 462, "events": 47},
+          "arm_control": {"n": 244, "events": 51},
+          "effect_measure": "HR",
+          "effect_estimate": 0.50,
+          "effect_ci_low": 0.33,
+          "effect_ci_high": 0.75,
+          "p_value": 0.0008
+        }
+      ],
+      "notes": "Post-hoc subgroup analysis of patients with baseline HF",
+      "provenance": {
+        "effect_estimate": {"source_id": "PMID:26378978", "source_type": "pdf", "page": "Supplementary"}
+      },
+      "risk_of_bias": {
+        "overall": "some_concerns",
+        "notes": "Post-hoc subgroup analysis"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "truthcert_version": "0.1.0",
+  "assurance_level": "bronze",
+  "run_id": "run_20260217_220540_9b8bc5c1",
+  "generated_at": "2026-02-17T22:05:40.568750+00:00",
+  "decision": "FAIL",
+  "decision_reasons": [
+    "provenance_failures: 96",
+    "validator_warnings: ['units_timepoint']",
+    "---DETAILS---",
+    "DECISION: FAIL - 96 critical issue(s) found",
+    "  - NCT:02551094: Critical field 'n' missing provenance",
+    "  - NCT:02551094: Critical field 'events' missing provenance",
+    "  - NCT:02551094: Critical field 'timepoint' missing provenance",
+    "  - ...and 93 more",
+    "ACTION REQUIRED: Fix provenance/extraction issues before proceeding"
+  ],
+  "scorecard": {
+    "provenance": "CHECKED",
+    "validators": "COMPLETE",
+    "disagreements": "SURFACED"
+  },
+  "statement": "This TruthCert (bronze) certifies the reproducibility and traceability of the extraction inputs. It does NOT guarantee zero extraction error or completeness of the evidence universe.",
+  "extraction": {
+    "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+    "sha256": "a2a249ad0b352aad1b78b45c9c9831cde49750e4f82f7bd535d4a80d2ee04c4f"
+  },
+  "audit_log": {
+    "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260217_220540_9b8bc5c1.json",
+    "sha256": "ea50c3f56979e3647dcb9bd0557697438008663803db27b846e16aed9193106b"
+  },
+  "validators_run": [
+    "effect_direction",
+    "inconsistent_n",
+    "units_timepoint",
+    "duplicates"
+  ],
+  "provenance_checked": true,
+  "disagreements_surfaced": true
+}

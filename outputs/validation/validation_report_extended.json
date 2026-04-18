@@ -1,0 +1,62 @@
+{
+  "validation_run_at": "2026-02-17T22:05:40.556060+00:00",
+  "validators_run": [
+    "effect_direction",
+    "inconsistent_n",
+    "units_timepoint",
+    "duplicates"
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 3,
+    "flagged": 1,
+    "failed": 0
+  },
+  "results": [
+    {
+      "validator": "effect_direction",
+      "description": "Validates effect direction consistency across fields",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-17T22:05:40.552254+00:00"
+    },
+    {
+      "validator": "inconsistent_n",
+      "description": "Validates N and events consistency across arms",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-17T22:05:40.552432+00:00"
+    },
+    {
+      "validator": "units_timepoint",
+      "description": "Validates units and timepoints are specified and consistent",
+      "status": "FLAG",
+      "issues": [
+        {
+          "study_id": "cross_study",
+          "field": "timepoint_units",
+          "message": "Heterogeneous timepoint units across studies: {'months', 'days'}",
+          "severity": "warning",
+          "details": {
+            "unique_units": [
+              "months",
+              "days"
+            ]
+          }
+        }
+      ],
+      "issue_count": 1,
+      "validated_at": "2026-02-17T22:05:40.552595+00:00"
+    },
+    {
+      "validator": "duplicates",
+      "description": "Detects potential duplicate studies",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-17T22:05:40.556034+00:00"
+    }
+  ]
+}

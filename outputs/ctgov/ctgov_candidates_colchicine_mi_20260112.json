@@ -1,0 +1,85 @@
+{
+  "topic": "colchicine_mi",
+  "created_at_utc": "2026-01-12T21:05:09.515879+00:00",
+  "source": "aact_postgres",
+  "sql_file": "C:\\Users\\user\\Downloads\\lec_phase0_project\\sql\\colchicine_mi_candidates.sql",
+  "candidate_count": 5,
+  "disposition_summary": {
+    "INCLUDE": 3,
+    "FLAG": 1,
+    "EXCLUDE": 1
+  },
+  "candidates": [
+    {
+      "nct_id": "NCT02551094",
+      "brief_title": "Colchicine Cardiovascular Outcomes Trial (COLCOT)",
+      "overall_status": "Completed",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.9,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "COMPLETED",
+        "HAS_RESULTS"
+      ]
+    },
+    {
+      "nct_id": "NCT03048825",
+      "brief_title": "Low Dose Colchicine After Myocardial Infarction (LoDoCo-MI)",
+      "overall_status": "Completed",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.85,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "COMPLETED"
+      ]
+    },
+    {
+      "nct_id": "NCT01551094",
+      "brief_title": "Colchicine in Acute Coronary Syndrome",
+      "overall_status": "Completed",
+      "phase": "Phase 2",
+      "allocation": "Randomized",
+      "score_total": 0.75,
+      "disposition": "INCLUDE",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_2",
+        "COMPLETED"
+      ]
+    },
+    {
+      "nct_id": "NCT04322682",
+      "brief_title": "Colchicine for MI Prevention",
+      "overall_status": "Recruiting",
+      "phase": "Phase 3",
+      "allocation": "Randomized",
+      "score_total": 0.6,
+      "disposition": "FLAG",
+      "reason_codes": [
+        "RANDOMIZED",
+        "PHASE_3",
+        "RECRUITING_NO_RESULTS"
+      ]
+    },
+    {
+      "nct_id": "NCT00000001",
+      "brief_title": "Observational Colchicine Study",
+      "overall_status": "Completed",
+      "phase": null,
+      "allocation": null,
+      "score_total": 0.3,
+      "disposition": "EXCLUDE",
+      "reason_codes": [
+        "ALLOC_UNKNOWN",
+        "PHASE_UNKNOWN",
+        "NOT_RANDOMIZED_LIKELY"
+      ]
+    }
+  ]
+}

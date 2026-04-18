@@ -1,0 +1,84 @@
+{
+  "run_id": "run_20260217_233006_0809dec2",
+  "started_at": "2026-02-17T23:30:06.364194+00:00",
+  "assurance_level": "bronze",
+  "extraction_source": "data\\sample_extraction.json",
+  "extraction_sha256": "9c57c4cac7bcbe31c54da6c4969a062477469cc3c542500c890a22ff9dae1ae6",
+  "steps": [
+    {
+      "step": "provenance_check",
+      "started_at": "2026-02-17T23:30:06.364441+00:00",
+      "completed_at": "2026-02-17T23:30:06.364670+00:00",
+      "status": "PASS",
+      "issue_count": 0,
+      "issues": []
+    },
+    {
+      "step": "mvp_validators",
+      "started_at": "2026-02-17T23:30:06.364675+00:00",
+      "completed_at": "2026-02-17T23:30:06.364835+00:00",
+      "validators_run": [
+        "effect_direction",
+        "inconsistent_n",
+        "units_timepoint",
+        "duplicates"
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "flagged": 0,
+        "failed": 0
+      },
+      "results": [
+        {
+          "validator": "effect_direction",
+          "description": "Validates effect direction consistency across fields",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T23:30:06.364703+00:00"
+        },
+        {
+          "validator": "inconsistent_n",
+          "description": "Validates N and events consistency across arms",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T23:30:06.364725+00:00"
+        },
+        {
+          "validator": "units_timepoint",
+          "description": "Validates units and timepoints are specified and consistent",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T23:30:06.364744+00:00"
+        },
+        {
+          "validator": "duplicates",
+          "description": "Detects potential duplicate studies",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T23:30:06.364823+00:00"
+        }
+      ]
+    },
+    {
+      "step": "disagreement_check",
+      "started_at": "2026-02-17T23:30:06.364840+00:00",
+      "completed_at": "2026-02-17T23:30:06.364844+00:00",
+      "status": "PASS",
+      "critical_disagreements": 0,
+      "total_disagreements": 0
+    }
+  ],
+  "completed_at": "2026-02-17T23:30:06.364854+00:00",
+  "decision": "PASS",
+  "decision_reasons": [
+    "all_checks_passed",
+    "---DETAILS---",
+    "DECISION: PASS - All verification checks passed",
+    "CERTIFIED: Extraction is traceable and reproducible"
+  ]
+}

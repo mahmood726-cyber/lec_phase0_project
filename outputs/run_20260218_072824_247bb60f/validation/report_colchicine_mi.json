@@ -1,0 +1,49 @@
+{
+  "validation_run_at": "2026-02-18T07:28:24.632455+00:00",
+  "validators_run": [
+    "effect_direction",
+    "inconsistent_n",
+    "units_timepoint",
+    "duplicates"
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "flagged": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "validator": "effect_direction",
+      "description": "Validates effect direction consistency across fields",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-18T07:28:24.632082+00:00"
+    },
+    {
+      "validator": "inconsistent_n",
+      "description": "Validates N and events consistency across arms",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-18T07:28:24.632155+00:00"
+    },
+    {
+      "validator": "units_timepoint",
+      "description": "Validates units and timepoints are specified and consistent",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-18T07:28:24.632203+00:00"
+    },
+    {
+      "validator": "duplicates",
+      "description": "Detects potential duplicate studies",
+      "status": "PASS",
+      "issues": [],
+      "issue_count": 0,
+      "validated_at": "2026-02-18T07:28:24.632443+00:00"
+    }
+  ]
+}

@@ -1,0 +1,679 @@
+{
+  "run_id": "run_20260217_074616_c592bb98",
+  "started_at": "2026-02-17T07:46:16.946640+00:00",
+  "assurance_level": "bronze",
+  "extraction_source": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+  "extraction_sha256": "a2a249ad0b352aad1b78b45c9c9831cde49750e4f82f7bd535d4a80d2ee04c4f",
+  "steps": [
+    {
+      "step": "provenance_check",
+      "started_at": "2026-02-17T07:46:16.946945+00:00",
+      "completed_at": "2026-02-17T07:46:16.947215+00:00",
+      "status": "FAIL",
+      "issue_count": 96,
+      "issues": [
+        {
+          "study_id": "NCT:02551094",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:02551094",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:03048825",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:01551094",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:03874338",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:30578418",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:03161119",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "NCT:04322682",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:27258858",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:32673060",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:31969186",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:28493122",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "n",
+          "severity": "error",
+          "message": "Critical field 'n' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "events",
+          "severity": "error",
+          "message": "Critical field 'events' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "timepoint",
+          "severity": "error",
+          "message": "Critical field 'timepoint' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "timepoint_unit",
+          "severity": "error",
+          "message": "Critical field 'timepoint_unit' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "effect_direction",
+          "severity": "error",
+          "message": "Critical field 'effect_direction' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "effect_estimate",
+          "severity": "error",
+          "message": "Critical field 'effect_estimate' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "effect_ci_low",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_low' missing provenance"
+        },
+        {
+          "study_id": "PMID:32894695",
+          "field": "effect_ci_high",
+          "severity": "error",
+          "message": "Critical field 'effect_ci_high' missing provenance"
+        }
+      ]
+    },
+    {
+      "step": "mvp_validators",
+      "started_at": "2026-02-17T07:46:16.947220+00:00",
+      "completed_at": "2026-02-17T07:46:16.948465+00:00",
+      "validators_run": [
+        "effect_direction",
+        "inconsistent_n",
+        "units_timepoint",
+        "duplicates"
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 3,
+        "flagged": 1,
+        "failed": 0
+      },
+      "results": [
+        {
+          "validator": "effect_direction",
+          "description": "Validates effect direction consistency across fields",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T07:46:16.947291+00:00"
+        },
+        {
+          "validator": "inconsistent_n",
+          "description": "Validates N and events consistency across arms",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T07:46:16.947336+00:00"
+        },
+        {
+          "validator": "units_timepoint",
+          "description": "Validates units and timepoints are specified and consistent",
+          "status": "FLAG",
+          "issues": [
+            {
+              "study_id": "cross_study",
+              "field": "timepoint_units",
+              "message": "Heterogeneous timepoint units across studies: {'months', 'days'}",
+              "severity": "warning",
+              "details": {
+                "unique_units": [
+                  "months",
+                  "days"
+                ]
+              }
+            }
+          ],
+          "issue_count": 1,
+          "validated_at": "2026-02-17T07:46:16.947390+00:00"
+        },
+        {
+          "validator": "duplicates",
+          "description": "Detects potential duplicate studies",
+          "status": "PASS",
+          "issues": [],
+          "issue_count": 0,
+          "validated_at": "2026-02-17T07:46:16.948448+00:00"
+        }
+      ]
+    },
+    {
+      "step": "disagreement_check",
+      "started_at": "2026-02-17T07:46:16.948471+00:00",
+      "completed_at": "2026-02-17T07:46:16.948475+00:00",
+      "status": "PASS",
+      "critical_disagreements": 0,
+      "total_disagreements": 0
+    }
+  ],
+  "completed_at": "2026-02-17T07:46:16.948494+00:00",
+  "decision": "FAIL",
+  "decision_reasons": [
+    "provenance_failures: 96",
+    "validator_warnings: ['units_timepoint']",
+    "---DETAILS---",
+    "DECISION: FAIL - 96 critical issue(s) found",
+    "  - NCT:02551094: Critical field 'n' missing provenance",
+    "  - NCT:02551094: Critical field 'events' missing provenance",
+    "  - NCT:02551094: Critical field 'timepoint' missing provenance",
+    "  - ...and 93 more",
+    "ACTION REQUIRED: Fix provenance/extraction issues before proceeding"
+  ]
+}

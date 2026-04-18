@@ -1,0 +1,128 @@
+{
+  "lec_version": "0.1.0",
+  "created_at_utc": "2026-02-17T23:30:06.503882+00:00",
+  "updated_at_utc": "2026-02-17T23:30:06.503892+00:00",
+  "question": {
+    "title": "Meta-analysis for topic: colchicine_mi",
+    "pico": {
+      "population": "To be specified",
+      "intervention": "To be specified",
+      "comparator": "To be specified",
+      "outcome": "To be specified"
+    }
+  },
+  "evidence_universe": {
+    "discovery_artifacts": [
+      {
+        "path": "outputs\\run_20260217_233006_89e612ad\\discovery\\discovery_colchicine_mi_2026-02-17.json",
+        "sha256": "10f8940b1f18c8a9dcb1ecf756675af1e64c4909e66016c41da4a125295385c0",
+        "candidate_count": 5
+      }
+    ],
+    "statistics": {
+      "total_candidates": 5,
+      "included": 0,
+      "flagged": 2,
+      "excluded": 3
+    }
+  },
+  "included_studies": {
+    "count": 2,
+    "study_ids": [
+      "NCT:02551094",
+      "NCT:03048825"
+    ]
+  },
+  "analysis": {
+    "outcome_type": "binary",
+    "effect_measure": "HR",
+    "model": {
+      "type": "random_effects",
+      "method": "REML"
+    },
+    "results": {
+      "pooled": {
+        "estimate": 0.7215,
+        "ci_low": 0.6243,
+        "ci_high": 0.8338,
+        "se": 0.0738
+      },
+      "heterogeneity": {
+        "i2": 0,
+        "tau2": 0,
+        "q": 0.5331,
+        "df": 1
+      }
+    },
+    "metaengine_contract": {
+      "contract_version": "0.1.0",
+      "input": {
+        "path": "outputs\\run_20260217_233006_89e612ad\\metaengine\\metaengine_input_colchicine_mi.json",
+        "sha256": "2a785a8cd8eedc0e8779e3c809d5d7d06c5f05856bc19df1ab4fbfcd0523345d"
+      },
+      "output": {
+        "path": "outputs\\run_20260217_233006_89e612ad\\metaengine\\metaengine_output_colchicine_mi.json",
+        "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a"
+      }
+    }
+  },
+  "verification": {
+    "truthcert": {
+      "assurance_level": "bronze",
+      "decision": "PASS",
+      "certificate": {
+        "path": "outputs\\run_20260217_233006_89e612ad\\verification\\certificates\\truthcert_run_20260217_233006_0809dec2.json",
+        "sha256": "556338318cfeb2879264fd683d2071eaf12d9740e5da6ec7c3b43a733baaa2c7"
+      },
+      "audit_log": {
+        "path": "outputs\\run_20260217_233006_89e612ad\\verification\\audit_logs\\audit_run_20260217_233006_0809dec2.json",
+        "sha256": "97c504191639ca0bc9187cf143b7d202184c3629ba61364a1b5f00564ed15a6a"
+      }
+    }
+  },
+  "reproducibility": {
+    "run_id": "run_20260217_233006_4fb71f73",
+    "manifest": {
+      "path": "outputs\\run_20260217_233006_89e612ad\\lec_objects\\manifest_run_20260217_233006_4fb71f73.json",
+      "sha256": ""
+    },
+    "artifacts": [
+      {
+        "type": "discovery",
+        "path": "outputs\\run_20260217_233006_89e612ad\\discovery\\discovery_colchicine_mi_2026-02-17.json",
+        "sha256": "10f8940b1f18c8a9dcb1ecf756675af1e64c4909e66016c41da4a125295385c0",
+        "added_at": "2026-02-17T23:30:06.451417+00:00"
+      },
+      {
+        "type": "extraction",
+        "path": "data\\sample_extraction.json",
+        "sha256": "9c57c4cac7bcbe31c54da6c4969a062477469cc3c542500c890a22ff9dae1ae6",
+        "added_at": "2026-02-17T23:30:06.451710+00:00"
+      },
+      {
+        "type": "metaengine_input",
+        "path": "outputs\\run_20260217_233006_89e612ad\\metaengine\\metaengine_input_colchicine_mi.json",
+        "sha256": "2a785a8cd8eedc0e8779e3c809d5d7d06c5f05856bc19df1ab4fbfcd0523345d",
+        "added_at": "2026-02-17T23:30:06.451896+00:00"
+      },
+      {
+        "type": "metaengine_output",
+        "path": "outputs\\run_20260217_233006_89e612ad\\metaengine\\metaengine_output_colchicine_mi.json",
+        "sha256": "656812bdd6ab5b35cdd0882a06450d3812477899a0eab29e34a0adbc46dbbd4a",
+        "added_at": "2026-02-17T23:30:06.467549+00:00"
+      },
+      {
+        "type": "truthcert",
+        "path": "outputs\\run_20260217_233006_89e612ad\\verification\\certificates\\truthcert_run_20260217_233006_0809dec2.json",
+        "sha256": "556338318cfeb2879264fd683d2071eaf12d9740e5da6ec7c3b43a733baaa2c7",
+        "added_at": "2026-02-17T23:30:06.486119+00:00"
+      },
+      {
+        "type": "audit_log",
+        "path": "outputs\\run_20260217_233006_89e612ad\\verification\\audit_logs\\audit_run_20260217_233006_0809dec2.json",
+        "sha256": "97c504191639ca0bc9187cf143b7d202184c3629ba61364a1b5f00564ed15a6a",
+        "added_at": "2026-02-17T23:30:06.502473+00:00"
+      }
+    ]
+  }
+}

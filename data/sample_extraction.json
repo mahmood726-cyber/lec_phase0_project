@@ -1,0 +1,265 @@
+{
+  "extraction_id": "extract_colchicine_demo_001",
+  "created_at": "2026-01-09T10:00:00Z",
+  "topic": "colchicine_mi",
+  "studies": [
+    {
+      "study_id": "NCT:02551094",
+      "nct_id": "NCT02551094",
+      "pmid": "31733140",
+      "title": "Colchicine Cardiovascular Outcomes Trial (COLCOT)",
+      "year": 2019,
+      "authors": ["Tardif JC", "Kouz S", "Waters DD"],
+      "n_total": 4745,
+      "arms": [
+        {
+          "label": "colchicine",
+          "role": "intervention",
+          "n": 2366,
+          "events": 131
+        },
+        {
+          "label": "placebo",
+          "role": "comparator",
+          "n": 2379,
+          "events": 170
+        }
+      ],
+      "outcomes": [
+        {
+          "name": "primary_composite",
+          "type": "binary",
+          "timepoint": 22.6,
+          "timepoint_unit": "months",
+          "effect": {
+            "measure": "HR",
+            "estimate": 0.77,
+            "ci_low": 0.61,
+            "ci_high": 0.96
+          },
+          "effect_direction": "treatment",
+          "arm_data": {
+            "colchicine": {"n": 2366, "events": 131},
+            "placebo": {"n": 2379, "events": 170}
+          }
+        }
+      ],
+      "provenance": {
+        "study_id": "NCT:02551094",
+        "created_at": "2026-01-09T10:00:00Z",
+        "record_count": 11,
+        "records": {
+          "arm_label": {
+            "field_name": "arm_label",
+            "value": "colchicine",
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "n": {
+            "field_name": "n",
+            "value": 4745,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "events": {
+            "field_name": "events",
+            "value": 131,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "outcome_name": {
+            "field_name": "outcome_name",
+            "value": "primary_composite",
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "rules",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "timepoint": {
+            "field_name": "timepoint",
+            "value": 22.6,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_estimate": {
+            "field_name": "effect_estimate",
+            "value": 0.77,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_direction": {
+            "field_name": "effect_direction",
+            "value": "treatment",
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "rules",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "timepoint_unit": {
+            "field_name": "timepoint_unit",
+            "value": "months",
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_ci_low": {
+            "field_name": "effect_ci_low",
+            "value": 0.61,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_ci_high": {
+            "field_name": "effect_ci_high",
+            "value": 0.96,
+            "source": {"source_id": "PMID:31733140", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "study_id": "NCT:03048825",
+      "nct_id": "NCT03048825",
+      "pmid": "32865376",
+      "title": "Low-Dose Colchicine for Secondary Prevention (LoDoCo2)",
+      "year": 2020,
+      "authors": ["Nidorf SM", "Fiolet ATL", "Mosterd A"],
+      "n_total": 5522,
+      "arms": [
+        {
+          "label": "colchicine",
+          "role": "intervention",
+          "n": 2762,
+          "events": 187
+        },
+        {
+          "label": "placebo",
+          "role": "comparator",
+          "n": 2760,
+          "events": 264
+        }
+      ],
+      "outcomes": [
+        {
+          "name": "primary_composite",
+          "type": "binary",
+          "timepoint": 28.6,
+          "timepoint_unit": "months",
+          "effect": {
+            "measure": "HR",
+            "estimate": 0.69,
+            "ci_low": 0.57,
+            "ci_high": 0.83
+          },
+          "effect_direction": "treatment",
+          "arm_data": {
+            "colchicine": {"n": 2762, "events": 187},
+            "placebo": {"n": 2760, "events": 264}
+          }
+        }
+      ],
+      "provenance": {
+        "study_id": "NCT:03048825",
+        "created_at": "2026-01-09T10:00:00Z",
+        "record_count": 11,
+        "records": {
+          "arm_label": {
+            "field_name": "arm_label",
+            "value": "colchicine",
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "n": {
+            "field_name": "n",
+            "value": 5522,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "events": {
+            "field_name": "events",
+            "value": 187,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "outcome_name": {
+            "field_name": "outcome_name",
+            "value": "primary_composite",
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "rules",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "timepoint": {
+            "field_name": "timepoint",
+            "value": 28.6,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_estimate": {
+            "field_name": "effect_estimate",
+            "value": 0.69,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_direction": {
+            "field_name": "effect_direction",
+            "value": "treatment",
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "rules",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "timepoint_unit": {
+            "field_name": "timepoint_unit",
+            "value": "months",
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_ci_low": {
+            "field_name": "effect_ci_low",
+            "value": 0.57,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          },
+          "effect_ci_high": {
+            "field_name": "effect_ci_high",
+            "value": 0.83,
+            "source": {"source_id": "PMID:32865376", "source_type": "pubmed"},
+            "agent_id": "rules_v1",
+            "method": "regex",
+            "extracted_at": "2026-01-09T10:00:00Z"
+          }
+        }
+      }
+    }
+  ]
+}

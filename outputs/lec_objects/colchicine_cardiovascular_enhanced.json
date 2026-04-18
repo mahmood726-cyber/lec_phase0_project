@@ -1,0 +1,117 @@
+{
+  "lec_version": "0.1.0",
+  "created_at_utc": "2026-02-17T22:05:40.675101+00:00",
+  "updated_at_utc": "2026-02-17T22:05:40.675125+00:00",
+  "question": {
+    "title": "Colchicine for Prevention of Cardiovascular Events",
+    "pico": {
+      "population": "Adults with coronary artery disease or recent MI",
+      "intervention": "Colchicine 0.5mg daily",
+      "comparator": "Placebo or standard care",
+      "outcome": "Major adverse cardiovascular events (MACE)",
+      "timeframe": "Median 12-36 months follow-up"
+    },
+    "keywords": [
+      "colchicine",
+      "MACE",
+      "cardiovascular",
+      "anti-inflammatory",
+      "secondary prevention"
+    ]
+  },
+  "evidence_universe": {},
+  "included_studies": {
+    "count": 12,
+    "study_ids": [
+      "NCT:02551094",
+      "NCT:03048825",
+      "NCT:01551094",
+      "NCT:03874338",
+      "PMID:30578418",
+      "NCT:03161119",
+      "NCT:04322682",
+      "PMID:27258858",
+      "PMID:32673060",
+      "PMID:31969186",
+      "PMID:28493122",
+      "PMID:32894695"
+    ]
+  },
+  "analysis": {
+    "outcome_type": "binary",
+    "effect_measure": "HR",
+    "model": {
+      "type": "random_effects",
+      "method": "REML"
+    },
+    "results": {
+      "pooled": {
+        "estimate": 0.8223,
+        "ci_low": 0.6515,
+        "ci_high": 1.0379,
+        "se": 0.1188,
+        "z": -1.6469,
+        "p_value": 0.099574
+      },
+      "heterogeneity": {
+        "i2": 66.83,
+        "tau2": 0.063547,
+        "q": 21.1008,
+        "df": 7,
+        "p_heterogeneity": 0.003756
+      }
+    },
+    "metaengine_contract": {
+      "contract_version": "0.1.0",
+      "input": {
+        "path": "",
+        "sha256": ""
+      },
+      "output": {
+        "path": "",
+        "sha256": ""
+      }
+    }
+  },
+  "verification": {
+    "truthcert": {
+      "assurance_level": "bronze",
+      "decision": "FAIL",
+      "certificate": {
+        "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\certificates\\truthcert_run_20260217_220540_9b8bc5c1.json",
+        "sha256": "b20fb61a261e34fc4ad060db0db882d99a35dfc225bf14cfa056f59d7a7eff59"
+      },
+      "audit_log": {
+        "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260217_220540_9b8bc5c1.json",
+        "sha256": "57620143b01793e7431eda5dd74abd086f63356a42a253861b784a4d3dc4b554"
+      }
+    }
+  },
+  "reproducibility": {
+    "run_id": "run_20260217_220540_89afa8d8",
+    "manifest": {
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\lec_objects\\manifest_run_20260217_220540_89afa8d8.json",
+      "sha256": ""
+    },
+    "artifacts": [
+      {
+        "type": "extraction",
+        "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+        "sha256": "a2a249ad0b352aad1b78b45c9c9831cde49750e4f82f7bd535d4a80d2ee04c4f",
+        "added_at": "2026-02-17T22:05:40.599503+00:00"
+      },
+      {
+        "type": "truthcert",
+        "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\certificates\\truthcert_run_20260217_220540_9b8bc5c1.json",
+        "sha256": "b20fb61a261e34fc4ad060db0db882d99a35dfc225bf14cfa056f59d7a7eff59",
+        "added_at": "2026-02-17T22:05:40.636040+00:00"
+      },
+      {
+        "type": "audit_log",
+        "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260217_220540_9b8bc5c1.json",
+        "sha256": "57620143b01793e7431eda5dd74abd086f63356a42a253861b784a4d3dc4b554",
+        "added_at": "2026-02-17T22:05:40.672678+00:00"
+      }
+    ]
+  }
+}

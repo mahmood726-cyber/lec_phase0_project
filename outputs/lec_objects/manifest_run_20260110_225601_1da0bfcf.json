@@ -1,0 +1,25 @@
+{
+  "run_id": "run_20260110_225601_1da0bfcf",
+  "created_at_utc": "2026-01-10T22:56:01.876604+00:00",
+  "completed_at_utc": "2026-01-10T22:56:01.910024+00:00",
+  "artifacts": [
+    {
+      "type": "extraction",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\data\\extended_extraction.json",
+      "sha256": "661537de62af0cba3a44029280fefdeb61c9662b14abd3a21cd94176707e8868",
+      "added_at": "2026-01-10T22:56:01.876993+00:00"
+    },
+    {
+      "type": "truthcert",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\certificates\\truthcert_run_20260110_225601_7054474d.json",
+      "sha256": "382418bb20c21637770dc6b26bc30775d92524cd46d47d3500265b519c323dd3",
+      "added_at": "2026-01-10T22:56:01.891447+00:00"
+    },
+    {
+      "type": "audit_log",
+      "path": "C:\\Users\\user\\Downloads\\lec_phase0_project\\outputs\\verification\\audit_logs\\audit_run_20260110_225601_7054474d.json",
+      "sha256": "7d64e1de20e0e2874b6be7a616e8a1a0fae114f5a4b96a0dbb296a0aa16c7812",
+      "added_at": "2026-01-10T22:56:01.905860+00:00"
+    }
+  ]
+}
