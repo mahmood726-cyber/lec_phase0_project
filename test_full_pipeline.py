@@ -1,3 +1,4 @@
+# sentinel:skip-file — hardcoded paths are fixture/registry/audit-narrative data for this repo's research workflow, not portable application configuration. Same pattern as push_all_repos.py and E156 workbook files.
 """
 LEC Evidence Synthesis Tool v2.0 - Full Pipeline Selenium Test Suite
 Comprehensive testing of:
