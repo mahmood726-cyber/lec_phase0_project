@@ -156,7 +156,13 @@ def calculate_meta_analysis_hksj(studies: list, use_hksj: bool = True) -> dict:
             re_weights[i] * (log_estimates[i] - pooled_re) ** 2
             for i in range(n)
         )
+        # HKSJ correction is the weighted residual q-statistic. When q < 1 the
+        # adjustment would *narrow* the interval below the standard RE CI, which
+        # is anti-conservative. Apply the recommended floor max(1, q) so HKSJ
+        # never produces an interval narrower than the unadjusted one
+        # (Roever et al. 2015; IQWiG truncated KH estimator).
         hksj_correction = residuals_sq / (n - 1) if n > 1 else 1.0
+        hksj_correction = max(1.0, hksj_correction)
         hksj_var = pooled_var * hksj_correction
         hksj_se = math.sqrt(hksj_var)
 
@@ -481,82 +487,6 @@ def continuous_outcome_meta(studies: list, measure: str = "MD") -> dict:
         },
         "measure": measure,
         "n_studies": len(effects),
-    }
-
-
-def multivariate_pooling_check(outcomes: list, default_rho: float = 0.5) -> dict:
-    """Check for and handle correlated outcomes from the same study.
-    
-    If multiple outcomes are provided for the same population (e.g., CV death and MI),
-    pooling them as independent leads to unit-of-analysis errors.
-    
-    This function implements a conservative adjustment using a correlation 
-    coefficient (rho) when the true correlation is unknown.
-    """
-    if len(outcomes) < 2:
-        return {"adjusted": False, "reason": "Single outcome"}
-        
-    # Improved multivariate pooling (Inverse-Variance Weighted)
-    n = len(outcomes)
-    log_effects = []
-    variances = []
-    ses = []
-    
-    for o in outcomes:
-        est = o.get("estimate")
-        se = o.get("se")
-        if est and se:
-            log_effects.append(math.log(est))
-            variances.append(se**2)
-            ses.append(se)
-            
-    if len(log_effects) < 2:
-        return {"adjusted": False, "reason": "Insufficient data for adjustment"}
-        
-    # Calculate adjusted variance-covariance matrix sum
-    # Variance of sum = sum(var_i) + sum(cov_ij)
-    # Variance of mean = (1/n^2) * Variance of sum
-    
-    sum_var = sum(variances)
-    sum_cov = 0
-    for i in range(n):
-        for j in range(i + 1, n):
-            sum_cov += 2 * default_rho * ses[i] * ses[j]
-            
-    adj_var = (sum_var + sum_cov) / (n**2)
-    adj_se = math.sqrt(adj_var)
-    
-    # Use weighted mean for estimate
-    weights = [1/v for v in variances]
-    weighted_log_effect = sum(w * e for w, e in zip(weights, log_effects)) / sum(weights)
-    
-    return {
-        "adjusted": True,
-        "n_outcomes": n,
-        "composite_estimate": round(math.exp(weighted_log_effect), 4),
-        "composite_se": round(adj_se, 4),
-        "rho_used": default_rho,
-        "method": "Inverse-Variance Weighted Correlation Adjustment"
-    }
-
-
-def multivariate_sensitivity_analysis(outcomes: list) -> dict:
-    """Perform sensitivity analysis on the correlation coefficient (rho)."""
-    rho_values = [0.0, 0.2, 0.5, 0.7, 0.9]
-    results = []
-    
-    for rho in rho_values:
-        res = multivariate_pooling_check(outcomes, default_rho=rho)
-        if res.get("adjusted"):
-            results.append({
-                "rho": rho,
-                "estimate": res["composite_estimate"],
-                "se": res["composite_se"]
-            })
-            
-    return {
-        "sensitivity_results": results,
-        "interpretation": "Higher rho values lead to wider (more conservative) confidence intervals."
     }
 
 
