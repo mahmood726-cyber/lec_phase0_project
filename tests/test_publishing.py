@@ -30,13 +30,14 @@ class TestZenodoPacker:
         
         cert_path = artifacts_dir / "cert.json"
         write_json(cert_path, {"test": "cert"})
+        write_json(artifacts_dir / "manifest.json", {"test": "manifest"})
         
         # Create LEC object
         lec_data = {
             "question": {"title": "Test Topic"},
             "reproducibility": {
                 "run_id": "run_123",
-                "manifest": {"path": str(artifacts_dir / "manifest.json")} # Missing file, should warn
+                "manifest": {"path": str(artifacts_dir / "manifest.json")}
             },
             "evidence_universe": {
                 "discovery_artifacts": [{"path": str(discovery_path)}]
@@ -64,6 +65,5 @@ class TestZenodoPacker:
             assert "truthcert.json" in names
             assert "README.md" in names
             assert ".zenodo.json" in names
-            # Manifest was missing, so not in zip
-            assert "manifest.json" not in names
+            assert "manifest.json" in names
 

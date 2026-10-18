@@ -1,5 +1,8 @@
 """Zenodo Packer - Creates release-ready artifact bundles."""
 
+import hashlib
+import os
+import re
 import shutil
 import zipfile
 import tempfile
@@ -15,6 +18,17 @@ class ZenodoPacker:
     def __init__(self, output_dir: Path):
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+
+    @staticmethod
+    def _filename_component(value: str) -> str:
+        """Keep metadata in the JSON; use a bounded, portable filename component."""
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError("Bundle topic and run ID must be nonempty strings")
+        safe = re.sub(r"[^A-Za-z0-9_-]+", "_", value).strip("_")[:48]
+        if safe != value:
+            digest = hashlib.sha256(value.encode("utf-8")).hexdigest()[:8]
+            return f"{safe or 'bundle'}_{digest}"
+        return safe
 
     def pack(self, lec_path: Path, methods_path: Optional[Path] = None, 
              topic: Optional[str] = None) -> Path:
@@ -36,10 +50,10 @@ class ZenodoPacker:
         run_id = lec_data.get("reproducibility", {}).get("run_id", "unknown")
 
         # Prepare staging directory using tempfile
-        bundle_name = f"lec_bundle_{topic}_{run_id}"
+        bundle_name = f"lec_bundle_{self._filename_component(topic)}_{self._filename_component(run_id)}"
         
         with tempfile.TemporaryDirectory() as tmp_dir:
-            bundle_dir = Path(tmp_dir) / bundle_name
+            bundle_dir = Path(tmp_dir) / "bundle"
             bundle_dir.mkdir(parents=True)
 
             # 1. Copy main LEC object
@@ -49,7 +63,10 @@ class ZenodoPacker:
             self._copy_artifacts(lec_data, bundle_dir)
 
             # 3. Add METHODS.md
-            if methods_path and methods_path.exists():
+            if methods_path is not None:
+                methods_path = Path(methods_path)
+                if not methods_path.is_file():
+                    raise FileNotFoundError(f"Methods file not found: {methods_path}")
                 shutil.copy2(methods_path, bundle_dir / "METHODS.md")
             else:
                 # Create default README/METHODS if missing
@@ -66,15 +83,14 @@ class ZenodoPacker:
 
     def _copy_artifacts(self, lec_data: dict, dest_dir: Path):
         """Copy referenced artifacts to bundle."""
-        # Helper to copy if path exists
+        # Every nonempty reference is required; absent optional references are omitted.
         def safe_copy(src_str, dest_name):
             if not src_str:
                 return
             src = Path(src_str)
-            if src.exists():
-                shutil.copy2(src, dest_dir / dest_name)
-            else:
-                print(f"Warning: Artifact not found: {src}")
+            if not src.is_file():
+                raise FileNotFoundError(f"Referenced artifact not found: {src}")
+            shutil.copy2(src, dest_dir / dest_name)
 
         # Discovery
         universe = lec_data.get("evidence_universe", {})
@@ -98,20 +114,18 @@ class ZenodoPacker:
 
     def _create_default_methods(self, bundle_dir: Path, topic: str, run_id: str):
         """Create default README/METHODS file."""
+        contents = "\n".join(f"- {path.name}" for path in sorted(bundle_dir.iterdir()) if path.is_file())
         content = f"""# LEC Bundle: {topic}
 Run ID: {run_id}
 Generated: {utc_now_iso()}
 
 ## Contents
-- lec_object.json: Main Living Evidence Composite object
-- truthcert.json: Verification certificate (Bronze)
-- audit_log.json: Detailed verification audit trail
-- metaengine_input/output.json: Analysis inputs and results
-- discovery_*.json: Search results and candidate lists
-- manifest.json: File integrity manifest
+{contents}
+- .zenodo.json: Deposition metadata
 
 ## Usage
-This bundle contains all artifacts required to reproduce the meta-analysis for this topic.
+This bundle includes every artifact with a nonempty path referenced by the LEC object.
+Packaging checks file presence; it does not certify scientific validity or reproducibility.
 """
         with open(bundle_dir / "README.md", "w", encoding="utf-8") as f:
             f.write(content)
@@ -132,8 +146,14 @@ This bundle contains all artifacts required to reproduce the meta-analysis for t
         write_json(bundle_dir / ".zenodo.json", metadata)
 
     def _create_zip(self, source_dir: Path, output_path: Path):
-        """Create ZIP archive."""
-        with zipfile.ZipFile(output_path, "w", zipfile.ZIP_DEFLATED) as zf:
-            for file in source_dir.rglob("*"):
-                if file.is_file():
-                    zf.write(file, file.relative_to(source_dir))
+        """Replace the destination only after the complete archive is written."""
+        with tempfile.NamedTemporaryFile(dir=output_path.parent, suffix=".tmp", delete=False) as staged:
+            staged_path = Path(staged.name)
+        try:
+            with zipfile.ZipFile(staged_path, "w", zipfile.ZIP_DEFLATED) as zf:
+                for file in sorted(source_dir.rglob("*")):
+                    if file.is_file():
+                        zf.write(file, file.relative_to(source_dir))
+            os.replace(staged_path, output_path)
+        finally:
+            staged_path.unlink(missing_ok=True)
